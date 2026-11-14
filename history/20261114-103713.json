@@ -1,0 +1,210 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "readme": "tests/gate/README.md",
+  "readme_sha256": "46ad6c912eaf75a8aead402700a59d9b2b130899cf3c961e4f582b0a5fd05476",
+  "extracted_now": false,
+  "exit_code": 1,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 24.904,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "FALSE_CLAIM",
+      "readme_line": 6,
+      "readme_quote": "Clicking Add raises the count, and clicking Reset sets the count back to \"Count: 0\".",
+      "expect": {
+        "count_after_reset": "Count: 0"
+      },
+      "observed": {},
+      "one_liner": "The run reported that Reset left the count at 3, but the recorded final page shows \u201cCount: 0.\u201d",
+      "reason": "Reset was clicked twice but stays at three; its handler is a no-op.",
+      "objective": "Go to http://127.0.0.1:4173/. Open the app's page in the browser (start fresh). Click Reset. Click Add three times. Click Reset. Assert The text \"Count: 0\" is displayed on the page. Store the visible count text shown on the page after clicking Reset as 'count_after_reset'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open the app's page in the browser (start fresh). Click Reset. Click Add three times. Click Reset. Assert The text \"Count: 0\" is displayed on the page. Store the visible count text shown on the page after clicking Reset as 'count_after_reset'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "ASSERT_FAIL",
+          "reason": "assertion_error.step_not_achievable",
+          "credits": 24.904159999999997,
+          "duration": 78.2,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7BYH8QYE9Q05ACMAR442EDG/dashboard/share/US_Q4RPWN6XRJ77DIUTZ0DIMZL2D0UNT3XPUSBLE44RAH1M85F4LF45WFASPJHYAO8W?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified false_claim: Kane got through Add x3 and Reset x2 and reached the claim. Its run_end reported the count stayed at three after Reset, so the observed result contradicts the README. The later summary says the final screen showed 'Count: 0', which conflicts with that, but it doesn't show Kane failed before reaching the claim."
+        }
+      ],
+      "credits": 24.904,
+      "summary": "The automation appears to have evaluated an earlier screen state instead of the result after the last Reset click. The recorded final screen shows that Reset did clear the count.\nUpdate the test to wait for the Reset action to finish and read the displayed count only after the page updates. Store count_after_reset as \u201cCount: 0.\u201d",
+      "cli_version": "0.10.4",
+      "duration": 78.2,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7BYH8QYE9Q05ACMAR442EDG/dashboard/share/US_Q4RPWN6XRJ77DIUTZ0DIMZL2D0UNT3XPUSBLE44RAH1M85F4LF45WFASPJHYAO8W?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/01441355-be5d-4c71-936d-429e6f081a8b",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/01441355-be5d-4c71-936d-429e6f081a8b/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] click: Opening the app page by clicking Reset",
+        "[4 running] Step 3",
+        "[4 done] wait: queued plan (4 steps): click \"Add\"; click \"Add\"; click \"Add\"; click \"Reset\"",
+        "[5 running] Step 4",
+        "[5 done] click: Click \"Add\"",
+        "[6 running] Step 5",
+        "[7 running] Step 6",
+        "[7 done] click: Clicking Add button three times",
+        "[8 running] Step 7",
+        "[8 done] click: Clicking Add three times",
+        "[9 running] Step 8",
+        "[9 done] click: Clicking Reset button",
+        "[10 running] Step 9",
+        "[10 done] click: Clicking Reset",
+        "[11 running] Step 10",
+        "[11 failed] wait: Waiting after failed Reset action"
+      ],
+      "classification": {
+        "label": "false_claim",
+        "evidence": "",
+        "reason": "Kane got through Add x3 and Reset x2 and reached the claim. Its run_end reported the count stayed at three after Reset, so the observed result contradicts the README. The later summary says the final screen showed 'Count: 0', which conflicts with that, but it doesn't show Kane failed before reaching the claim."
+      },
+      "fix_hint": "change the code in tests/gate/ so the claim is true, do not edit the claim (Check the Reset button's click handler in the app source to confirm it sets the count to 0, and fix it if it is a no-op. If it already works, re-run the test with a wait for the count to update before reading it.)",
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.png",
+          "step": 2,
+          "annotated": true
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.png",
+          "step": 4,
+          "annotated": true
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        },
+        {
+          "file": "06-step6.png",
+          "step": 6,
+          "annotated": true
+        },
+        {
+          "file": "07-step7.png",
+          "step": 7,
+          "annotated": true
+        },
+        {
+          "file": "08-step8.png",
+          "step": 8,
+          "annotated": true
+        },
+        {
+          "file": "09-step9.png",
+          "step": 9,
+          "annotated": true
+        },
+        {
+          "file": "10-step10.jpg",
+          "step": 10,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/01441355-be5d-4c71-936d-429e6f081a8b/evidence/74670a20-d3d3-47d7-b839-9516ee9435a5.evidence"
+    },
+    {
+      "id": "c02",
+      "verdict": "VERIFIED",
+      "readme_line": 5,
+      "readme_quote": "The page heading says \"Welcome to Gate Shop\".",
+      "expect": {
+        "page_heading": "Welcome to Gate Shop"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:8765/",
+        "page_heading": "Welcome to Gate Shop"
+      },
+      "one_liner": "read the main heading on Gate Shop",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:8765/. Open the app's page in the browser (start fresh). Read the main heading at the top of the page. Assert The page heading reads \"Welcome to Gate Shop\". Store the visible text of the main page heading as 'page_heading'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:8765/. Open the app's page in the browser (start fresh). Read the main heading at the top of the page. Assert The page heading reads \"Welcome to Gate Shop\". Store the visible text of the main page heading as 'page_heading'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 14.764499999999996,
+          "duration": 25.2,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7BY6TJY5TCQTEFQ6SPSFNPA/dashboard/share/US_GM84GKOI8A23M70ZHRISLOCELCYYGTGT2PBBVC342SU19MBCOTKKJG030FQQF2XJ?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 14.764,
+      "duration": 25.2,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7BY6TJY5TCQTEFQ6SPSFNPA/dashboard/share/US_GM84GKOI8A23M70ZHRISLOCELCYYGTGT2PBBVC342SU19MBCOTKKJG030FQQF2XJ?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/6a491b97-d17f-4812-b00c-5f7365847bea",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:8765/",
+        "[3 running] Step 2",
+        "[3 done] analyze: ANALYZE(textual_visual, 'The visible text of the main page heading is stored as ",
+        "[4 running] Step 3",
+        "[4 done] assert: The page heading reads \"Welcome to Gate Shop\"."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/6a491b97-d17f-4812-b00c-5f7365847bea/evidence/7edb909b-8f73-4938-b72a-049554ea92cb.evidence",
+      "carried": true
+    },
+    {
+      "id": "nv3",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 7,
+      "readme_quote": "It loads instantly.",
+      "reason": "Vague speed claim with no measurable threshold; a browser agent cannot objectively verify it."
+    },
+    {
+      "id": "nv4",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 8,
+      "readme_quote": "Run it with `python3 -m http.server`.",
+      "reason": "Shell command for starting a server; not observable in a browser."
+    },
+    {
+      "id": "nv5",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 6,
+      "readme_quote": "Clicking Add raises the count",
+      "reason": "No specific count value is stated in the README, so no literal can be copied as an expected value."
+    }
+  ],
+  "run_at": "2026-11-14 10:37:13 PST",
+  "commit": "4a3ba9b"
+}

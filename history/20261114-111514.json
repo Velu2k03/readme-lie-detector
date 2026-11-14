@@ -1,0 +1,646 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "readme": "demo-app/README.md",
+  "readme_sha256": "27e7cc54c52e7e16d2abbc26b681ff9c29204837fc4372bf8878496f65431973",
+  "extracted_now": true,
+  "exit_code": 1,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 94.72,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "VERIFIED",
+      "readme_line": 18,
+      "readme_quote": "1,000.00 split between Ana, Ben and\nCy gives 333.34, 333.33, 333.33.",
+      "expect": {
+        "equal_split_shares": "333.34, 333.33, 333.33"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "equal_split_shares": "333.34, 333.33, 333.33",
+        "Ana share": "333.34",
+        "Ben share": "333.33",
+        "Cy share": "333.33"
+      },
+      "one_liner": "split a 1,000.00 bill among three people on Hati",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati and clear any saved data so the app starts empty. Add a person named Ana. Add a person named Ben. Add a person named Cy. Add a bill with amount 1,000.00 paid by Ana, split equally between Ana, Ben and Cy, then view the per-person shares. Assert Ana's share shows 333.34. Assert Ben's share shows 333.33. Assert Cy's share shows 333.33. Store the three shares shown for Ana, Ben and Cy, in that order, as visible text as 'equal_split_shares'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati and clear any saved data so the app starts empty. Add a person named Ana. Add a person named Ben. Add a person named Cy. Add a bill with amount 1,000.00 paid by Ana, split equally between Ana, Ben and Cy, then view the per-person shares. Assert Ana's share shows 333.34. Assert Ben's share shows 333.33. Assert Cy's share shows 333.33. Store the three shares shown for Ana, Ben and Cy, in that order, as visible text as 'equal_split_shares'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 29.3103925,
+          "duration": 95.1,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C0CA83WZF523GY2QQHP7P3/dashboard/share/US_XLC8JCDA80IOQYZOA3PJUKD6WDH9EHDMXWRKO2RGOYSHSNT1V6WACQQMZ5ZXFD6B?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 29.31,
+      "summary": "Cleared saved Hati data to start with an empty app.\nAdded Ana, Ben, and Cy.\nAdded a 1,000.00 bill paid by Ana and split it equally among all three people.\nViewed the bill\u2019s shares: Ana 333.34, Ben 333.33, and Cy 333.33.",
+      "cli_version": "0.10.4",
+      "duration": 95.1,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C0CA83WZF523GY2QQHP7P3/dashboard/share/US_XLC8JCDA80IOQYZOA3PJUKD6WDH9EHDMXWRKO2RGOYSHSNT1V6WACQQMZ5ZXFD6B?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/6f6f08e7-fda4-4fa6-8b48-a6e5f5769d76",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/6f6f08e7-fda4-4fa6-8b48-a6e5f5769d76/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] type: Entering Ana into the Name field",
+        "[4 running] Step 3",
+        "[4 done] click: Clicking Add person in the People form",
+        "[5 running] Step 4",
+        "[5 done] wait: queued plan (2 steps): type \"Name\"; click \"Add person\"",
+        "[6 running] Step 5",
+        "[6 done] type: Type \"Ben\" into \"Name\"",
+        "[7 running] Step 6",
+        "[7 done] click: Click \"Add person\"",
+        "[8 running] Step 7",
+        "[8 done] wait: queued plan (2 steps): type \"Name\"; click \"Add person\"",
+        "[9 running] Step 8",
+        "[9 done] type: Type \"Cy\" into \"Name\"",
+        "[10 running] Step 9",
+        "[10 done] click: Click \"Add person\"",
+        "[11 running] Step 10",
+        "[11 done] type: Typing bill name in Add bill form",
+        "[12 running] Step 11",
+        "[12 done] wait: queued plan (5 steps): type \"Amount\"; click \"Ana\"; click \"Ben\"; click \"Cy\"; clic",
+        "[13 running] Step 12",
+        "[13 done] type: Type \"1,000.00\" into \"Amount\"",
+        "[14 running] Step 13",
+        "[14 done] click: Click \"Ana\"",
+        "[15 running] Step 14",
+        "[15 done] click: Click \"Ben\"",
+        "[16 running] Step 15",
+        "[16 done] click: Click \"Cy\"",
+        "[17 running] Step 16",
+        "[17 done] click: Click \"Add bill\"",
+        "[18 running] Step 17",
+        "[18 done] analyze: ANALYZE(textual_visual, 'The three shares shown for Ana, Ben and Cy, in that ord",
+        "[19 running] Step 18",
+        "[19 done] assert: Ana's share shows 333.34.",
+        "[20 running] Step 19",
+        "[20 done] assert: Ben's share shows 333.33.",
+        "[21 running] Step 20",
+        "[21 done] assert: Cy's share shows 333.33."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.png",
+          "step": 2,
+          "annotated": true
+        },
+        {
+          "file": "03-step3.png",
+          "step": 3,
+          "annotated": true
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.png",
+          "step": 6,
+          "annotated": true
+        },
+        {
+          "file": "07-step7.jpg",
+          "step": 7,
+          "annotated": false
+        },
+        {
+          "file": "08-step8.png",
+          "step": 8,
+          "annotated": true
+        },
+        {
+          "file": "09-step9.png",
+          "step": 9,
+          "annotated": true
+        },
+        {
+          "file": "10-step10.png",
+          "step": 10,
+          "annotated": true
+        },
+        {
+          "file": "11-step11.jpg",
+          "step": 11,
+          "annotated": false
+        },
+        {
+          "file": "12-step12.png",
+          "step": 12,
+          "annotated": true
+        },
+        {
+          "file": "13-step13.png",
+          "step": 13,
+          "annotated": true
+        },
+        {
+          "file": "14-step14.png",
+          "step": 14,
+          "annotated": true
+        },
+        {
+          "file": "15-step15.png",
+          "step": 15,
+          "annotated": true
+        },
+        {
+          "file": "16-step16.png",
+          "step": 16,
+          "annotated": true
+        },
+        {
+          "file": "17-step17.jpg",
+          "step": 17,
+          "annotated": false
+        },
+        {
+          "file": "18-step18.jpg",
+          "step": 18,
+          "annotated": false
+        },
+        {
+          "file": "19-step19.jpg",
+          "step": 19,
+          "annotated": false
+        },
+        {
+          "file": "20-step20.jpg",
+          "step": 20,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/6f6f08e7-fda4-4fa6-8b48-a6e5f5769d76/evidence/6107dd3c-85f7-488b-a729-3dc06d1beec1.evidence"
+    },
+    {
+      "id": "c02",
+      "verdict": "INCONCLUSIVE",
+      "readme_line": 21,
+      "readme_quote": "1,000.01 at 50, 30 and 20 percent\ngives 500.01, 300.00 and 200.00.",
+      "expect": {
+        "percentage_split_shares": "500.01, 300.00 and 200.00"
+      },
+      "observed": {},
+      "one_liner": "The run reached its 25-step limit immediately after submitting the bill, leaving no steps to view, verify, and save the three shares.",
+      "reason": "bad_test claimed without a quote that matches a step remark: The run hit its 25-step limit right after clicking Add bill, so Kane never viewed or read the per-person shares and never reached the claim.",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati and clear any saved data so the app starts empty. Add a person named Ana. Add a person named Ben. Add a person named Cy. Add a bill with amount 1,000.01 split by percentage: Ana 50, Ben 30, Cy 20, then view the per-person shares. Assert Ana's share shows 500.01. Assert Ben's share shows 300.00. Assert Cy's share shows 200.00. Store the three shares shown for Ana, Ben and Cy, in that order, as visible text as 'percentage_split_shares'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati and clear any saved data so the app starts empty. Add a person named Ana. Add a person named Ben. Add a person named Cy. Add a bill with amount 1,000.01 split by percentage: Ana 50, Ben 30, Cy 20, then view the per-person shares. Assert Ana's share shows 500.01. Assert Ben's share shows 300.00. Assert Cy's share shows 200.00. Store the three shares shown for Ana, Ben and Cy, in that order, as visible text as 'percentage_split_shares'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "ASSERT_FAIL",
+          "reason": "stuck.max_steps",
+          "credits": 33.870255,
+          "duration": 130.1,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C0GA86QB7Q9PN6DVXWS9YH/dashboard/share/US_DFWB4PEEBR5Q57CNGIV0W4NZHT3ZZXT8D8GUQD6PDKD39WLN60UQTXSO06BC7LQ1?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified unproven: bad_test claimed without a quote that matches a step remark: The run hit its 25-step limit right after clicking Add bill, so Kane never viewed or read the per-person shares and never reached the claim."
+        }
+      ],
+      "credits": 33.87,
+      "summary": "The automation was given too few steps for the full task. It completed the bill-entry sequence through the Add bill click, but the run stopped before it could confirm the result or collect the requested share text.\nIncrease the maximum-step allowance or streamline the setup actions, then reserve steps after Add bill to read the displayed shares in Ana, Ben, Cy order and save them.",
+      "cli_version": "0.10.4",
+      "duration": 130.1,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C0GA86QB7Q9PN6DVXWS9YH/dashboard/share/US_DFWB4PEEBR5Q57CNGIV0W4NZHT3ZZXT8D8GUQD6PDKD39WLN60UQTXSO06BC7LQ1?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/6b7aabde-5d23-4627-98ac-5648064e81ad",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/6b7aabde-5d23-4627-98ac-5648064e81ad/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: Open Hati",
+        "[4 running] Step 3",
+        "[4 done] wait: PRIMARY: Clear any saved data so the app starts empty",
+        "[5 running] Step 4",
+        "[5 done] wait: queued plan (2 steps): type \"Name\"; click \"Add person\"",
+        "[6 running] Step 5",
+        "[6 done] type: Type \"Ana\" into \"Name\"",
+        "[7 running] Step 6",
+        "[7 done] click: Click \"Add person\"",
+        "[8 running] Step 7",
+        "[8 done] wait: queued plan (2 steps): type \"Name\"; click \"Add person\"",
+        "[9 running] Step 8",
+        "[9 done] type: Type \"Ben\" into \"Name\"",
+        "[10 running] Step 9",
+        "[10 done] click: Click \"Add person\"",
+        "[11 running] Step 10",
+        "[11 done] wait: queued plan (2 steps): type \"Name\"; click \"Add person\"",
+        "[12 running] Step 11",
+        "[12 done] type: Type \"Cy\" into \"Name\"",
+        "[13 running] Step 12",
+        "[13 done] click: Click \"Add person\"",
+        "[14 running] Step 13",
+        "[14 done] wait: PRIMARY: Add people named Ana, Ben, and Cy",
+        "[15 running] Step 14",
+        "[15 done] select: Selecting split mode by percentage",
+        "[16 running] Step 15",
+        "[16 done] wait: queued plan (8 steps): type \"Bill name\"; type \"Amount\"; click \"Ana Ana percent\";",
+        "[17 running] Step 16",
+        "[17 done] type: Type \"Shared bill\" into \"Bill name\"",
+        "[18 running] Step 17",
+        "[18 done] type: Type \"1000.01\" into \"Amount\"",
+        "[19 running] Step 18",
+        "[19 done] click: Click \"Ana Ana percent\"",
+        "[20 running] Step 19",
+        "[20 done] type: Type \"50\" into \"Ana percent\"",
+        "[21 running] Step 20",
+        "[21 done] click: Click \"Ben Ben percent\"",
+        "[22 running] Step 21",
+        "[22 done] type: Type \"30\" into \"Ben percent\"",
+        "[23 running] Step 22",
+        "[23 done] click: Click \"Cy Cy percent\"",
+        "[24 running] Step 23",
+        "[24 done] type: Type \"20\" into \"Cy percent\"",
+        "[25 running] Step 24",
+        "[25 done] click: Clicking Add bill",
+        "[26 running] Step 25",
+        "[26 done] wait: PRIMARY: Add a bill with amount 1,000.01 split by percentage: Ana 50, Ben 30, Cy",
+        "[27 running] Step 26"
+      ],
+      "classification": {
+        "label": "unproven",
+        "evidence": "[26 done] wait: PRIMARY: Add a bill with amount 1,000.01 split by percentage: Ana 50, Ben 30, Cy",
+        "reason": "bad_test claimed without a quote that matches a step remark: The run hit its 25-step limit right after clicking Add bill, so Kane never viewed or read the per-person shares and never reached the claim."
+      },
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.png",
+          "step": 6,
+          "annotated": true
+        },
+        {
+          "file": "07-step7.jpg",
+          "step": 7,
+          "annotated": false
+        },
+        {
+          "file": "08-step8.png",
+          "step": 8,
+          "annotated": true
+        },
+        {
+          "file": "09-step9.png",
+          "step": 9,
+          "annotated": true
+        },
+        {
+          "file": "10-step10.jpg",
+          "step": 10,
+          "annotated": false
+        },
+        {
+          "file": "11-step11.png",
+          "step": 11,
+          "annotated": true
+        },
+        {
+          "file": "12-step12.png",
+          "step": 12,
+          "annotated": true
+        },
+        {
+          "file": "13-step13.jpg",
+          "step": 13,
+          "annotated": false
+        },
+        {
+          "file": "14-step14.png",
+          "step": 14,
+          "annotated": true
+        },
+        {
+          "file": "15-step15.jpg",
+          "step": 15,
+          "annotated": false
+        },
+        {
+          "file": "16-step16.png",
+          "step": 16,
+          "annotated": true
+        },
+        {
+          "file": "17-step17.png",
+          "step": 17,
+          "annotated": true
+        },
+        {
+          "file": "18-step18.png",
+          "step": 18,
+          "annotated": true
+        },
+        {
+          "file": "19-step19.png",
+          "step": 19,
+          "annotated": true
+        },
+        {
+          "file": "20-step20.png",
+          "step": 20,
+          "annotated": true
+        },
+        {
+          "file": "21-step21.png",
+          "step": 21,
+          "annotated": true
+        },
+        {
+          "file": "22-step22.png",
+          "step": 22,
+          "annotated": true
+        },
+        {
+          "file": "23-step23.png",
+          "step": 23,
+          "annotated": true
+        },
+        {
+          "file": "24-step24.png",
+          "step": 24,
+          "annotated": true
+        },
+        {
+          "file": "25-step25.jpg",
+          "step": 25,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/6b7aabde-5d23-4627-98ac-5648064e81ad/evidence/30973d1d-1d9d-43c8-9c32-ea41d8c72495.evidence"
+    },
+    {
+      "id": "c03",
+      "verdict": "STALE_DOC",
+      "readme_line": 27,
+      "readme_quote": "If Ana pays Rent 900.00 and Ben pays\nElectricity 300.00, both shared equally, Settle up shows exactly two\npayments.",
+      "expect": {
+        "payment_count": "two"
+      },
+      "observed": {},
+      "one_liner": "The check expected two payments, but these two shared bills reduce to one net settlement payment.",
+      "reason": "Final verification failed: \"Settle up shows exactly two payments.\"",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati and clear any saved data so the app starts empty. Add people Ana and Ben. Add a bill named Rent, amount 900.00, paid by Ana, split equally between Ana and Ben. Add a bill named Electricity, amount 300.00, paid by Ben, split equally between Ana and Ben. Open Settle up. Count the payments listed on Settle up. Assert Settle up shows exactly two payments. Store the number of payments listed on Settle up, as a word as 'payment_count'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati and clear any saved data so the app starts empty. Add people Ana and Ben. Add a bill named Rent, amount 900.00, paid by Ana, split equally between Ana and Ben. Add a bill named Electricity, amount 300.00, paid by Ben, split equally between Ana and Ben. Open Settle up. Count the payments listed on Settle up. Assert Settle up shows exactly two payments. Store the number of payments listed on Settle up, as a word as 'payment_count'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "ASSERT_FAIL",
+          "reason": "assertion_error.final_verification",
+          "credits": 31.54041,
+          "duration": 114.1,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C0NYN1KHG2W2T38JX9D18P/dashboard/share/US_74K4VRXG1CJAVKX4ZF4TD49Y84HMA1JJMCICMXZGD3RROL7HIHPK7VWOT9FPMWBO?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified stale_doc: Kane entered both bills and opened Settle up, then the assertion failed because the app nets the two bills into one 300.00 payment from Ben to Ana, not the two payments the README states."
+        }
+      ],
+      "credits": 31.54,
+      "summary": "The test expectation is wrong for the entered amounts. Ana is owed 450.00 from Rent, while Ana owes Ben 150.00 from Electricity, leaving one net payment of 300.00 from Ben to Ana.\nUpdate the expected payment count to one and store \u201cone\u201d as payment_count. If the intended behavior is to show a separate payment per bill, revise the product requirement and settlement design before testing it.",
+      "cli_version": "0.10.4",
+      "duration": 114.1,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C0NYN1KHG2W2T38JX9D18P/dashboard/share/US_74K4VRXG1CJAVKX4ZF4TD49Y84HMA1JJMCICMXZGD3RROL7HIHPK7VWOT9FPMWBO?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/f7faa783-16b0-47f4-bdae-dde8e898a1a7",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/f7faa783-16b0-47f4-bdae-dde8e898a1a7/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] type: Typing Ana in the Name field",
+        "[4 running] Step 3",
+        "[4 done] click: Clicking Add person",
+        "[5 running] Step 4",
+        "[5 done] type: Typing Ben into the Name field in the People section",
+        "[6 running] Step 5",
+        "[6 done] click: Clicking Add person",
+        "[7 running] Step 6",
+        "[7 done] wait: queued plan (6 steps): type \"Bill name\"; type \"Amount\"; select \"Paid by\"; click ",
+        "[8 running] Step 7",
+        "[8 done] type: Type \"Rent\" into \"Bill name\"",
+        "[9 running] Step 8",
+        "[9 done] type: Type \"900.00\" into \"Amount\"",
+        "[10 running] Step 9",
+        "[10 done] select: Select \"Ana\" in \"Paid by\"",
+        "[11 running] Step 10",
+        "[11 done] click: Click \"Ana\"",
+        "[12 running] Step 11",
+        "[12 done] click: Click \"Ben\"",
+        "[13 running] Step 12",
+        "[13 done] click: Click \"Add bill\"",
+        "[14 running] Step 13",
+        "[14 done] wait: queued plan (4 steps): type \"Bill name\"; type \"Amount\"; select \"Paid by\"; click ",
+        "[15 running] Step 14",
+        "[15 done] type: Type \"Electricity\" into \"Bill name\"",
+        "[16 running] Step 15",
+        "[16 done] type: Type \"300.00\" into \"Amount\"",
+        "[17 running] Step 16",
+        "[17 done] select: Select \"Ben\" in \"Paid by\"",
+        "[18 running] Step 17",
+        "[18 done] click: Click \"Add bill\"",
+        "[19 running] Step 18",
+        "[19 done] wait: PRIMARY: Add a bill named Rent, amount 900.00, paid by Ana, split equally betwee",
+        "[20 running] Step 19",
+        "[20 done] wait: PRIMARY: Add a bill named Electricity, amount 300.00, paid by Ben, split equally",
+        "[21 running] Step 20",
+        "[21 done] wait: PRIMARY: Open Settle up and count the payments listed on Settle up",
+        "[22 running] Step 21",
+        "[22 done] analyze: ANALYZE(textual_visual, 'The number of payments listed on Settle up is stored as",
+        "[23 running] Step 22",
+        "[23 failed] assert: Settle up shows exactly two payments."
+      ],
+      "classification": {
+        "label": "stale_doc",
+        "evidence": "",
+        "reason": "Kane entered both bills and opened Settle up, then the assertion failed because the app nets the two bills into one 300.00 payment from Ben to Ana, not the two payments the README states."
+      },
+      "fix_hint": "the feature works, the README line is out of date: edit that README line to describe the app as it is, do not change the code (Change the README example to say Settle up shows exactly one payment (Ben pays Ana 300.00), and update the expected payment_count to \"one\".)",
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.png",
+          "step": 2,
+          "annotated": true
+        },
+        {
+          "file": "03-step3.png",
+          "step": 3,
+          "annotated": true
+        },
+        {
+          "file": "04-step4.png",
+          "step": 4,
+          "annotated": true
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.jpg",
+          "step": 6,
+          "annotated": false
+        },
+        {
+          "file": "07-step7.png",
+          "step": 7,
+          "annotated": true
+        },
+        {
+          "file": "08-step8.png",
+          "step": 8,
+          "annotated": true
+        },
+        {
+          "file": "09-step9.png",
+          "step": 9,
+          "annotated": true
+        },
+        {
+          "file": "10-step10.png",
+          "step": 10,
+          "annotated": true
+        },
+        {
+          "file": "11-step11.png",
+          "step": 11,
+          "annotated": true
+        },
+        {
+          "file": "12-step12.png",
+          "step": 12,
+          "annotated": true
+        },
+        {
+          "file": "13-step13.jpg",
+          "step": 13,
+          "annotated": false
+        },
+        {
+          "file": "14-step14.png",
+          "step": 14,
+          "annotated": true
+        },
+        {
+          "file": "15-step15.png",
+          "step": 15,
+          "annotated": true
+        },
+        {
+          "file": "16-step16.png",
+          "step": 16,
+          "annotated": true
+        },
+        {
+          "file": "17-step17.png",
+          "step": 17,
+          "annotated": true
+        },
+        {
+          "file": "18-step18.jpg",
+          "step": 18,
+          "annotated": false
+        },
+        {
+          "file": "19-step19.jpg",
+          "step": 19,
+          "annotated": false
+        },
+        {
+          "file": "20-step20.jpg",
+          "step": 20,
+          "annotated": false
+        },
+        {
+          "file": "21-step21.jpg",
+          "step": 21,
+          "annotated": false
+        },
+        {
+          "file": "22-step22.jpg",
+          "step": 22,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/f7faa783-16b0-47f4-bdae-dde8e898a1a7/evidence/b8f5636c-a668-4a18-84d6-f997b0c8c2e7.evidence"
+    },
+    {
+      "id": "nv4",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 44,
+      "readme_quote": "Loads instantly.",
+      "reason": "Speed is subjective and not a checkable browser outcome; the README itself disclaims it."
+    },
+    {
+      "id": "nv5",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 46,
+      "readme_quote": "Your data never leaves your browser.",
+      "reason": "Network privacy needs traffic inspection, not visible page output."
+    },
+    {
+      "id": "nv6",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 48,
+      "readme_quote": "Works offline after the first load.",
+      "reason": "Requires disabling the network, which is outside a normal browser test."
+    },
+    {
+      "id": "nv7",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 50,
+      "readme_quote": "Run it with npm install and npm run dev.",
+      "reason": "Shell install commands are not browser-observable."
+    }
+  ],
+  "run_at": "2026-11-14 11:15:14 PST",
+  "commit": "3f4be2f"
+}

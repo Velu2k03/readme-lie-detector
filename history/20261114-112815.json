@@ -1,0 +1,222 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "readme": "demo-app/README.md",
+  "readme_sha256": "e47e5204e5a9337146f7bc7247168f8b73017b8d559cee3830a8013998144570",
+  "extracted_now": true,
+  "exit_code": 1,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 28.197,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "STALE_DOC",
+      "readme_line": 18,
+      "readme_quote": "1,000.00 split between Ana, Ben and\nCy gives 333.34, 333.33, 333.33.",
+      "expect": {
+        "equal_split_shares": "333.34, 333.33, 333.33"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "equal_split_shares": "333.34,333.33,333.33",
+        "Ana share": "333.34",
+        "Ben share": "333.33",
+        "Cy share": "333.33"
+      },
+      "one_liner": "created and split a Rent bill on Hati",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Rent. Enter the amount 1,000.00 and choose all three people, Ana, Ben and Cy, with an equal split. Save the bill and look at each person's share of the bill. Assert Ana's share shows 333.34. Assert Ben's share shows 333.33. Assert Cy's share shows 333.33. Store The shares shown for Ana, Ben and Cy, in that order, as one comma-separated line as 'equal_split_shares'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Rent. Enter the amount 1,000.00 and choose all three people, Ana, Ben and Cy, with an equal split. Save the bill and look at each person's share of the bill. Assert Ana's share shows 333.34. Assert Ben's share shows 333.33. Assert Cy's share shows 333.33. Store The shares shown for Ana, Ben and Cy, in that order, as one comma-separated line as 'equal_split_shares'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 28.197165000000002,
+          "duration": 90.4,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C1ECWFRVCZNXJVDATEJ6QX/dashboard/share/US_SABH23C1CO0CVBYTUTC0M9BGNW29HQREVJ02X64RI466Z95U0K60BRAX3I40CM1D?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified stale_doc: Kane reached the claim and the app works: the shares shown are Ana 333.34, Ben 333.33 and Cy 333.33, and all three assertions passed. The only mismatch is that the stored string has no spaces after the commas ('333.34,333.33,333.33'), where the expected value has them. | mismatch [\"equal_split_shares: expected '333.34, 333.33, 333.33', observed '333.34,333.33,333.33'\"]"
+        }
+      ],
+      "credits": 28.197,
+      "summary": "Started Hati with no previously saved people or bills.\nAdded Ana, Ben, and Cy.\nCreated and saved a Rent bill for 1,000.00, paid by Ana, with an equal split among all three people.\nConfirmed the saved shares: Ana 333.34, Ben 333.33, and Cy 333.33.",
+      "cli_version": "0.10.4",
+      "duration": 90.4,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C1ECWFRVCZNXJVDATEJ6QX/dashboard/share/US_SABH23C1CO0CVBYTUTC0M9BGNW29HQREVJ02X64RI466Z95U0K60BRAX3I40CM1D?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/86fa5fde-a0dc-4f0a-ab24-ad330ae296af",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/86fa5fde-a0dc-4f0a-ab24-ad330ae296af/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] type: Typing Ana into the Name field",
+        "[4 running] Step 3",
+        "[4 done] click: Clicking Add person button in People form",
+        "[5 running] Step 4",
+        "[5 done] type: Typing Ben in the Name textbox",
+        "[6 running] Step 5",
+        "[6 done] click: Clicking Add person to add Ana, Ben and Cy",
+        "[7 running] Step 6",
+        "[7 done] type: Typing Cy in the Name field",
+        "[8 running] Step 7",
+        "[8 done] click: Clicking Add person",
+        "[9 running] Step 8",
+        "[9 done] wait: queued plan (5 steps): type \"Bill name\"; type \"Amount\"; click \"Ana\"; click \"Ben\"",
+        "[10 running] Step 9",
+        "[10 done] type: Type \"Rent\" into \"Bill name\"",
+        "[11 running] Step 10",
+        "[11 done] type: Type \"1,000.00\" into \"Amount\"",
+        "[12 running] Step 11",
+        "[12 done] click: Click \"Ana\"",
+        "[13 running] Step 12",
+        "[13 done] click: Click \"Ben\"",
+        "[14 running] Step 13",
+        "[14 done] click: Click \"Cy\"",
+        "[15 running] Step 14",
+        "[15 done] click: Clicking Add bill to save the bill and view each person's share",
+        "[16 running] Step 15",
+        "[16 done] analyze: ANALYZE(textual_visual, 'The shares shown for Ana, Ben and Cy, in that order, ar",
+        "[17 running] Step 16",
+        "[17 done] assert: Ana's share shows 333.34.",
+        "[18 running] Step 17",
+        "[18 done] assert: Ben's share shows 333.33.",
+        "[19 running] Step 18",
+        "[19 done] assert: Cy's share shows 333.33."
+      ],
+      "mismatch": [
+        "equal_split_shares: expected '333.34, 333.33, 333.33', observed '333.34,333.33,333.33'"
+      ],
+      "classification": {
+        "label": "stale_doc",
+        "evidence": "",
+        "reason": "Kane reached the claim and the app works: the shares shown are Ana 333.34, Ben 333.33 and Cy 333.33, and all three assertions passed. The only mismatch is that the stored string has no spaces after the commas ('333.34,333.33,333.33'), where the expected value has them."
+      },
+      "fix_hint": "the feature works, the README line is out of date: edit that README line to describe the app as it is, do not change the code (The README claim is correct, so make the expected value match how the shares are recorded, or compare the three shares ignoring whitespace. No app change is needed.)",
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.png",
+          "step": 2,
+          "annotated": true
+        },
+        {
+          "file": "03-step3.png",
+          "step": 3,
+          "annotated": true
+        },
+        {
+          "file": "04-step4.png",
+          "step": 4,
+          "annotated": true
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.png",
+          "step": 6,
+          "annotated": true
+        },
+        {
+          "file": "07-step7.png",
+          "step": 7,
+          "annotated": true
+        },
+        {
+          "file": "08-step8.jpg",
+          "step": 8,
+          "annotated": false
+        },
+        {
+          "file": "09-step9.png",
+          "step": 9,
+          "annotated": true
+        },
+        {
+          "file": "10-step10.png",
+          "step": 10,
+          "annotated": true
+        },
+        {
+          "file": "11-step11.png",
+          "step": 11,
+          "annotated": true
+        },
+        {
+          "file": "12-step12.png",
+          "step": 12,
+          "annotated": true
+        },
+        {
+          "file": "13-step13.png",
+          "step": 13,
+          "annotated": true
+        },
+        {
+          "file": "14-step14.png",
+          "step": 14,
+          "annotated": true
+        },
+        {
+          "file": "15-step15.jpg",
+          "step": 15,
+          "annotated": false
+        },
+        {
+          "file": "16-step16.jpg",
+          "step": 16,
+          "annotated": false
+        },
+        {
+          "file": "17-step17.jpg",
+          "step": 17,
+          "annotated": false
+        },
+        {
+          "file": "18-step18.jpg",
+          "step": 18,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/86fa5fde-a0dc-4f0a-ab24-ad330ae296af/evidence/1dd21290-4d34-49f2-b291-15db40111e44.evidence"
+    },
+    {
+      "id": "nv2",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 44,
+      "readme_quote": "Loads instantly.",
+      "reason": "Speed is not a fixed, observable result a browser check can assert."
+    },
+    {
+      "id": "nv3",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 46,
+      "readme_quote": "Your data never leaves your browser.",
+      "reason": "Privacy and network behavior cannot be confirmed from what is visible on the page."
+    },
+    {
+      "id": "nv4",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 48,
+      "readme_quote": "Works offline after the first load.",
+      "reason": "Requires disconnecting the network, which a browser agent cannot do reliably."
+    },
+    {
+      "id": "nv5",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 50,
+      "readme_quote": "Run it with npm install and npm run dev.",
+      "reason": "Shell install commands are not observable in a browser."
+    }
+  ],
+  "run_at": "2026-11-14 11:28:15 PST",
+  "commit": "3f4be2f"
+}

@@ -1,0 +1,1220 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "readme": "demo-app/README.md",
+  "readme_sha256": "e47e5204e5a9337146f7bc7247168f8b73017b8d559cee3830a8013998144570",
+  "extracted_now": false,
+  "exit_code": 3,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 238.702,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "VERIFIED",
+      "readme_line": 18,
+      "readme_quote": "1,000.00 split between Ana, Ben and\nCy gives 333.34, 333.33, 333.33.",
+      "expect": {
+        "equal_split_shares": "333.34, 333.33, 333.33"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "equal_split_shares": "333.34,333.33,333.33",
+        "ana_share": "333.34",
+        "ben_share": "333.33",
+        "cy_share": "333.33"
+      },
+      "one_liner": "created and equally split a Rent bill on Hati",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Rent. Enter the amount 1,000.00 and choose all three people, Ana, Ben and Cy, with an equal split. Save the bill and look at each person's share of the bill. Assert Ana's share shows 333.34. Assert Ben's share shows 333.33. Assert Cy's share shows 333.33. Store The shares shown for Ana, Ben and Cy, in that order, as one comma-separated line as 'equal_split_shares'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Rent. Enter the amount 1,000.00 and choose all three people, Ana, Ben and Cy, with an equal split. Save the bill and look at each person's share of the bill. Assert Ana's share shows 333.34. Assert Ben's share shows 333.33. Assert Cy's share shows 333.33. Store The shares shown for Ana, Ben and Cy, in that order, as one comma-separated line as 'equal_split_shares'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 31.2503075,
+          "duration": 97.1,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C1TYX85X72D70G84NYN4WY/dashboard/share/US_8BCRQV8MJTOAK3I2HOOSWXS5HQ5G6VD1EK3DN6KZ0L03TBCFZ0K5H5VN60Y5NG0U?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 31.25,
+      "summary": "Started Hati with no saved people or bills.\nAdded Ana, Ben, and Cy.\nCreated and saved a 1,000.00 bill named Rent, shared equally among all three people.\nConfirmed the saved bill shows Ana owing 333.34, Ben owing 333.33, and Cy owing 333.33.",
+      "cli_version": "0.10.4",
+      "duration": 97.1,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C1TYX85X72D70G84NYN4WY/dashboard/share/US_8BCRQV8MJTOAK3I2HOOSWXS5HQ5G6VD1EK3DN6KZ0L03TBCFZ0K5H5VN60Y5NG0U?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/2dc6a483-9e47-4821-bb98-36a40dd5b1f7",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/2dc6a483-9e47-4821-bb98-36a40dd5b1f7/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] type: Typing Ana into the Name field in People section",
+        "[4 running] Step 3",
+        "[4 done] click: Clicking Add person",
+        "[5 running] Step 4",
+        "[5 done] type: Typing Ben into the Name field",
+        "[6 running] Step 5",
+        "[6 done] click: Clicking Add person for people Ana, Ben, and Cy",
+        "[7 running] Step 6",
+        "[7 done] type: Typing Cy into Name field",
+        "[8 running] Step 7",
+        "[8 done] click: Clicking Add person",
+        "[9 running] Step 8",
+        "[9 done] type: Typing Rent into the Bill name field",
+        "[10 running] Step 9",
+        "[10 done] wait: queued plan (5 steps): type \"Amount\"; select \"Split\"; click \"Ana\"; click \"Ben\"; ",
+        "[11 running] Step 10",
+        "[12 running] Step 11",
+        "[12 done] click: Clicking Add bill",
+        "[13 running] Step 12",
+        "[13 done] wait: PRIMARY: look at each person's share of the bill",
+        "[14 running] Step 13",
+        "[14 done] analyze: ANALYZE(textual_visual, 'The shares shown for Ana, Ben and Cy, in that order, ar",
+        "[15 running] Step 14",
+        "[15 done] assert: Ana's share shows 333.34.",
+        "[16 running] Step 15",
+        "[16 done] assert: Ben's share shows 333.33.",
+        "[17 running] Step 16",
+        "[17 done] assert: Cy's share shows 333.33."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.png",
+          "step": 2,
+          "annotated": true
+        },
+        {
+          "file": "03-step3.png",
+          "step": 3,
+          "annotated": true
+        },
+        {
+          "file": "04-step4.png",
+          "step": 4,
+          "annotated": true
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.png",
+          "step": 6,
+          "annotated": true
+        },
+        {
+          "file": "07-step7.png",
+          "step": 7,
+          "annotated": true
+        },
+        {
+          "file": "08-step8.png",
+          "step": 8,
+          "annotated": true
+        },
+        {
+          "file": "09-step9.jpg",
+          "step": 9,
+          "annotated": false
+        },
+        {
+          "file": "10-step10.jpg",
+          "step": 10,
+          "annotated": false
+        },
+        {
+          "file": "11-step11.png",
+          "step": 11,
+          "annotated": true
+        },
+        {
+          "file": "12-step12.jpg",
+          "step": 12,
+          "annotated": false
+        },
+        {
+          "file": "13-step13.jpg",
+          "step": 13,
+          "annotated": false
+        },
+        {
+          "file": "14-step14.jpg",
+          "step": 14,
+          "annotated": false
+        },
+        {
+          "file": "15-step15.jpg",
+          "step": 15,
+          "annotated": false
+        },
+        {
+          "file": "16-step16.jpg",
+          "step": 16,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/2dc6a483-9e47-4821-bb98-36a40dd5b1f7/evidence/0fa2be45-305b-4336-80b2-068d43e17e11.evidence"
+    },
+    {
+      "id": "c02",
+      "verdict": "VERIFIED",
+      "readme_line": 21,
+      "readme_quote": "1,000.01 at 50, 30 and 20 percent\ngives 500.01, 300.00 and 200.00.",
+      "expect": {
+        "percentage_split_shares": "500.01, 300.00 and 200.00"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "percentage_split_shares": "500.01,300.00,200.00",
+        "ana_share": "500.01",
+        "ben_share": "300.00",
+        "cy_share": "200.00"
+      },
+      "one_liner": "created a percentage-split Groceries bill on Hati",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Groceries. Enter the amount 1,000.01 and choose all three people, Ana, Ben and Cy. Choose the percentage split and enter 50 for Ana, 30 for Ben and 20 for Cy. Save the bill and look at each person's share of the bill. Assert Ana's share shows 500.01. Assert Ben's share shows 300.00. Assert Cy's share shows 200.00. Store The shares shown for Ana, Ben and Cy, in that order, as one comma-separated line as 'percentage_split_shares'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Groceries. Enter the amount 1,000.01 and choose all three people, Ana, Ben and Cy. Choose the percentage split and enter 50 for Ana, 30 for Ben and 20 for Cy. Save the bill and look at each person's share of the bill. Assert Ana's share shows 500.01. Assert Ben's share shows 300.00. Assert Cy's share shows 200.00. Store The shares shown for Ana, Ben and Cy, in that order, as one comma-separated line as 'percentage_split_shares'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 23.4276025,
+          "duration": 88.8,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C1Z8ETECJGKK2S5B5RE3HD/dashboard/share/US_V3NEH0V2DEQX4S2ZJM9XQBIJ7MNJK5WEUK0YXMJ8365FXX8NXF2CZO2NFB3DQSTF?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 23.428,
+      "summary": "Opened Hati and confirmed there were no existing people or bills, so no saved data needed to be cleared.\nAdded Ana, Ben, and Cy.\nCreated and saved a Groceries bill for 1,000.01, paid by Ana, with a 50%/30%/20% split among Ana, Ben, and Cy.\nConfirmed the saved bill shows shares of Ana 500.01, Ben 300.00, and Cy 200.00.",
+      "cli_version": "0.10.4",
+      "duration": 88.8,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C1Z8ETECJGKK2S5B5RE3HD/dashboard/share/US_V3NEH0V2DEQX4S2ZJM9XQBIJ7MNJK5WEUK0YXMJ8365FXX8NXF2CZO2NFB3DQSTF?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/c42aa460-da4e-4fe4-8bdc-5d571d31400b",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/c42aa460-da4e-4fe4-8bdc-5d571d31400b/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] analyze: Any bills or people exist.",
+        "[4 running] Step 3",
+        "[5 running] Step 4",
+        "[5 done] wait: queued plan (2 steps): type \"Name\"; click \"Add person\"",
+        "[6 running] Step 5",
+        "[6 done] type: Type \"Cy\" into \"Name\"",
+        "[7 running] Step 6",
+        "[7 done] click: Click \"Add person\"",
+        "[8 running] Step 7",
+        "[8 done] wait: queued plan (2 steps): type \"Bill name\"; type \"Amount\"",
+        "[9 running] Step 8",
+        "[10 running] Step 9",
+        "[10 done] type: Typing Groceries as the bill name",
+        "[11 running] Step 10",
+        "[11 done] wait: queued plan (4 steps): click \"Cy Cy percent\"; type \"Ana percent\"; type \"Ben perc",
+        "[12 running] Step 11",
+        "[13 running] Step 12",
+        "[13 done] click: Clicking Add bill",
+        "[14 running] Step 13",
+        "[14 done] analyze: ANALYZE(textual_visual, 'The shares shown for Ana, Ben and Cy, in that order, as",
+        "[15 running] Step 14",
+        "[15 done] assert: Ana's share shows 500.01.",
+        "[16 running] Step 15",
+        "[16 done] assert: Ben's share shows 300.00.",
+        "[17 running] Step 16",
+        "[17 done] assert: Cy's share shows 200.00."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.png",
+          "step": 4,
+          "annotated": true
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.jpg",
+          "step": 6,
+          "annotated": false
+        },
+        {
+          "file": "07-step7.jpg",
+          "step": 7,
+          "annotated": false
+        },
+        {
+          "file": "08-step8.png",
+          "step": 8,
+          "annotated": true
+        },
+        {
+          "file": "09-step9.jpg",
+          "step": 9,
+          "annotated": false
+        },
+        {
+          "file": "10-step10.jpg",
+          "step": 10,
+          "annotated": false
+        },
+        {
+          "file": "11-step11.png",
+          "step": 11,
+          "annotated": true
+        },
+        {
+          "file": "12-step12.jpg",
+          "step": 12,
+          "annotated": false
+        },
+        {
+          "file": "13-step13.jpg",
+          "step": 13,
+          "annotated": false
+        },
+        {
+          "file": "14-step14.jpg",
+          "step": 14,
+          "annotated": false
+        },
+        {
+          "file": "15-step15.jpg",
+          "step": 15,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/c42aa460-da4e-4fe4-8bdc-5d571d31400b/evidence/4ad0e555-f7b1-4ddb-b007-0c74abb0e001.evidence"
+    },
+    {
+      "id": "c03",
+      "verdict": "INCONCLUSIVE",
+      "readme_line": 27,
+      "readme_quote": "If Ana pays Rent 900.00 and Ben pays\nElectricity 300.00, both shared equally between Ana, Ben and\nCy, Settle up\nshows exactly two payments.",
+      "expect": {
+        "payment_count": "two"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "payment_count": "2",
+        "payments_listed": "Cy pays Ana 400.00; Ben pays Ana 100.00"
+      },
+      "one_liner": "counted payments on Settle up",
+      "reason": "bad_test claimed without a quote that matches a step remark: The README claim holds: Settle up listed exactly two payments (Cy pays Ana 400.00, Ben pays Ana 100.00), which matches the shared-expense math. The only failure is the test's expected value 'two' against the stored digit '2', and the objective's 'Ben pays Ana 300.00' assertion is wrong, since the quoted remark contradicts the observed 100.00.",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Add a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy. Add a bill named Electricity with amount 300.00, paid by Ben, split equally between Ana, Ben and Cy. Open Settle up and count the payments listed. Assert Settle up lists exactly two payments. Assert Ben pays Ana 300.00 appears among the payments or Cy is shown as paying. Store The number of payments listed in Settle up, as a digit as 'payment_count'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Add a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy. Add a bill named Electricity with amount 300.00, paid by Ben, split equally between Ana, Ben and Cy. Open Settle up and count the payments listed. Assert Settle up lists exactly two payments. Assert Ben pays Ana 300.00 appears among the payments or Cy is shown as paying. Store The number of payments listed in Settle up, as a digit as 'payment_count'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 30.953670000000002,
+          "duration": 123.9,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C237V5QVBFKS8EBQ7WYKF0/dashboard/share/US_JN5K0T2TW61M40SVU00R2CML3ZMB502O61U9FN022VX1KWQSJ2JXATGM3L33L5LY?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified unproven: bad_test claimed without a quote that matches a step remark: The README claim holds: Settle up listed exactly two payments (Cy pays Ana 400.00, Ben pays Ana 100.00), which matches the shared-expense math. The only failure is the test's expected value 'two' against the stored digit '2', and the objective's 'Ben pays Ana 300.00' assertion is wrong, since the quoted remark contradicts the observed 100.00. | mismatch [\"payment_count: expected 'two', observed '2'\"]"
+        }
+      ],
+      "credits": 30.954,
+      "summary": "Opened Settle up as requested and counted the listed payments.\nFound two payments in the list: Cy pays Ana 400.00 and Ben pays Ana 100.00.\nConfirmed that Cy is shown as paying and recorded the payment count as 2.",
+      "cli_version": "0.10.4",
+      "duration": 123.9,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C237V5QVBFKS8EBQ7WYKF0/dashboard/share/US_JN5K0T2TW61M40SVU00R2CML3ZMB502O61U9FN022VX1KWQSJ2JXATGM3L33L5LY?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/fd33df48-649f-49dd-bc4f-74c921163c49",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/fd33df48-649f-49dd-bc4f-74c921163c49/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] type: Typing Ana",
+        "[4 running] Step 3",
+        "[4 done] type: Typing Ana into Name field",
+        "[5 running] Step 4",
+        "[5 done] click: Clicking Add person for Ana, Ben, and Cy",
+        "[6 running] Step 5",
+        "[6 done] type: Typing Ben into the Name field",
+        "[7 running] Step 6",
+        "[7 done] click: Clicking Add person in the People form",
+        "[8 running] Step 7",
+        "[8 done] type: Typing Cy into the Name textbox",
+        "[9 running] Step 8",
+        "[9 done] click: Clicking Add person button in People form",
+        "[10 running] Step 9",
+        "[10 done] wait: queued plan (6 steps): type \"Bill name\"; type \"Amount\"; click \"Ana\"; click \"Ben\"",
+        "[11 running] Step 10",
+        "[11 done] type: Type \"Rent\" into \"Bill name\"",
+        "[12 running] Step 11",
+        "[12 done] type: Type \"900.00\" into \"Amount\"",
+        "[13 running] Step 12",
+        "[13 done] click: Click \"Ana\"",
+        "[14 running] Step 13",
+        "[14 done] click: Click \"Ben\"",
+        "[15 running] Step 14",
+        "[15 done] click: Click \"Cy\"",
+        "[16 running] Step 15",
+        "[16 done] click: Click \"Add bill\"",
+        "[17 running] Step 16",
+        "[17 done] type: Typing Electricity in Bill name field",
+        "[18 running] Step 17",
+        "[18 done] wait: queued plan (3 steps): type \"Amount\"; select \"Paid by\"; click \"Add bill\"",
+        "[19 running] Step 18",
+        "[19 done] type: Type \"300.00\" into \"Amount\"",
+        "[20 running] Step 19",
+        "[20 done] select: Select \"Ben\" in \"Paid by\"",
+        "[21 running] Step 20",
+        "[21 done] click: Click \"Add bill\"",
+        "[22 running] Step 21",
+        "[22 done] wait: Waiting confirm the completed Hati bills",
+        "[2 running] Step 1",
+        "[2 done] analyze: Ben pays Ana 300.00 appears among the payments.",
+        "[3 running] Step 2",
+        "[3 done] assert: Settle up lists exactly two payments.",
+        "[4 running] Step 3",
+        "[4 done] assert: Ben pays Ana 300.00 appears among the payments or Cy is shown as paying."
+      ],
+      "classification": {
+        "label": "unproven",
+        "evidence": "[2 done] analyze: Ben pays Ana 300.00 appears among the payments.",
+        "reason": "bad_test claimed without a quote that matches a step remark: The README claim holds: Settle up listed exactly two payments (Cy pays Ana 400.00, Ben pays Ana 100.00), which matches the shared-expense math. The only failure is the test's expected value 'two' against the stored digit '2', and the objective's 'Ben pays Ana 300.00' assertion is wrong, since the quoted remark contradicts the observed 100.00."
+      },
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.png",
+          "step": 3,
+          "annotated": true
+        },
+        {
+          "file": "04-step4.png",
+          "step": 4,
+          "annotated": true
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.png",
+          "step": 6,
+          "annotated": true
+        },
+        {
+          "file": "07-step7.png",
+          "step": 7,
+          "annotated": true
+        },
+        {
+          "file": "08-step8.png",
+          "step": 8,
+          "annotated": true
+        },
+        {
+          "file": "09-step9.jpg",
+          "step": 9,
+          "annotated": false
+        },
+        {
+          "file": "10-step10.png",
+          "step": 10,
+          "annotated": true
+        },
+        {
+          "file": "11-step11.png",
+          "step": 11,
+          "annotated": true
+        },
+        {
+          "file": "12-step12.png",
+          "step": 12,
+          "annotated": true
+        },
+        {
+          "file": "13-step13.png",
+          "step": 13,
+          "annotated": true
+        },
+        {
+          "file": "14-step14.png",
+          "step": 14,
+          "annotated": true
+        },
+        {
+          "file": "15-step15.png",
+          "step": 15,
+          "annotated": true
+        },
+        {
+          "file": "16-step16.png",
+          "step": 16,
+          "annotated": true
+        },
+        {
+          "file": "17-step17.jpg",
+          "step": 17,
+          "annotated": false
+        },
+        {
+          "file": "18-step18.png",
+          "step": 18,
+          "annotated": true
+        },
+        {
+          "file": "19-step19.png",
+          "step": 19,
+          "annotated": true
+        },
+        {
+          "file": "20-step20.png",
+          "step": 20,
+          "annotated": true
+        },
+        {
+          "file": "21-step21.jpg",
+          "step": 21,
+          "annotated": false
+        },
+        {
+          "file": "22-step22.jpg",
+          "step": 22,
+          "annotated": false
+        },
+        {
+          "file": "23-step23.jpg",
+          "step": 23,
+          "annotated": false
+        },
+        {
+          "file": "24-step24.jpg",
+          "step": 24,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/fd33df48-649f-49dd-bc4f-74c921163c49/evidence/b498517c-561f-41ed-863b-a43896c5a7f7.evidence"
+    },
+    {
+      "id": "c04",
+      "verdict": "INCONCLUSIVE",
+      "readme_line": 34,
+      "readme_quote": "Delete Electricity from the\nexample above and Settle up shows \"Ben pays Ana 300.00\".",
+      "expect": {
+        "settle_line": "Ben pays Ana 300.00"
+      },
+      "observed": {},
+      "one_liner": "The run stopped because the old people remained after an incomplete cleanup, so the requested additions and checks were never performed.",
+      "reason": "bad_test claimed without a quote that matches a step remark: Kane failed during setup: after clearing storage and reloading, Ana, Ben, Cy and Rent were still listed, so it never added the bills, deleted Electricity, or opened Settle up to check the claim.",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati. If any bills or people are already listed, clear this site's browser storage and reload so the app starts empty. In the people section, add three people one at a time: type Ana and click the add button, type Ben and click the add button, type Cy and click the add button. Confirm Ana, Ben and Cy are each listed exactly once. In the bill form, type Rent in \"Bill name\", type 900.00 in \"Amount\", choose Ana in \"Paid by\", keep all three people Ana, Ben and Cy selected for the split (equal), then click \"Add bill\" exactly once. Confirm exactly one Rent bill is listed. In the bill form, type Electricity in \"Bill name\", type 300.00 in \"Amount\", choose Ben in \"Paid by\", keep Ana, Ben and Cy selected for the split (equal), then click \"Add bill\" exactly once. Confirm exactly one Electricity bill is listed. Click the Delete button on the Electricity bill row only. Do not delete the Rent bill. Confirm Electricity is gone and the single Rent bill is still listed. Without deleting or changing any other bill, open Settle up and read the payment lines. Assert Settle up shows \"Ben pays Ana 300.00\". Assert The Electricity bill is no longer listed. Store The payment line shown for Ben in Settle up as 'settle_line'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Add a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy. Add a bill named Electricity with amount 300.00, paid by Ben, split equally between Ana, Ben and Cy. Delete the Electricity bill. Open Settle up and read the payment lines. Assert Settle up shows \"Ben pays Ana 300.00\". Assert The Electricity bill is no longer listed. Store The payment line shown for Ben in Settle up as 'settle_line'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "ASSERT_FAIL",
+          "reason": "stuck.max_steps",
+          "credits": 33.735814999999995,
+          "duration": 127.8,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C29CBBDCNP80CV865XVTMV/dashboard/share/US_P1ZA5U3MKU8EN1O56SHDP7LS1D745J9QUDGLA9Z1TWD53JEO2CXTHTXMKU8OFRK9?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified bad_test: Kane added Rent twice and spent its remaining steps deleting the duplicate. It hit the step limit before it deleted Electricity or opened Settle up, so it never reached the claim. -> rewritten"
+        },
+        {
+          "attempt": 2,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati. If any bills or people are already listed, clear this site's browser storage and reload so the app starts empty. In the people section, add three people one at a time: type Ana and click the add button, type Ben and click the add button, type Cy and click the add button. Confirm Ana, Ben and Cy are each listed exactly once. In the bill form, type Rent in \"Bill name\", type 900.00 in \"Amount\", choose Ana in \"Paid by\", keep all three people Ana, Ben and Cy selected for the split (equal), then click \"Add bill\" exactly once. Confirm exactly one Rent bill is listed. In the bill form, type Electricity in \"Bill name\", type 300.00 in \"Amount\", choose Ben in \"Paid by\", keep Ana, Ben and Cy selected for the split (equal), then click \"Add bill\" exactly once. Confirm exactly one Electricity bill is listed. Click the Delete button on the Electricity bill row only. Do not delete the Rent bill. Confirm Electricity is gone and the single Rent bill is still listed. Without deleting or changing any other bill, open Settle up and read the payment lines. Assert Settle up shows \"Ben pays Ana 300.00\". Assert The Electricity bill is no longer listed. Store The payment line shown for Ben in Settle up as 'settle_line'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "ASSERT_FAIL",
+          "reason": "agent_error.child_failed",
+          "credits": 24.804049999999997,
+          "duration": 74.1,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C2FG31WFN7GX98FP0D1HJA/dashboard/share/US_E5Y346K7KNDW4JX0FCOXRERO4TLVYGGRIN59GLDON19QY4RJBTYRZEWRIKQTSU8Z?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified unproven: bad_test claimed without a quote that matches a step remark: Kane failed during setup: after clearing storage and reloading, Ana, Ben, Cy and Rent were still listed, so it never added the bills, deleted Electricity, or opened Settle up to check the claim."
+        }
+      ],
+      "credits": 58.54,
+      "summary": "The test started with saved information already on the page, but the agent did not successfully remove all saved site data and confirm the page was empty after reloading.\nReset all storage for the site, including any database storage in addition to cookies and local storage, reload, and verify that both people and bills are empty before adding Ana, Ben, and Cy.",
+      "cli_version": "0.10.4",
+      "duration": 74.1,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C2FG31WFN7GX98FP0D1HJA/dashboard/share/US_E5Y346K7KNDW4JX0FCOXRERO4TLVYGGRIN59GLDON19QY4RJBTYRZEWRIKQTSU8Z?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/90d35d86-6a9b-4859-8946-cdc2e89a1dce",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/90d35d86-6a9b-4859-8946-cdc2e89a1dce/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: Open Hati",
+        "[4 running] Step 3",
+        "[4 done] analyze: Any bills are already listed.",
+        "[5 running] Step 4",
+        "[2 running] Step 1",
+        "[2 done] wait: PRIMARY: clear this site's browser storage",
+        "[3 running] Step 2",
+        "[3 failed] wait: Waiting reload the site so the app starts empty"
+      ],
+      "classification": {
+        "label": "unproven",
+        "evidence": "[3 failed] wait: Waiting reload the site so the app starts empty",
+        "reason": "bad_test claimed without a quote that matches a step remark: Kane failed during setup: after clearing storage and reloading, Ana, Ben, Cy and Rent were still listed, so it never added the bills, deleted Electricity, or opened Settle up to check the claim."
+      },
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/90d35d86-6a9b-4859-8946-cdc2e89a1dce/evidence/0e26c1c8-68df-42a2-9247-4ed16adfc127.evidence"
+    },
+    {
+      "id": "c05",
+      "verdict": "VERIFIED",
+      "readme_line": 24,
+      "readme_quote": "Percentages must add up\nto 100. Otherwise you see \"Percentages must add up\nto 100\" and the bill is not saved.",
+      "expect": {
+        "percentage_error": "Percentages must add up to 100"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "percentage_error": "Percentages must add up to 100",
+        "internet_bill_in_bill_list": "false"
+      },
+      "one_liner": "tested an invalid percentage split for an Internet bill on Hati",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Internet with amount 500.00, choosing Ana, Ben and Cy. Choose the percentage split and enter 50 for Ana, 30 for Ben and 30 for Cy. Try to save the bill and read the message shown. Assert The message \"Percentages must add up to 100\" is shown. Assert The Internet bill does not appear in the bill list. Store The error message text shown after trying to save the bill as 'percentage_error'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Internet with amount 500.00, choosing Ana, Ben and Cy. Choose the percentage split and enter 50 for Ana, 30 for Ben and 30 for Cy. Try to save the bill and read the message shown. Assert The message \"Percentages must add up to 100\" is shown. Assert The Internet bill does not appear in the bill list. Store The error message text shown after trying to save the bill as 'percentage_error'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 42.81599249999999,
+          "duration": 144.0,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C2K85B89DE9FXYNYZWAVZK/dashboard/share/US_R2NS4Y7TW4DKPZN8FPJ7N9ZQUB6IGUAEN1LO0TEFHA4RV7I6EXWOGSLLUQFB9H67?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 42.816,
+      "summary": "Opened Hati with a cleared starting state.\nAdded Ana, Ben, and Cy as people.\nCreated an Internet bill for 500.00 and selected all three people.\nChose a percentage split and entered 50% for Ana, 30% for Ben, and 30% for Cy.\nTried to save the bill; Hati showed \u201cPercentages must add up to 100,\u201d and the Internet bill was not added to the bill list.",
+      "cli_version": "0.10.4",
+      "duration": 144.0,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C2K85B89DE9FXYNYZWAVZK/dashboard/share/US_R2NS4Y7TW4DKPZN8FPJ7N9ZQUB6IGUAEN1LO0TEFHA4RV7I6EXWOGSLLUQFB9H67?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/14c936c6-0014-4907-8113-e2f1f4c4ec9d",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/14c936c6-0014-4907-8113-e2f1f4c4ec9d/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] type: Typing Ana into Name field in People form",
+        "[4 running] Step 3",
+        "[4 done] click: Clicking Add person button to add Ana, Ben, and Cy",
+        "[5 running] Step 4",
+        "[5 done] type: Typing Ben into the Name field",
+        "[6 running] Step 5",
+        "[6 done] click: Clicking Add person button",
+        "[7 running] Step 6",
+        "[7 done] click: Clicking Add person button in the People form",
+        "[8 running] Step 7",
+        "[8 done] type: Typing Internet into the Bill name field",
+        "[9 running] Step 8",
+        "[9 done] wait: queued plan (5 steps): type \"Amount\"; click \"Ana\"; click \"Ben\"; click \"Cy\"; sele",
+        "[10 running] Step 9",
+        "[10 done] type: Type \"500.00\" into \"Amount\"",
+        "[11 running] Step 10",
+        "[11 done] click: Click \"Ana\"",
+        "[12 running] Step 11",
+        "[12 done] click: Click \"Ben\"",
+        "[13 running] Step 12",
+        "[14 running] Step 13",
+        "[14 done] click: Clicking the Cy checkbox",
+        "[15 running] Step 14",
+        "[15 done] click: Clicking Cy checkbox to set bill recipients",
+        "[16 running] Step 15",
+        "[16 done] wait: queued plan (4 steps): type \"Bill name\"; type \"Ana percent\"; type \"Ben percent\";",
+        "[17 running] Step 16",
+        "[17 done] type: Type \"Internet\" into \"Bill name\"",
+        "[18 running] Step 17",
+        "[18 done] type: Type \"50\" into \"Ana percent\"",
+        "[19 running] Step 18",
+        "[19 done] type: Type \"30\" into \"Ben percent\"",
+        "[20 running] Step 19",
+        "[20 done] type: Type \"30\" into \"Cy percent\"",
+        "[21 running] Step 20",
+        "[21 done] type: Entering bill amount 500.00",
+        "[22 running] Step 21",
+        "[22 done] type: Entering 30 into Cy percentage field",
+        "[23 running] Step 22",
+        "[23 done] click: Clicking Add bill",
+        "[24 running] Step 23",
+        "[24 done] wait: PRIMARY: read the message shown after trying to save the bill",
+        "[25 running] Step 24",
+        "[25 done] analyze: ANALYZE(visual, 'The error message text shown after trying to save the bill is s",
+        "[26 running] Step 25",
+        "[26 done] assert: The message \"Percentages must add up to 100\" is shown.",
+        "[27 running] Step 26",
+        "[27 done] assert: The Internet bill does not appear in the bill list."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.png",
+          "step": 2,
+          "annotated": true
+        },
+        {
+          "file": "03-step3.png",
+          "step": 3,
+          "annotated": true
+        },
+        {
+          "file": "04-step4.png",
+          "step": 4,
+          "annotated": true
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.png",
+          "step": 6,
+          "annotated": true
+        },
+        {
+          "file": "07-step7.png",
+          "step": 7,
+          "annotated": true
+        },
+        {
+          "file": "08-step8.jpg",
+          "step": 8,
+          "annotated": false
+        },
+        {
+          "file": "09-step9.png",
+          "step": 9,
+          "annotated": true
+        },
+        {
+          "file": "10-step10.png",
+          "step": 10,
+          "annotated": true
+        },
+        {
+          "file": "11-step11.png",
+          "step": 11,
+          "annotated": true
+        },
+        {
+          "file": "12-step12.jpg",
+          "step": 12,
+          "annotated": false
+        },
+        {
+          "file": "13-step13.png",
+          "step": 13,
+          "annotated": true
+        },
+        {
+          "file": "14-step14.png",
+          "step": 14,
+          "annotated": true
+        },
+        {
+          "file": "15-step15.jpg",
+          "step": 15,
+          "annotated": false
+        },
+        {
+          "file": "16-step16.png",
+          "step": 16,
+          "annotated": true
+        },
+        {
+          "file": "17-step17.png",
+          "step": 17,
+          "annotated": true
+        },
+        {
+          "file": "18-step18.png",
+          "step": 18,
+          "annotated": true
+        },
+        {
+          "file": "19-step19.png",
+          "step": 19,
+          "annotated": true
+        },
+        {
+          "file": "20-step20.png",
+          "step": 20,
+          "annotated": true
+        },
+        {
+          "file": "21-step21.png",
+          "step": 21,
+          "annotated": true
+        },
+        {
+          "file": "22-step22.png",
+          "step": 22,
+          "annotated": true
+        },
+        {
+          "file": "23-step23.jpg",
+          "step": 23,
+          "annotated": false
+        },
+        {
+          "file": "24-step24.jpg",
+          "step": 24,
+          "annotated": false
+        },
+        {
+          "file": "25-step25.jpg",
+          "step": 25,
+          "annotated": false
+        },
+        {
+          "file": "26-step26.jpg",
+          "step": 26,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/14c936c6-0014-4907-8113-e2f1f4c4ec9d/evidence/1a394b8f-5b5d-4b2e-8242-a3bb1b2af486.evidence"
+    },
+    {
+      "id": "c06",
+      "verdict": "VERIFIED",
+      "readme_line": 31,
+      "readme_quote": "Marking a payment as paid removes it. When every payment is marked paid,\nSettle up says \"All settled\".",
+      "expect": {
+        "settled_message": "All settled"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "settled_message": "All settled",
+        "listed_payments_absent": "true",
+        "settle_up_status_message": "All settled"
+      },
+      "one_liner": "settled all listed payments on the Settle up page",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Add a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy. Open Settle up. Mark each listed payment as paid, one by one. Look at the Settle up page after the last payment is marked paid. Assert Each payment disappears from the list once marked paid. Assert Settle up says \"All settled\". Store The status message shown in Settle up after all payments are marked paid as 'settled_message'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Add a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy. Open Settle up. Mark each listed payment as paid, one by one. Look at the Settle up page after the last payment is marked paid. Assert Each payment disappears from the list once marked paid. Assert Settle up says \"All settled\". Store The status message shown in Settle up after all payments are marked paid as 'settled_message'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 51.71370749999999,
+          "duration": 196.8,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C2RWM5MVA4QF0AZ380W7EV/dashboard/share/US_SPS0SFQX5XNY0DCWRNS4XYKWCB6ACDRR4G55PC0XJDZPAAEKQ66ALDUH19B0SI1F?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 51.714,
+      "summary": "Opened the Settle up page as requested.\nMarked each listed payment as paid, one at a time.\nConfirmed that no payments remained in the list and that the page showed \u201cAll settled.\u201d\nSaved the final Settle up status message as \u201cAll settled.\u201d",
+      "cli_version": "0.10.4",
+      "duration": 196.8,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C2RWM5MVA4QF0AZ380W7EV/dashboard/share/US_SPS0SFQX5XNY0DCWRNS4XYKWCB6ACDRR4G55PC0XJDZPAAEKQ66ALDUH19B0SI1F?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/d01bb4c9-923e-455e-a16c-428fabdc9d19",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/d01bb4c9-923e-455e-a16c-428fabdc9d19/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: Open Hati; role=heading; text=\"Hati\" | HINTS: position=top of page",
+        "[4 running] Step 3",
+        "[4 done] analyze: Any bills or people exist.",
+        "[5 running] Step 4",
+        "[2 running] Step 1",
+        "[2 done] wait: PRIMARY: clear this site's browser storage",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: reload the site",
+        "[4 running] Step 3",
+        "[4 done] wait: Waiting confirm the reloaded site has no saved people or bills",
+        "[6 running] Step 5",
+        "[6 done] type: Typing Ana into the Name field",
+        "[7 running] Step 6",
+        "[7 done] click: Clicking Add person for Ana, Ben, and Cy",
+        "[8 running] Step 7",
+        "[8 done] type: Typing Ben into the Name field",
+        "[9 running] Step 8",
+        "[9 done] click: Clicking Add person button to add Ana, Ben, and Cy",
+        "[10 running] Step 9",
+        "[10 done] type: Typing Cy in the Name field",
+        "[11 running] Step 10",
+        "[11 done] click: Clicking Add person in the People form",
+        "[12 running] Step 11",
+        "[12 done] wait: queued plan (6 steps): type \"Bill name\"; type \"Amount\"; click \"Ana\"; click \"Ben\"",
+        "[13 running] Step 12",
+        "[13 done] type: Type \"Rent\" into \"Bill name\"",
+        "[14 running] Step 13",
+        "[14 done] type: Type \"900.00\" into \"Amount\"",
+        "[15 running] Step 14",
+        "[15 done] click: Click \"Ana\"",
+        "[16 running] Step 15",
+        "[16 done] click: Click \"Ben\"",
+        "[17 running] Step 16",
+        "[17 done] click: Click \"Cy\"",
+        "[18 running] Step 17",
+        "[18 done] click: Click \"Add bill\"",
+        "[19 running] Step 18",
+        "[19 done] wait: PRIMARY: Add a bill named Rent with amount 900.00, paid by Ana, split equally be",
+        "[20 running] Step 19",
+        "[20 done] wait: Waiting confirm the completed Hati bill setup",
+        "[2 running] Step 1",
+        "[2 done] scroll: Scrolling into view the Open Settle up button in the Settle up list",
+        "[3 running] Step 2",
+        "[4 running] Step 3",
+        "[4 done] click: Clicking Mark paid for Cy pays Ana 400 in the settle up list",
+        "[5 running] Step 4",
+        "[5 done] click: Clicking Mark paid: Ben pays Ana 100.00",
+        "[6 running] Step 5",
+        "[6 done] wait: PRIMARY: Look at the Settle up page after the last payment is marked paid",
+        "[7 running] Step 6",
+        "[7 done] analyze: ANALYZE(textual_visual, 'The status message shown in Settle up after all payment",
+        "[8 running] Step 7",
+        "[8 done] assert: Each payment disappears from the list once marked paid.",
+        "[9 running] Step 8",
+        "[9 done] assert: Settle up says \"All settled\"."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        },
+        {
+          "file": "06-step6.jpg",
+          "step": 6,
+          "annotated": false
+        },
+        {
+          "file": "07-step7.png",
+          "step": 7,
+          "annotated": true
+        },
+        {
+          "file": "08-step8.png",
+          "step": 8,
+          "annotated": true
+        },
+        {
+          "file": "09-step9.png",
+          "step": 9,
+          "annotated": true
+        },
+        {
+          "file": "10-step10.png",
+          "step": 10,
+          "annotated": true
+        },
+        {
+          "file": "11-step11.png",
+          "step": 11,
+          "annotated": true
+        },
+        {
+          "file": "12-step12.png",
+          "step": 12,
+          "annotated": true
+        },
+        {
+          "file": "13-step13.jpg",
+          "step": 13,
+          "annotated": false
+        },
+        {
+          "file": "14-step14.png",
+          "step": 14,
+          "annotated": true
+        },
+        {
+          "file": "15-step15.png",
+          "step": 15,
+          "annotated": true
+        },
+        {
+          "file": "16-step16.png",
+          "step": 16,
+          "annotated": true
+        },
+        {
+          "file": "17-step17.png",
+          "step": 17,
+          "annotated": true
+        },
+        {
+          "file": "18-step18.png",
+          "step": 18,
+          "annotated": true
+        },
+        {
+          "file": "19-step19.png",
+          "step": 19,
+          "annotated": true
+        },
+        {
+          "file": "20-step20.jpg",
+          "step": 20,
+          "annotated": false
+        },
+        {
+          "file": "21-step21.jpg",
+          "step": 21,
+          "annotated": false
+        },
+        {
+          "file": "22-step22.jpg",
+          "step": 22,
+          "annotated": false
+        },
+        {
+          "file": "23-step23.jpg",
+          "step": 23,
+          "annotated": false
+        },
+        {
+          "file": "24-step24.png",
+          "step": 24,
+          "annotated": true
+        },
+        {
+          "file": "25-step25.png",
+          "step": 25,
+          "annotated": true
+        },
+        {
+          "file": "26-step26.jpg",
+          "step": 26,
+          "annotated": false
+        },
+        {
+          "file": "27-step27.jpg",
+          "step": 27,
+          "annotated": false
+        },
+        {
+          "file": "28-step28.jpg",
+          "step": 28,
+          "annotated": false
+        },
+        {
+          "file": "29-step29.jpg",
+          "step": 29,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/d01bb4c9-923e-455e-a16c-428fabdc9d19/evidence/3c525566-3b42-47a2-b9b0-c2d38bb1cb19.evidence"
+    },
+    {
+      "id": "c07",
+      "verdict": "INCONCLUSIVE",
+      "readme_line": 39,
+      "readme_quote": "A blank, zero or negative amount shows\n\"Enter an amount greater than 0\" and no bill is added.",
+      "expect": {
+        "amount_error": "Enter an amount greater than 0"
+      },
+      "observed": {},
+      "one_liner": "",
+      "reason": "infra error (infra_error.credits_exhausted); continue with other claims",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Water. Enter the amount 0 and choose Ana, Ben and Cy. Try to save the bill and read the message shown. Assert The message \"Enter an amount greater than 0\" is shown. Assert The Water bill does not appear in the bill list. Store The error message text shown after trying to save the bill as 'amount_error'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Click Add bill and enter the name Water. Enter the amount 0 and choose Ana, Ben and Cy. Try to save the bill and read the message shown. Assert The message \"Enter an amount greater than 0\" is shown. Assert The Water bill does not appear in the bill list. Store The error message text shown after trying to save the bill as 'amount_error'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "INCONCLUSIVE",
+          "reason": "infra error (infra_error.credits_exhausted); continue with other claims",
+          "credits": 0.0,
+          "duration": 3.4,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C306SZ79BDYFM7XGABBFHK/dashboard/share/US_5RGG62ELZDH49HOQZLSANY935FQYL2A3RZCFHIJ739JZBLTXTYR4OJTM2H3ZIXKA?type=summary&agentView=true&fqdn=summary-page",
+          "note": ""
+        }
+      ],
+      "credits": 0.0,
+      "summary": "Credits exhausted: {\"error\":\"insufficient credits\"}",
+      "cli_version": "0.10.4",
+      "duration": 3.4,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C306SZ79BDYFM7XGABBFHK/dashboard/share/US_5RGG62ELZDH49HOQZLSANY935FQYL2A3RZCFHIJ739JZBLTXTYR4OJTM2H3ZIXKA?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/8c0c3953-488e-49e7-bb59-249b57ae4820",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/8c0c3953-488e-49e7-bb59-249b57ae4820/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2"
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/8c0c3953-488e-49e7-bb59-249b57ae4820/evidence/28512554-7484-46f1-a5db-1676f68d4f07.evidence"
+    },
+    {
+      "id": "c08",
+      "verdict": "INCONCLUSIVE",
+      "readme_line": 37,
+      "readme_quote": "Your bills are still there after a reload.",
+      "expect": {
+        "bill_after_reload": "900.00"
+      },
+      "observed": {},
+      "one_liner": "",
+      "reason": "infra error (infra_error.credits_exhausted); continue with other claims",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Add a bill named Rent with amount 900.00, split equally between Ana, Ben and Cy. Confirm the Rent bill is listed. Reload the page and look at the bill list. Assert The Rent bill is still listed after the reload. Assert The Rent bill still shows 900.00. Store The amount shown for the Rent bill after the reload as 'bill_after_reload'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist). Add the people Ana, Ben and Cy. Add a bill named Rent with amount 900.00, split equally between Ana, Ben and Cy. Confirm the Rent bill is listed. Reload the page and look at the bill list. Assert The Rent bill is still listed after the reload. Assert The Rent bill still shows 900.00. Store The amount shown for the Rent bill after the reload as 'bill_after_reload'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "INCONCLUSIVE",
+          "reason": "infra error (infra_error.credits_exhausted); continue with other claims",
+          "credits": 0.0,
+          "duration": 3.1,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C31DAKXJEETZ5JJMYAWXDX/dashboard/share/US_J8TWHQM655TVKURS6OEAVL6J6ZK4UK65G9SHYSEKN9QL16WQB51LR8U6085XE5T3?type=summary&agentView=true&fqdn=summary-page",
+          "note": ""
+        }
+      ],
+      "credits": 0.0,
+      "summary": "Credits exhausted: {\"error\":\"insufficient credits\"}",
+      "cli_version": "0.10.4",
+      "duration": 3.1,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C31DAKXJEETZ5JJMYAWXDX/dashboard/share/US_J8TWHQM655TVKURS6OEAVL6J6ZK4UK65G9SHYSEKN9QL16WQB51LR8U6085XE5T3?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/b3b3b208-fc85-4230-9764-ab6b18fc00b3",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/b3b3b208-fc85-4230-9764-ab6b18fc00b3/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2"
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/b3b3b208-fc85-4230-9764-ab6b18fc00b3/evidence/70e912ba-c827-407b-a93c-302f77497017.evidence"
+    },
+    {
+      "id": "nv9",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 44,
+      "readme_quote": "Loads instantly.",
+      "reason": "Speed is not a fixed, observable result a browser check can assert."
+    },
+    {
+      "id": "nv10",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 46,
+      "readme_quote": "Your data never leaves your browser.",
+      "reason": "Privacy and network behavior cannot be confirmed from what is visible on the page."
+    },
+    {
+      "id": "nv11",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 48,
+      "readme_quote": "Works offline after the first load.",
+      "reason": "Requires disconnecting the network, which a browser agent cannot do reliably."
+    },
+    {
+      "id": "nv12",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 50,
+      "readme_quote": "Run it with npm install and npm run dev.",
+      "reason": "Shell install commands are not observable in a browser."
+    }
+  ],
+  "run_at": "2026-11-14 11:54:19 PST",
+  "commit": "3f4be2f"
+}

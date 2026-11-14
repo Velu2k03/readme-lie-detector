@@ -55,7 +55,7 @@ Credit safeguards are on by default: the tool refuses to start when your balance
 
 ## The report
 
-Every run writes one static page, `report/index.html`, plus screenshots in `report/assets/`. The page opens with a verdict banner. When every claim is true it says "All 8 claims are true. This README told the truth." Each claim has its own card showing the README line, the README quote, the value the README expected, the value Kane observed, and the screenshots from every step.
+Every run writes one static page, `report/index.html`, plus screenshots in `report/assets/`. The page opens with a verdict banner. When every claim is true it says "All 8 claims are true. This README told the truth." Each claim has its own card showing a link to the README line, the quoted sentence, an "Expected (README)" column, an "Observed (Kane)" column, and the screenshots from every step.
 
 ## The Stop hook
 

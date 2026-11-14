@@ -1,0 +1,398 @@
+{
+  "url": "https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/",
+  "readme": "README.md",
+  "readme_sha256": "12fe1195ead24d86d99e232aad239a3afc64b8e0bafdd6c10a4dab3aa99fc479",
+  "extracted_now": false,
+  "exit_code": 1,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 28.873,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "VERIFIED",
+      "readme_line": 58,
+      "readme_quote": "All 8 claims are true. This README told the truth.",
+      "expect": {
+        "banner_text": "All 8 claims are true. This README told the truth."
+      },
+      "observed": {
+        "url": "https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/",
+        "banner_text": "All 8 claims are true. This README told the truth."
+      },
+      "one_liner": "viewed the verdict banner on the README Lie Detector report site",
+      "reason": "Objective completed",
+      "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app URL in a fresh browser tab with no saved state. Wait for the page to finish loading. Look at the verdict banner at the top of the report page. Assert A verdict banner is visible at the top of the page. Assert The banner says \"All 8 claims are true. This README told the truth.\". Store The full text of the verdict banner at the top of the page as 'banner_text'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app URL in a fresh browser tab with no saved state. Wait for the page to finish loading. Look at the verdict banner at the top of the report page. Assert A verdict banner is visible at the top of the page. Assert The banner says \"All 8 claims are true. This README told the truth.\". Store The full text of the verdict banner at the top of the page as 'banner_text'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 19.4761125,
+          "duration": 56.9,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D01RC69AJ53E89Q4QCQET5/dashboard/share/US_NISHJBX1PADQSEVJRNLJO5YQAA0CDDWII1XITE56PXVWD8EE5SRBQT4HGGN2I56R?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 19.476,
+      "summary": "Opened the report page in a fresh browser tab and waited for it to load.\nViewed the verdict banner at the top of the report page.\nThe banner confirmed: \u201cAll 8 claims are true. This README told the truth.\u201d",
+      "cli_version": "0.10.4",
+      "duration": 56.9,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D01RC69AJ53E89Q4QCQET5/dashboard/share/US_NISHJBX1PADQSEVJRNLJO5YQAA0CDDWII1XITE56PXVWD8EE5SRBQT4HGGN2I56R?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/ece2b920-1473-4598-b87b-c5ed45ea1854",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/ece2b920-1473-4598-b87b-c5ed45ea1854/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: Open the app URL in a fresh browser tab",
+        "[4 running] Step 3",
+        "[4 done] wait: PRIMARY: Wait for the page to finish loading and look at the verdict banner at t",
+        "[5 running] Step 4",
+        "[5 done] wait: PRIMARY: wait 1500 ms for the report page to finish loading",
+        "[6 running] Step 5",
+        "[6 done] analyze: ANALYZE(textual_visual, 'The full text of the verdict banner at the top of the p",
+        "[7 running] Step 6",
+        "[7 done] assert: A verdict banner is visible at the top of the page.",
+        "[8 running] Step 7",
+        "[8 done] assert: The banner says \"All 8 claims are true. This README told the truth.\"."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        },
+        {
+          "file": "06-step6.jpg",
+          "step": 6,
+          "annotated": false
+        },
+        {
+          "file": "07-step7.jpg",
+          "step": 7,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/ece2b920-1473-4598-b87b-c5ed45ea1854/evidence/316125f7-2ee8-40e0-84cf-0f0e61de3254.evidence",
+      "carried": true
+    },
+    {
+      "id": "c02",
+      "verdict": "VERIFIED",
+      "readme_line": 58,
+      "readme_quote": "an \"Expected (README)\" column",
+      "expect": {
+        "expected_heading": "Expected (README)"
+      },
+      "observed": {
+        "url": "https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/",
+        "expected_heading": "Expected (README)"
+      },
+      "one_liner": "reviewed the first claim card\u2019s column headings on the README Lie Detector Report",
+      "reason": "Objective completed",
+      "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app URL in a fresh browser tab with no saved state. Wait for the page to finish loading. Scroll down to the first claim card. Look at the column headings inside the first claim card. Assert The claim card shows a column headed \"Expected (README)\". Store The heading text of the expected-value column in the first claim card as 'expected_heading'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app URL in a fresh browser tab with no saved state. Wait for the page to finish loading. Scroll down to the first claim card. Look at the column headings inside the first claim card. Assert The claim card shows a column headed \"Expected (README)\". Store The heading text of the expected-value column in the first claim card as 'expected_heading'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 18.872764999999998,
+          "duration": 49.4,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D04KZVBPJ1GK5QQXZBYSNH/dashboard/share/US_1W7Y9ZHV1WF7NICDY02NCD616DCUE6DLLLX084XXER5M60TEBDVUEV4JQ1Q4BGV1?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 18.873,
+      "summary": "Opened the report page in a fresh browser tab and scrolled to the first claim card.\nChecked the claim card\u2019s column headings and found the expected-value column.\nThe expected-value column heading was \"Expected (README)\".",
+      "cli_version": "0.10.4",
+      "duration": 49.4,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D04KZVBPJ1GK5QQXZBYSNH/dashboard/share/US_1W7Y9ZHV1WF7NICDY02NCD616DCUE6DLLLX084XXER5M60TEBDVUEV4JQ1Q4BGV1?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/e859436f-6b28-4d34-a099-0a94090687fe",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/e859436f-6b28-4d34-a099-0a94090687fe/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: wait for the app page to finish loading",
+        "[4 running] Step 3",
+        "[4 done] scroll: Scrolling down",
+        "[5 running] Step 4",
+        "[5 done] analyze: ANALYZE(textual_visual, 'The heading text of the expected-value column in the fi",
+        "[6 running] Step 5",
+        "[6 done] assert: The claim card shows a column headed \"Expected (README)\"."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/e859436f-6b28-4d34-a099-0a94090687fe/evidence/d7c858df-d338-48e8-8fcb-7006701e2b50.evidence",
+      "carried": true
+    },
+    {
+      "id": "c03",
+      "verdict": "VERIFIED",
+      "readme_line": 58,
+      "readme_quote": "an \"Observed (Kane)\" column",
+      "expect": {
+        "observed_heading": "Observed (Kane)"
+      },
+      "observed": {
+        "url": "https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/",
+        "observed_heading": "Observed (Kane)"
+      },
+      "one_liner": "reviewed the first claim card\u2019s column heading on the report page",
+      "reason": "Objective completed",
+      "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app URL in a fresh browser tab with no saved state. Wait for the page to finish loading. Scroll down to the first claim card. Look at the column headings inside the first claim card. Assert The claim card shows a column headed \"Observed (Kane)\". Store The heading text of the observed-value column in the first claim card as 'observed_heading'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app URL in a fresh browser tab with no saved state. Wait for the page to finish loading. Scroll down to the first claim card. Look at the column headings inside the first claim card. Assert The claim card shows a column headed \"Observed (Kane)\". Store The heading text of the observed-value column in the first claim card as 'observed_heading'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 18.5173,
+          "duration": 45.7,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D07CYX7977S0W9N5C4R41N/dashboard/share/US_EQT93RMN7RF29P3GN3S2G3B98LRFXQK328M2HNQF272Y641P4KQA5Z7W5XMH6W4H?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 18.517,
+      "summary": "Opened the report page in a fresh browser tab and scrolled to the first claim card.\nReviewed the claim card\u2019s column headings as requested.\nConfirmed that the observed-value column is labeled \u201cObserved (Kane).\u201d",
+      "cli_version": "0.10.4",
+      "duration": 45.7,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D07CYX7977S0W9N5C4R41N/dashboard/share/US_EQT93RMN7RF29P3GN3S2G3B98LRFXQK328M2HNQF272Y641P4KQA5Z7W5XMH6W4H?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/7e7679a7-da93-451c-9b7a-9695bb8e39d4",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/7e7679a7-da93-451c-9b7a-9695bb8e39d4/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38",
+        "[3 running] Step 2",
+        "[3 done] scroll: Scrolling down to the first claim card in the Claims section",
+        "[4 running] Step 3",
+        "[4 done] analyze: ANALYZE(textual_visual, 'The heading text of the observed-value column in the fi",
+        "[5 running] Step 4",
+        "[5 done] assert: The claim card shows a column headed \"Observed (Kane)\"."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.png",
+          "step": 2,
+          "annotated": true
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/7e7679a7-da93-451c-9b7a-9695bb8e39d4/evidence/11d216f8-ed39-4c38-b4c7-05a30e3d7294.evidence",
+      "carried": true
+    },
+    {
+      "id": "c04",
+      "verdict": "STALE_DOC",
+      "readme_line": 52,
+      "readme_quote": "Stale doc",
+      "expect": {
+        "verdict_label": "Stale doc"
+      },
+      "observed": {
+        "url": "https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/",
+        "verdict_label": "stale doc",
+        "stale_doc_verdict_shown": "true"
+      },
+      "one_liner": "found the stale-document verdict on the README Lie Detector report",
+      "reason": "Objective completed",
+      "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app URL in a fresh browser tab with no saved state. Wait for the page to finish loading. Look for the list or legend of verdict names on the page. Assert A verdict named \"Stale doc\" is shown on the page. Store The verdict name on the page that refers to an out-of-date README line as 'verdict_label'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app URL in a fresh browser tab with no saved state. Wait for the page to finish loading. Look for the list or legend of verdict names on the page. Assert A verdict named \"Stale doc\" is shown on the page. Store The verdict name on the page that refers to an out-of-date README line as 'verdict_label'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 28.872762499999997,
+          "duration": 74.6,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D0A2614TAJ4B3R0JJSJ5YX/dashboard/share/US_AGZB3U8FLOZ6RZMLVPM8Q4SGKA5063YH2ON4I75JG64NAHLQFLAO7O5QC8KUL2E6?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified stale_doc: Kane reached the page and the assert step found the 'Stale doc' verdict. The only mismatch is that the stored value came back as 'stale doc' (lowercase) instead of 'Stale doc', so the feature works and only the label's casing differs. | mismatch [\"verdict_label: expected 'Stale doc', observed 'stale doc'\"]"
+        }
+      ],
+      "credits": 28.873,
+      "summary": "Opened the README Lie Detector report and reviewed the displayed verdict names.\nFound the verdict labeled \u201cStale doc,\u201d which identifies an out-of-date README line.\nThe requested verdict label was recorded as \u201cstale doc.\u201d",
+      "cli_version": "0.10.4",
+      "duration": 74.6,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D0A2614TAJ4B3R0JJSJ5YX/dashboard/share/US_AGZB3U8FLOZ6RZMLVPM8Q4SGKA5063YH2ON4I75JG64NAHLQFLAO7O5QC8KUL2E6?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/a629dc35-754b-4a64-8964-01c558da3c8d",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/a629dc35-754b-4a64-8964-01c558da3c8d/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: wait for the page to finish loading",
+        "[4 running] Step 3",
+        "[4 done] wait: PRIMARY: wait for the page to finish loading",
+        "[5 running] Step 4",
+        "[5 done] wait: PRIMARY: Look for the list or legend of verdict names on the page",
+        "[6 running] Step 5",
+        "[6 done] analyze: ANALYZE(textual_visual, 'The verdict name on the page that refers to an out-of-d",
+        "[7 running] Step 6",
+        "[7 done] assert: A verdict named \"Stale doc\" is shown on the page."
+      ],
+      "mismatch": [
+        "verdict_label: expected 'Stale doc', observed 'stale doc'"
+      ],
+      "classification": {
+        "label": "stale_doc",
+        "evidence": "",
+        "reason": "Kane reached the page and the assert step found the 'Stale doc' verdict. The only mismatch is that the stored value came back as 'stale doc' (lowercase) instead of 'Stale doc', so the feature works and only the label's casing differs."
+      },
+      "fix_hint": "the feature works, the README line is out of date: edit that README line to describe the app as it is, do not change the code (Make the expected label match the casing the app shows, or compare case-insensitively. Then check the page's verdict label against the README.)",
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        },
+        {
+          "file": "06-step6.jpg",
+          "step": 6,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/a629dc35-754b-4a64-8964-01c558da3c8d/evidence/f5f865dc-c31a-4f87-b9c1-7627cb942b8c.evidence"
+    },
+    {
+      "id": "nv5",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 3,
+      "readme_quote": "checks each one in a real browser with Kane CLI",
+      "reason": "Describes the tool's internal process, which a browser cannot observe."
+    },
+    {
+      "id": "nv6",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 16,
+      "readme_quote": "python3 -m rld check --url http://127.0.0.1:4173/ --readme demo-app/README.md",
+      "reason": "Shell command, not observable in a browser."
+    },
+    {
+      "id": "nv7",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 23,
+      "readme_quote": "`rld gate` exits 0 when every claim is true, 1 when a claim is false or stale, 3 when the result is inconclusive, and 4 when the tool itself or Kane failed.",
+      "reason": "Process exit codes cannot be seen in a browser."
+    },
+    {
+      "id": "nv8",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 37,
+      "readme_quote": "npm install -g @testmuai/kane-cli@0.10.4",
+      "reason": "Install command, not browser-observable."
+    },
+    {
+      "id": "nv9",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 39,
+      "readme_quote": "The tool uses `claude -p` once per README to extract the claims, which uses your Claude plan and no API key.",
+      "reason": "Internal behaviour and billing, not visible in a browser."
+    },
+    {
+      "id": "nv10",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 44,
+      "readme_quote": "the tool refuses to start when your balance is under 2,000 credits (`RLD_MIN_CREDITS`)",
+      "reason": "CLI safeguard that depends on account state, not visible in a browser."
+    },
+    {
+      "id": "nv11",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 62,
+      "readme_quote": "After three blocked rounds the turn is released with a warning.",
+      "reason": "Claude Code hook behaviour, not observable in a browser."
+    }
+  ],
+  "run_at": "2026-11-14 20:27:19 PST",
+  "commit": "af7976b"
+}

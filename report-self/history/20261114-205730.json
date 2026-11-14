@@ -1,0 +1,324 @@
+{
+  "url": "https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/",
+  "readme": "README.md",
+  "readme_sha256": "12fe1195ead24d86d99e232aad239a3afc64b8e0bafdd6c10a4dab3aa99fc479",
+  "extracted_now": true,
+  "exit_code": 3,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 56.756,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "VERIFIED",
+      "readme_line": 58,
+      "readme_quote": "When every claim is true it says \"All 8 claims are true. This README told the truth.\"",
+      "expect": {
+        "verdict_banner_text": "All 8 claims are true. This README told the truth."
+      },
+      "observed": {
+        "url": "https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/",
+        "verdict_banner_text": "All 8 claims are true. This README told the truth."
+      },
+      "one_liner": "read the verdict banner on the README lie detector report site",
+      "reason": "Objective completed",
+      "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app's report page at the live report URL https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Read the verdict banner at the top of the report page. Assert The banner says \"All 8 claims are true. This README told the truth.\". Store the full text of the verdict banner at the top of the report page as 'verdict_banner_text'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the app's report page at the live report URL https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Read the verdict banner at the top of the report page. Assert The banner says \"All 8 claims are true. This README told the truth.\". Store the full text of the verdict banner at the top of the report page as 'verdict_banner_text'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 18.500767500000002,
+          "duration": 56.9,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D1VHZ0H8FW0H2X7CGG7NFS/dashboard/share/US_7RSBHUQ32LX0XFG78ZQDL2MTCJ3MVAGD3080VK97OK13ZUBP4MAPEHZLXBK1JSJL?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 18.501,
+      "summary": "Opened the live README lie detector report page.\nRead the verdict banner at the top of the report.\nThe report concluded: \u201cAll 8 claims are true. This README told the truth.\u201d",
+      "cli_version": "0.10.4",
+      "duration": 56.9,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D1VHZ0H8FW0H2X7CGG7NFS/dashboard/share/US_7RSBHUQ32LX0XFG78ZQDL2MTCJ3MVAGD3080VK97OK13ZUBP4MAPEHZLXBK1JSJL?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/9498e260-372a-4e61-95c4-907938e34bc8",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/9498e260-372a-4e61-95c4-907938e34bc8/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: Open the app's report page at the live report URL https://readme-lie-de",
+        "[4 running] Step 3",
+        "[4 done] wait: PRIMARY: Read the verdict banner at the top of the report page; role=heading; te",
+        "[5 running] Step 4",
+        "[5 done] analyze: ANALYZE(textual_visual, 'The full text of the verdict banner at the top of the r",
+        "[6 running] Step 5",
+        "[6 done] assert: The banner says \"All 8 claims are true. This README told the truth.\"."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/9498e260-372a-4e61-95c4-907938e34bc8/evidence/be19c9ff-35f0-44e6-8bbf-cc23a8ab4a73.evidence"
+    },
+    {
+      "id": "c02",
+      "verdict": "VERIFIED",
+      "readme_line": 66,
+      "readme_quote": "`demo-app/` is Hati, a small bill splitter whose README makes eight testable claims. All eight pass.",
+      "expect": {
+        "verified_verdict_label": "Verified"
+      },
+      "observed": {
+        "url": "https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/",
+        "claim_card_count": "8",
+        "all_claim_cards_verified": "true",
+        "verified_verdict_label": "Verified"
+      },
+      "one_liner": "reviewed claim verdicts on the README Lie Detector report page",
+      "reason": "Objective completed",
+      "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the live report page at https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Count the claim cards shown on the report page and check each card's verdict. Assert The page shows 8 claim cards. Assert Every claim card shows the verdict \"Verified\". Store the verdict label shown on the first claim card as 'verified_verdict_label'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the live report page at https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Count the claim cards shown on the report page and check each card's verdict. Assert The page shows 8 claim cards. Assert Every claim card shows the verdict \"Verified\". Store the verdict label shown on the first claim card as 'verified_verdict_label'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 14.423509999999998,
+          "duration": 71.9,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D1YE0AX565F94C0N9HXJVG/dashboard/share/US_GPYPVR78QUKHWQTHQX7VD9BJGGQYTNZQNSP74CEA8S6W2JO9IZ7Y4Z997SVFW60H?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 14.424,
+      "summary": "Opened the live README Lie Detector report page as requested.\nReviewed the Claims section and confirmed that it contains 8 claim cards.\nChecked the verdicts on all claim cards; every card is labeled \u201cVerified.\u201d\nRecorded the first claim card\u2019s verdict label as \u201cVerified.\u201d",
+      "cli_version": "0.10.4",
+      "duration": 71.9,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D1YE0AX565F94C0N9HXJVG/dashboard/share/US_GPYPVR78QUKHWQTHQX7VD9BJGGQYTNZQNSP74CEA8S6W2JO9IZ7Y4Z997SVFW60H?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/fc237884-2f59-4b53-959d-bebfd13b8784",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/fc237884-2f59-4b53-959d-bebfd13b8784/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: Count the claim cards shown on the report page and check each card's ve",
+        "[4 running] Step 3",
+        "[4 done] analyze: ANALYZE(textual_visual, 'The verdict label shown on the first claim card is stor",
+        "[5 running] Step 4",
+        "[5 done] assert: The page shows 8 claim cards.",
+        "[6 running] Step 5",
+        "[6 done] assert: Every claim card shows the verdict \"Verified\"."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/fc237884-2f59-4b53-959d-bebfd13b8784/evidence/f17b449f-5a43-4dde-a01a-3d10c6805ee6.evidence"
+    },
+    {
+      "id": "c03",
+      "verdict": "VERIFIED",
+      "readme_line": 58,
+      "readme_quote": "Each claim has its own card showing a link to the README line, the quoted sentence, an \"Expected (README)\" column, an \"Observed (Kane)\" column, and the screenshots from every step.",
+      "expect": {
+        "observed_column_heading": "Observed (Kane)"
+      },
+      "observed": {
+        "url": "https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/",
+        "observed_column_heading": "Observed (Kane)",
+        "expected_readme_column_present": "true",
+        "observed_kane_column_present": "true",
+        "readme_line_link_present": "true",
+        "quoted_sentence_present": "true",
+        "screenshots_present": "true"
+      },
+      "one_liner": "reviewed the first claim card on the live report page",
+      "reason": "Objective completed",
+      "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the live report page at https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Look at the first claim card and its contents. Assert The card has a column headed \"Expected (README)\". Assert The card has a column headed \"Observed (Kane)\". Assert The card shows a link to the README line, a quoted sentence and screenshots. Store the heading of the right-hand results column on the first claim card as 'observed_column_heading'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Open the live report page at https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/. Look at the first claim card and its contents. Assert The card has a column headed \"Expected (README)\". Assert The card has a column headed \"Observed (Kane)\". Assert The card shows a link to the README line, a quoted sentence and screenshots. Store the heading of the right-hand results column on the first claim card as 'observed_column_heading'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 23.830642499999996,
+          "duration": 68.4,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D21SPAVQTPCGN0PXZ39034/dashboard/share/US_JZQQCN3CDS5NGKLFTQUTM8D3W9IY4DMRQ694GA7M1JZQJHDH3XD11N0KGXP11U9A?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 23.831,
+      "summary": "Opened the live report page and reviewed the first claim card.\nConfirmed that the card includes the \u201cExpected (README)\u201d column and the right-hand \u201cObserved (Kane)\u201d column.\nConfirmed that the card includes a README line link, a quoted sentence, and screenshots.\nThe right-hand column heading was recorded as \u201cObserved (Kane).\u201d",
+      "cli_version": "0.10.4",
+      "duration": 68.4,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D21SPAVQTPCGN0PXZ39034/dashboard/share/US_JZQQCN3CDS5NGKLFTQUTM8D3W9IY4DMRQ694GA7M1JZQJHDH3XD11N0KGXP11U9A?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/13e738e1-a666-4326-87c3-55eea120b80d",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/13e738e1-a666-4326-87c3-55eea120b80d/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: Open the live report page at https://readme-lie-detector-report-a3ld2nb",
+        "[4 running] Step 3",
+        "[4 done] wait: PRIMARY: Look at the first claim card and its contents.",
+        "[5 running] Step 4",
+        "[5 done] analyze: ANALYZE(textual_visual, 'The heading of the right-hand results column on the fir",
+        "[6 running] Step 5",
+        "[6 done] assert: The card has a column headed \"Expected (README)\".",
+        "[7 running] Step 6",
+        "[7 done] assert: The card has a column headed \"Observed (Kane)\".",
+        "[8 running] Step 7",
+        "[8 done] assert: The card shows a link to the README line, a quoted sentence and screenshots."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        },
+        {
+          "file": "06-step6.jpg",
+          "step": 6,
+          "annotated": false
+        },
+        {
+          "file": "07-step7.jpg",
+          "step": 7,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/13e738e1-a666-4326-87c3-55eea120b80d/evidence/c1a6ac1b-5ba0-4ff1-91ea-79a8952f65d2.evidence"
+    },
+    {
+      "id": "nv4",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 16,
+      "readme_quote": "python3 -m rld check --url http://127.0.0.1:4173/ --readme demo-app/README.md",
+      "reason": "Shell command, not observable in a browser."
+    },
+    {
+      "id": "nv5",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 23,
+      "readme_quote": "`rld gate` exits 0 when every claim is true, 1 when a claim is false or stale, 3 when the result is inconclusive, and 4 when the tool itself or Kane failed.",
+      "reason": "Process exit codes are not visible in a browser."
+    },
+    {
+      "id": "nv6",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 21,
+      "readme_quote": "It runs previously failed claims first, stops at the first failure, and skips claims that already passed on the same README and build.",
+      "reason": "CLI behaviour, not observable in a browser."
+    },
+    {
+      "id": "nv7",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 27,
+      "readme_quote": "Python 3.11 or newer and Node.js (tested with v24.22.1).",
+      "reason": "Install requirement, not browser-checkable."
+    },
+    {
+      "id": "nv8",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 37,
+      "readme_quote": "npm install -g @testmuai/kane-cli@0.10.4",
+      "reason": "Install command."
+    },
+    {
+      "id": "nv9",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 44,
+      "readme_quote": "the tool refuses to start when your balance is under 2,000 credits (`RLD_MIN_CREDITS`), runs at most 12 Kane runs per invocation (`RLD_MAX_RUNS`) and 4 per claim (`RLD_MAX_CLAIM_RUNS`).",
+      "reason": "Credit safeguards in a CLI tool, not observable in a browser."
+    },
+    {
+      "id": "nv10",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 62,
+      "readme_quote": "After three blocked rounds the turn is released with a warning. Set `RLD_HOOK=off` to turn the hook off.",
+      "reason": "Claude Code hook behaviour, not observable in a browser."
+    },
+    {
+      "id": "nv11",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 39,
+      "readme_quote": "The tool uses `claude -p` once per README to extract the claims, which uses your Claude plan and no API key.",
+      "reason": "Privacy and credentials behaviour, not observable in a browser."
+    }
+  ],
+  "runs": 3,
+  "run_cap_hit": true,
+  "run_at": "2026-11-14 20:57:30 PST",
+  "commit": "e1a832d"
+}

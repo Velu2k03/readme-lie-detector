@@ -1,0 +1,56 @@
+{"type":"stream_start","cli_version":"0.10.4","surface":"run","pid":19001,"v":1,"ts":"2026-11-14T14:27:11.289Z"}
+{"type":"recording_state","enabled":true,"session_id":"ac99be02-1b21-4cf5-8add-3504bc908432","persist":false,"v":1,"ts":"2026-11-14T14:27:11.386Z"}
+{"type":"bifurcation","flows":["Navigate to http://127.0.0.1:4173/ then Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist).\nAdd the people Ana, Ben and Cy.\nClick Add bill and enter the name Groceries.\nEnter the amount 1,000.01 and choose all three people, Ana, Ben and Cy.\nChoose the percentage split and enter 50 for Ana, 30 for Ben and 20 for Cy.\nSave the bill and look at each person's share of the bill.\nAssert Ana's share shows 500.01.\nAssert Ben's share shows 300.00.\nAssert Cy's share shows 200.00.\nStore The shares shown for Ana, Ben and Cy, in that order, as one comma-separated line as 'percentage_split_shares'."],"count":1,"v":1,"ts":"2026-11-14T14:27:54.869Z"}
+{"step":2,"status":"running","remark":"Step 1","v":1,"ts":"2026-11-14T14:27:55.537Z"}
+{"step":2,"status":"done","remark":"navigate: Navigate to http://127.0.0.1:4173/","v":1,"ts":"2026-11-14T14:27:55.540Z"}
+{"step":3,"status":"running","remark":"Step 2","v":1,"ts":"2026-11-14T14:28:05.173Z"}
+{"step":3,"status":"done","remark":"wait: PRIMARY: confirm Hati has no saved people or bills","v":1,"ts":"2026-11-14T14:28:12.863Z"}
+{"step":4,"status":"running","remark":"Step 3","v":1,"ts":"2026-11-14T14:28:13.493Z"}
+{"step":4,"status":"done","remark":"wait: queued plan (6 steps): type \"Name\"; click \"Add person\"; type \"Name\"; click \"Add ","v":1,"ts":"2026-11-14T14:28:21.159Z"}
+{"step":5,"status":"running","remark":"Step 4","v":1,"ts":"2026-11-14T14:28:21.907Z"}
+{"step":5,"status":"done","remark":"type: Type \"Ana\" into \"Name\"","v":1,"ts":"2026-11-14T14:28:22.349Z"}
+{"step":6,"status":"running","remark":"Step 5","v":1,"ts":"2026-11-14T14:28:22.981Z"}
+{"step":6,"status":"done","remark":"click: Click \"Add person\"","v":1,"ts":"2026-11-14T14:28:23.686Z"}
+{"step":7,"status":"running","remark":"Step 6","v":1,"ts":"2026-11-14T14:28:24.312Z"}
+{"step":7,"status":"done","remark":"","v":1,"ts":"2026-11-14T14:28:24.609Z"}
+{"step":8,"status":"running","remark":"Step 7","v":1,"ts":"2026-11-14T14:28:25.232Z"}
+{"step":8,"status":"done","remark":"wait: queued plan (2 steps): type \"Name\"; click \"Add person\"","v":1,"ts":"2026-11-14T14:28:31.262Z"}
+{"step":9,"status":"running","remark":"Step 8","v":1,"ts":"2026-11-14T14:28:31.962Z"}
+{"step":9,"status":"done","remark":"type: Type \"Ben\" into \"Name\"","v":1,"ts":"2026-11-14T14:28:32.296Z"}
+{"step":10,"status":"running","remark":"Step 9","v":1,"ts":"2026-11-14T14:28:32.941Z"}
+{"step":10,"status":"done","remark":"click: Click \"Add person\"","v":1,"ts":"2026-11-14T14:28:33.657Z"}
+{"step":11,"status":"running","remark":"Step 10","v":1,"ts":"2026-11-14T14:28:34.274Z"}
+{"step":11,"status":"done","remark":"wait: queued plan (2 steps): type \"Name\"; click \"Add person\"","v":1,"ts":"2026-11-14T14:28:39.735Z"}
+{"step":12,"status":"running","remark":"Step 11","v":1,"ts":"2026-11-14T14:28:40.359Z"}
+{"step":12,"status":"done","remark":"type: Type \"Cy\" into \"Name\"","v":1,"ts":"2026-11-14T14:28:40.584Z"}
+{"step":13,"status":"running","remark":"Step 12","v":1,"ts":"2026-11-14T14:28:41.207Z"}
+{"step":13,"status":"done","remark":"click: Click \"Add person\"","v":1,"ts":"2026-11-14T14:28:41.900Z"}
+{"step":14,"status":"running","remark":"Step 13","v":1,"ts":"2026-11-14T14:28:42.531Z"}
+{"step":14,"status":"done","remark":"type: Entering Groceries in the Bill name field","v":1,"ts":"2026-11-14T14:28:50.086Z"}
+{"step":15,"status":"running","remark":"Step 14","v":1,"ts":"2026-11-14T14:28:50.710Z"}
+{"step":15,"status":"done","remark":"wait: queued plan (4 steps): type \"Amount\"; click \"Ana\"; click \"Ben\"; click \"Cy\"","v":1,"ts":"2026-11-14T14:28:57.737Z"}
+{"step":16,"status":"running","remark":"Step 15","v":1,"ts":"2026-11-14T14:28:58.400Z"}
+{"step":16,"status":"done","remark":"type: Type \"1,000.01\" into \"Amount\"","v":1,"ts":"2026-11-14T14:28:58.646Z"}
+{"step":17,"status":"running","remark":"Step 16","v":1,"ts":"2026-11-14T14:28:59.297Z"}
+{"step":17,"status":"done","remark":"click: Click \"Ana\"","v":1,"ts":"2026-11-14T14:29:00.052Z"}
+{"step":18,"status":"running","remark":"Step 17","v":1,"ts":"2026-11-14T14:29:00.679Z"}
+{"step":18,"status":"done","remark":"click: Click \"Ben\"","v":1,"ts":"2026-11-14T14:29:01.375Z"}
+{"step":19,"status":"running","remark":"Step 18","v":1,"ts":"2026-11-14T14:29:01.999Z"}
+{"step":19,"status":"done","remark":"click: Click \"Cy\"","v":1,"ts":"2026-11-14T14:29:02.778Z"}
+{"step":20,"status":"running","remark":"Step 19","v":1,"ts":"2026-11-14T14:29:03.490Z"}
+{"step":20,"status":"done","remark":"select: Selecting the percentage split and choosing 50 for Ana","v":1,"ts":"2026-11-14T14:29:12.298Z"}
+{"step":21,"status":"running","remark":"Step 20","v":1,"ts":"2026-11-14T14:29:13.767Z"}
+{"step":21,"status":"done","remark":"wait: queued plan (3 steps): type \"Ana percent\"; type \"Ben percent\"; type \"Cy percent\"","v":1,"ts":"2026-11-14T14:29:23.130Z"}
+{"step":22,"status":"running","remark":"Step 21","v":1,"ts":"2026-11-14T14:29:24.791Z"}
+{"step":22,"status":"done","remark":"type: Type \"50\" into \"Ana percent\"","v":1,"ts":"2026-11-14T14:29:26.364Z"}
+{"step":23,"status":"running","remark":"Step 22","v":1,"ts":"2026-11-14T14:29:27.597Z"}
+{"step":23,"status":"done","remark":"type: Type \"30\" into \"Ben percent\"","v":1,"ts":"2026-11-14T14:29:29.292Z"}
+{"step":24,"status":"running","remark":"Step 23","v":1,"ts":"2026-11-14T14:29:30.465Z"}
+{"step":24,"status":"done","remark":"type: Type \"20\" into \"Cy percent\"","v":1,"ts":"2026-11-14T14:29:32.295Z"}
+{"step":25,"status":"running","remark":"Step 24","v":1,"ts":"2026-11-14T14:29:34.505Z"}
+{"step":25,"status":"done","remark":"click: Clicking Add bill to save the bill and view each person's share","v":1,"ts":"2026-11-14T14:29:42.207Z"}
+{"step":26,"status":"running","remark":"Step 25","v":1,"ts":"2026-11-14T14:29:43.787Z"}
+{"step":26,"status":"done","remark":"wait: PRIMARY: look at each person's share of the bill","v":1,"ts":"2026-11-14T14:29:51.282Z"}
+{"step":27,"status":"running","remark":"Step 26","v":1,"ts":"2026-11-14T14:29:52.697Z"}
+{"type":"coverage","status":"skipped","reason":"not_assurance_project","pack":"/home/hatch/.testmuai/kaneai/sessions/ac99be02-1b21-4cf5-8add-3504bc908432/evidence/b5775b4c-f1d3-454a-be46-9f4518c679f2.evidence","v":1,"ts":"2026-11-14T14:30:33.187Z"}
+{"type":"run_end","status":"failed","summary":"The agent used its final allowed step to wait after saving the bill. It did not use the remaining required actions to check and store the three shares before the step limit ended the run.\nReduce unnecessary actions and, immediately after saving, read and store the visible shares as: 500.01,300.00,200.00.","one_liner":"The bill was saved and the requested shares were visible, but the run stopped before it recorded the result.","final_state":{},"reason":"Maximum steps exceeded (26/25)","duration":140.1,"bifurcated":false,"total_runs":1,"context":{"memory":{},"variables":{"percentage_split_shares":{"syntax":"{{percentage_split_shares}}","value":"","type":"text","secret":false,"source":"runtime"}},"pointer":"(failed) The bill was saved and the requested shares were visible, but the run stopped before it recorded the result."},"credits_consumed":32.870732499999995,"session_dir":"/home/hatch/.testmuai/kaneai/sessions/ac99be02-1b21-4cf5-8add-3504bc908432","run_dir":"/home/hatch/.testmuai/kaneai/sessions/ac99be02-1b21-4cf5-8add-3504bc908432/runs/0","result_code":310,"reason_code":"stuck.max_steps","per_flow_metadata":[{"result_code":"310","reason_code":"stuck.max_steps","error_message":"Maximum steps exceeded (26/25)","summary":"The agent used its final allowed step to wait after saving the bill. It did not use the remaining required actions to check and store the three shares before the step limit ended the run.\nReduce unnecessary actions and, immediately after saving, read and store the visible shares as: 500.01,300.00,200.00.","one_liner":"The bill was saved and the requested shares were visible, but the run stopped before it recorded the result.","credits_consumed":32.870732499999995}],"run_id":"run-0","verdict":{"confirmed":false,"status":"broken","family":"automation_bug","category":"agent_misstep","category_proposal":"","severity":"minor","root_cause":"The agent used its final allowed step to wait after saving the bill. It did not use the remaining required actions to check and store the three shares before the step limit ended the run.","agent_fault_assessment":"The agent caused the failed run by exhausting the 25-step budget before completing the required assertions and storing percentage_split_shares. Its own final screen showed the successfully saved Groceries bill with Ana 500.01, Ben 300.00, and Cy 200.00, so there is no evidence that the product failed.","bug_title":"Step budget exhausted before recording verified shares","signals":[],"confidence":0.99,"suggestion":"Reduce unnecessary actions and, immediately after saving, read and store the visible shares as: 500.01,300.00,200.00.","one_liner":"The bill was saved and the requested shares were visible, but the run stopped before it recorded the result.","relevant_steps":[19,21,23,24,25],"culprit_step":"0-25","credits_consumed":4.41465,"mode":"terminal"},"test_url":"https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7D793PRBGF5SYTEP8Q36D3N/dashboard/share/US_QM6PD8U8MFTUMA2PI9G9S8OLSZ9V95QVP5273X3CEWRR6D61N5XCMNI0BIAEO1D5?type=summary&agentView=true&fqdn=summary-page","coverage":{"status":"skipped"},"v":1,"ts":"2026-11-14T14:30:33.191Z"}

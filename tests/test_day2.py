@@ -56,6 +56,21 @@ def test_check_expect_normalizes():
     assert objective.check_expect({"expect": {"t": "5"}}, {})
 
 
+def test_check_expect_list_spacing():
+    ok = lambda e, o: objective.check_expect({"expect": {"t": e}}, {"t": o}) == []
+    assert ok("333.34, 333.33, 333.33", "333.34,333.33,333.33")
+    assert ok("500.01, 300.00 and 200.00", "500.01,300.00,200.00")
+    assert not ok("333.34, 333.33", "333.34,333.43")
+    assert not ok("1,000.00", "1000.00")
+
+
+def test_check_expect_number_words():
+    ok = lambda e, o: objective.check_expect({"expect": {"t": e}}, {"t": o}) == []
+    assert ok("two", "2")
+    assert not ok("two", "3")
+    assert not ok("one hundred", "100")
+
+
 def test_extract_lock_skips_llm_when_hash_same(tmp_path):
     rd = tmp_path / "R.md"; rd.write_text(README)
     calls = []

@@ -1,0 +1,243 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "readme": "demo-app/README.md",
+  "readme_sha256": "a55fcd51264b6964de4ff66f79bcb7b4720f90736f4a87e9ddc4f63ea0767b44",
+  "extracted_now": true,
+  "exit_code": 1,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 29.612,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "STALE_DOC",
+      "readme_line": 18,
+      "readme_quote": "1,000.00 split between Ana, Ben and\nCy gives 333.34, 333.33 and 333.33.",
+      "expect": {
+        "equal_split_shares": "333.34, 333.33 and 333.33"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "equal_split_shares": "333.34, 333.33, 333.33",
+        "Ana share": "333.34",
+        "Ben share": "333.33",
+        "Cy share": "333.33"
+      },
+      "one_liner": "split a 1,000.00 bill equally among Ana, Ben, and Cy on Hati",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:4173/. Open Hati with no people and no bills (clear browser data for the site if anything is shown). Add the people Ana, Ben and Cy. Add a bill with an amount of 1,000.00 shared equally between Ana, Ben and Cy. Look at how the bill is divided between Ana, Ben and Cy. Assert Ana's share is 333.34. Assert Ben's share is 333.33. Assert Cy's share is 333.33. Store the three shares shown for Ana, Ben and Cy, in that order as 'equal_split_shares'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open Hati with no people and no bills (clear browser data for the site if anything is shown). Add the people Ana, Ben and Cy. Add a bill with an amount of 1,000.00 shared equally between Ana, Ben and Cy. Look at how the bill is divided between Ana, Ben and Cy. Assert Ana's share is 333.34. Assert Ben's share is 333.33. Assert Cy's share is 333.33. Store the three shares shown for Ana, Ben and Cy, in that order as 'equal_split_shares'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 29.612499999999997,
+          "duration": 104.7,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C06E6SM87JQBNYJ4HYBTTM/dashboard/share/US_MQ4ZRJU8M24QBV4QF61OTG0HPNBLKU9ZATB7TBYQA7TBF6XO33CO6MOM4D15D3VB?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified stale_doc: Kane completed the flow and the app showed Ana 333.34, Ben 333.33, Cy 333.33, matching every share in the README; only the stored string format differs ('333.34, 333.33, 333.33' versus '333.34, 333.33 and 333.33'). | mismatch [\"equal_split_shares: expected '333.34, 333.33 and 333.33', observed '333.34, 333.33, 333.33'\"]"
+        }
+      ],
+      "credits": 29.612,
+      "summary": "Started Hati with no existing people or bills.\nAdded Ana, Ben, and Cy.\nAdded a 1,000.00 bill and split it equally among the three people.\nViewed the bill division: Ana owes 333.34, Ben owes 333.33, and Cy owes 333.33.",
+      "cli_version": "0.10.4",
+      "duration": 104.7,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C06E6SM87JQBNYJ4HYBTTM/dashboard/share/US_MQ4ZRJU8M24QBV4QF61OTG0HPNBLKU9ZATB7TBYQA7TBF6XO33CO6MOM4D15D3VB?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/d8b762ab-9ac3-43d4-8fc2-b088a35292c2",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/d8b762ab-9ac3-43d4-8fc2-b088a35292c2/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] type: Typing Ana into the Name field in the People form",
+        "[4 running] Step 3",
+        "[4 done] click: Clicking Add person in the People form",
+        "[5 running] Step 4",
+        "[5 done] wait: queued plan (4 steps): type \"Name\"; click \"Add person\"; type \"Name\"; click \"Add ",
+        "[6 running] Step 5",
+        "[6 done] type: Type \"Ben\" into \"Name\"",
+        "[7 running] Step 6",
+        "[7 done] click: Click \"Add person\"",
+        "[8 running] Step 7",
+        "[8 done] type: Type \"Cy\" into \"Name\"",
+        "[9 running] Step 8",
+        "[9 done] click: Click \"Add person\"",
+        "[10 running] Step 9",
+        "[10 done] type: Typing bill name into Add bill form",
+        "[11 running] Step 10",
+        "[11 done] wait: queued plan (5 steps): type \"Amount\"; click \"Ana\"; click \"Ben\"; click \"Cy\"; clic",
+        "[12 running] Step 11",
+        "[12 done] type: Type \"1,000.00\" into \"Amount\"",
+        "[13 running] Step 12",
+        "[13 done] click: Click \"Ana\"",
+        "[14 running] Step 13",
+        "[14 done] click: Click \"Ben\"",
+        "[15 running] Step 14",
+        "[15 done] click: Click \"Cy\"",
+        "[16 running] Step 15",
+        "[16 done] click: Click \"Add bill\"",
+        "[17 running] Step 16",
+        "[17 done] wait: PRIMARY: confirm the added bill is displayed with its equal division",
+        "[18 running] Step 17",
+        "[18 done] wait: PRIMARY: Look at how the bill is divided between Ana, Ben and Cy; role=text; tex",
+        "[19 running] Step 18",
+        "[19 done] analyze: ANALYZE(textual_visual, 'The three shares shown for Ana, Ben and Cy, in that ord",
+        "[20 running] Step 19",
+        "[20 done] assert: Ana's share is 333.34.",
+        "[21 running] Step 20",
+        "[21 done] assert: Ben's share is 333.33.",
+        "[22 running] Step 21",
+        "[22 done] assert: Cy's share is 333.33."
+      ],
+      "mismatch": [
+        "equal_split_shares: expected '333.34, 333.33 and 333.33', observed '333.34, 333.33, 333.33'"
+      ],
+      "classification": {
+        "label": "stale_doc",
+        "evidence": "",
+        "reason": "Kane completed the flow and the app showed Ana 333.34, Ben 333.33, Cy 333.33, matching every share in the README; only the stored string format differs ('333.34, 333.33, 333.33' versus '333.34, 333.33 and 333.33')."
+      },
+      "fix_hint": "the feature works, the README line is out of date: edit that README line to describe the app as it is, do not change the code (Compare the three shares as separate values, or write the expected string as '333.34, 333.33, 333.33' to match how the app lists them.)",
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.png",
+          "step": 2,
+          "annotated": true
+        },
+        {
+          "file": "03-step3.png",
+          "step": 3,
+          "annotated": true
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.png",
+          "step": 6,
+          "annotated": true
+        },
+        {
+          "file": "07-step7.png",
+          "step": 7,
+          "annotated": true
+        },
+        {
+          "file": "08-step8.png",
+          "step": 8,
+          "annotated": true
+        },
+        {
+          "file": "09-step9.png",
+          "step": 9,
+          "annotated": true
+        },
+        {
+          "file": "10-step10.jpg",
+          "step": 10,
+          "annotated": false
+        },
+        {
+          "file": "11-step11.png",
+          "step": 11,
+          "annotated": true
+        },
+        {
+          "file": "12-step12.png",
+          "step": 12,
+          "annotated": true
+        },
+        {
+          "file": "13-step13.png",
+          "step": 13,
+          "annotated": true
+        },
+        {
+          "file": "14-step14.png",
+          "step": 14,
+          "annotated": true
+        },
+        {
+          "file": "15-step15.png",
+          "step": 15,
+          "annotated": true
+        },
+        {
+          "file": "16-step16.jpg",
+          "step": 16,
+          "annotated": false
+        },
+        {
+          "file": "17-step17.jpg",
+          "step": 17,
+          "annotated": false
+        },
+        {
+          "file": "18-step18.jpg",
+          "step": 18,
+          "annotated": false
+        },
+        {
+          "file": "19-step19.jpg",
+          "step": 19,
+          "annotated": false
+        },
+        {
+          "file": "20-step20.jpg",
+          "step": 20,
+          "annotated": false
+        },
+        {
+          "file": "21-step21.jpg",
+          "step": 21,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/d8b762ab-9ac3-43d4-8fc2-b088a35292c2/evidence/54a2c80b-f34e-44ca-b9e2-dc5cb232340a.evidence"
+    },
+    {
+      "id": "nv2",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 44,
+      "readme_quote": "Loads instantly.",
+      "reason": "Speed claim, vague and not a pass/fail observable in a browser test; explicitly not promised."
+    },
+    {
+      "id": "nv3",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 46,
+      "readme_quote": "Your data never leaves your browser.",
+      "reason": "Privacy claim; would need network traffic inspection, not visible in the page."
+    },
+    {
+      "id": "nv4",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 48,
+      "readme_quote": "Works offline after the first load.",
+      "reason": "Requires disconnecting the network; not testable by a browser agent, and explicitly not promised."
+    },
+    {
+      "id": "nv5",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 50,
+      "readme_quote": "Run it with npm install and npm run dev.",
+      "reason": "Shell install commands, not observable in a browser."
+    }
+  ],
+  "run_at": "2026-11-14 11:06:39 PST",
+  "commit": "3f4be2f"
+}

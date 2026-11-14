@@ -92,8 +92,24 @@ def _literals(claim: dict) -> list[str]:
     return [norm(v) for v in (claim.get("expect") or {}).values() if norm(v) in old_text]
 
 
+def _list_form(s: Any) -> str:
+    """Comparison form: list separators (commas, 'and') ignore the spacing around them."""
+    return re.sub(r"\s*,\s*(?:and\s+)?|\s+and\s+", ",", norm(s))
+
+
+_NUMBER_WORDS = {w: str(i) for i, w in enumerate(
+    "zero one two three four five six seven eight nine ten eleven twelve".split())}
+
+
+def _words_to_digits(s: str) -> str:
+    return re.sub(r"\b(" + "|".join(_NUMBER_WORDS) + r")\b", lambda m: _NUMBER_WORDS[m.group(1).lower()], s, flags=re.I)
+
+
 def values_match(expected: Any, observed: Any) -> bool:
-    return norm(expected) == norm(observed)
+    if norm(expected) == norm(observed):
+        return True
+    e, o = _words_to_digits(norm(expected)), _words_to_digits(norm(observed))
+    return e == o or _list_form(e) == _list_form(o)
 
 
 def check_expect(claim: dict, final_state: dict) -> list[str]:

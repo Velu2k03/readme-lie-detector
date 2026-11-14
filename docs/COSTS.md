@@ -48,3 +48,10 @@ Fixtures: `tests/fixtures/*.ndjson` (scrubbed copies of these three runs).
 ## Day 2 gate run (Sun 15 Nov 2026 session, 2 claims)
 
 `rld check` on tests/gate (heading claim true, Reset claim false): 40.2 credits by run_end, 44.8 by balance drop (1022.5 to 977.7), about 3 min wall. Verdicts: c02 VERIFIED (14.8 credits), c01 FALSE_CLAIM (25.5). Extraction and classification ran through `claude -p` (Pro plan, no API spend). Chrome reaches 127.0.0.1 directly (loopback bypasses the proxy), so local pages work.
+
+## Run ledger (written by rld)
+
+- 2026-11-14 13:18 gate: 3 Kane runs, 96.0 credits by run_end, balance 9747.72 -> 9644.27 (drop 103.45)
+- 2026-11-14 13:34 gate: 3 Kane runs, 89.0 credits by run_end, balance 9559.83 -> 9447.69 (drop 112.13); run cap hit
+- 2026-11-14 13:42 gate: 3 Kane runs, 104.0 credits by run_end, balance 9447.69 -> 9334.96 (drop 112.74); run cap hit
+- 2026-11-14 13:45 gate: 1 Kane runs, 38.7 credits by run_end, balance 9334.96 -> 9284.42 (drop 50.54)

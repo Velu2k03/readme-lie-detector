@@ -1,1 +1,209 @@
-{}
+{
+  "readme_sha256": "e47e5204e5a9337146f7bc7247168f8b73017b8d559cee3830a8013998144570",
+  "readme_path": "demo-app/README.md",
+  "claims": [
+    {
+      "id": "c01",
+      "readme_line": 18,
+      "readme_quote": "1,000.00 split between Ana, Ben and\nCy gives 333.34, 333.33, 333.33.",
+      "rank": 1,
+      "setup": [
+        "Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist)",
+        "Add the people Ana, Ben and Cy",
+        "Click Add bill and enter the name Rent",
+        "Enter the amount 1,000.00 and choose all three people, Ana, Ben and Cy, with an equal split"
+      ],
+      "action": "Save the bill and look at each person's share of the bill",
+      "assertions": [
+        "Ana's share shows 333.34",
+        "Ben's share shows 333.33",
+        "Cy's share shows 333.33"
+      ],
+      "store_name": "equal_split_shares",
+      "store_what": "The shares shown for Ana, Ben and Cy, in that order, as one comma-separated line",
+      "expect": {
+        "equal_split_shares": "333.34, 333.33, 333.33"
+      }
+    },
+    {
+      "id": "c02",
+      "readme_line": 21,
+      "readme_quote": "1,000.01 at 50, 30 and 20 percent\ngives 500.01, 300.00 and 200.00.",
+      "rank": 2,
+      "setup": [
+        "Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist)",
+        "Add the people Ana, Ben and Cy",
+        "Click Add bill and enter the name Groceries",
+        "Enter the amount 1,000.01 and choose all three people, Ana, Ben and Cy",
+        "Choose the percentage split and enter 50 for Ana, 30 for Ben and 20 for Cy"
+      ],
+      "action": "Save the bill and look at each person's share of the bill",
+      "assertions": [
+        "Ana's share shows 500.01",
+        "Ben's share shows 300.00",
+        "Cy's share shows 200.00"
+      ],
+      "store_name": "percentage_split_shares",
+      "store_what": "The shares shown for Ana, Ben and Cy, in that order, as one comma-separated line",
+      "expect": {
+        "percentage_split_shares": "500.01, 300.00 and 200.00"
+      }
+    },
+    {
+      "id": "c03",
+      "readme_line": 27,
+      "readme_quote": "If Ana pays Rent 900.00 and Ben pays\nElectricity 300.00, both shared equally between Ana, Ben and\nCy, Settle up\nshows exactly two payments.",
+      "rank": 3,
+      "setup": [
+        "Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist)",
+        "Add the people Ana, Ben and Cy",
+        "Add a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy",
+        "Add a bill named Electricity with amount 300.00, paid by Ben, split equally between Ana, Ben and Cy"
+      ],
+      "action": "Open Settle up and count the payments listed",
+      "assertions": [
+        "Settle up lists exactly two payments",
+        "Ben pays Ana 300.00 appears among the payments or Cy is shown as paying"
+      ],
+      "store_name": "payment_count",
+      "store_what": "The number of payments listed in Settle up, as a digit",
+      "expect": {
+        "payment_count": "two"
+      }
+    },
+    {
+      "id": "c04",
+      "readme_line": 34,
+      "readme_quote": "Delete Electricity from the\nexample above and Settle up shows \"Ben pays Ana 300.00\".",
+      "rank": 4,
+      "setup": [
+        "Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist)",
+        "Add the people Ana, Ben and Cy",
+        "Add a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy",
+        "Add a bill named Electricity with amount 300.00, paid by Ben, split equally between Ana, Ben and Cy",
+        "Delete the Electricity bill"
+      ],
+      "action": "Open Settle up and read the payment lines",
+      "assertions": [
+        "Settle up shows \"Ben pays Ana 300.00\"",
+        "The Electricity bill is no longer listed"
+      ],
+      "store_name": "settle_line",
+      "store_what": "The payment line shown for Ben in Settle up",
+      "expect": {
+        "settle_line": "Ben pays Ana 300.00"
+      }
+    },
+    {
+      "id": "c05",
+      "readme_line": 24,
+      "readme_quote": "Percentages must add up\nto 100. Otherwise you see \"Percentages must add up\nto 100\" and the bill is not saved.",
+      "rank": 5,
+      "setup": [
+        "Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist)",
+        "Add the people Ana, Ben and Cy",
+        "Click Add bill and enter the name Internet with amount 500.00, choosing Ana, Ben and Cy",
+        "Choose the percentage split and enter 50 for Ana, 30 for Ben and 30 for Cy"
+      ],
+      "action": "Try to save the bill and read the message shown",
+      "assertions": [
+        "The message \"Percentages must add up to 100\" is shown",
+        "The Internet bill does not appear in the bill list"
+      ],
+      "store_name": "percentage_error",
+      "store_what": "The error message text shown after trying to save the bill",
+      "expect": {
+        "percentage_error": "Percentages must add up to 100"
+      }
+    },
+    {
+      "id": "c06",
+      "readme_line": 31,
+      "readme_quote": "Marking a payment as paid removes it. When every payment is marked paid,\nSettle up says \"All settled\".",
+      "rank": 6,
+      "setup": [
+        "Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist)",
+        "Add the people Ana, Ben and Cy",
+        "Add a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy",
+        "Open Settle up",
+        "Mark each listed payment as paid, one by one"
+      ],
+      "action": "Look at the Settle up page after the last payment is marked paid",
+      "assertions": [
+        "Each payment disappears from the list once marked paid",
+        "Settle up says \"All settled\""
+      ],
+      "store_name": "settled_message",
+      "store_what": "The status message shown in Settle up after all payments are marked paid",
+      "expect": {
+        "settled_message": "All settled"
+      }
+    },
+    {
+      "id": "c07",
+      "readme_line": 39,
+      "readme_quote": "A blank, zero or negative amount shows\n\"Enter an amount greater than 0\" and no bill is added.",
+      "rank": 7,
+      "setup": [
+        "Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist)",
+        "Add the people Ana, Ben and Cy",
+        "Click Add bill and enter the name Water",
+        "Enter the amount 0 and choose Ana, Ben and Cy"
+      ],
+      "action": "Try to save the bill and read the message shown",
+      "assertions": [
+        "The message \"Enter an amount greater than 0\" is shown",
+        "The Water bill does not appear in the bill list"
+      ],
+      "store_name": "amount_error",
+      "store_what": "The error message text shown after trying to save the bill",
+      "expect": {
+        "amount_error": "Enter an amount greater than 0"
+      }
+    },
+    {
+      "id": "c08",
+      "readme_line": 37,
+      "readme_quote": "Your bills are still there after a reload.",
+      "rank": 8,
+      "setup": [
+        "Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist)",
+        "Add the people Ana, Ben and Cy",
+        "Add a bill named Rent with amount 900.00, split equally between Ana, Ben and Cy",
+        "Confirm the Rent bill is listed"
+      ],
+      "action": "Reload the page and look at the bill list",
+      "assertions": [
+        "The Rent bill is still listed after the reload",
+        "The Rent bill still shows 900.00"
+      ],
+      "store_name": "bill_after_reload",
+      "store_what": "The amount shown for the Rent bill after the reload",
+      "expect": {
+        "bill_after_reload": "900.00"
+      }
+    }
+  ],
+  "not_verifiable": [
+    {
+      "readme_line": 44,
+      "quote": "Loads instantly.",
+      "reason": "Speed is not a fixed, observable result a browser check can assert."
+    },
+    {
+      "readme_line": 46,
+      "quote": "Your data never leaves your browser.",
+      "reason": "Privacy and network behavior cannot be confirmed from what is visible on the page."
+    },
+    {
+      "readme_line": 48,
+      "quote": "Works offline after the first load.",
+      "reason": "Requires disconnecting the network, which a browser agent cannot do reliably."
+    },
+    {
+      "readme_line": 50,
+      "quote": "Run it with npm install and npm run dev.",
+      "reason": "Shell install commands are not observable in a browser."
+    }
+  ]
+}

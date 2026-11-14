@@ -1,0 +1,57 @@
+{"type":"stream_start","cli_version":"0.10.4","surface":"run","pid":8524,"v":1,"ts":"2026-11-14T03:46:06.055Z"}
+{"type":"recording_state","enabled":true,"session_id":"14c936c6-0014-4907-8113-e2f1f4c4ec9d","persist":false,"v":1,"ts":"2026-11-14T03:46:06.062Z"}
+{"type":"bifurcation","flows":["Navigate to http://127.0.0.1:4173/ then Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist).\nAdd the people Ana, Ben and Cy.\nClick Add bill and enter the name Internet with amount 500.00, choosing Ana, Ben and Cy.\nChoose the percentage split and enter 50 for Ana, 30 for Ben and 30 for Cy.\nTry to save the bill and read the message shown.\nAssert The message \"Percentages must add up to 100\" is shown.\nAssert The Internet bill does not appear in the bill list.\nStore The error message text shown after trying to save the bill as {{percentage_error}}."],"count":1,"v":1,"ts":"2026-11-14T03:46:26.645Z"}
+{"step":2,"status":"running","remark":"Step 1","v":1,"ts":"2026-11-14T03:46:27.332Z"}
+{"step":2,"status":"done","remark":"navigate: Navigate to http://127.0.0.1:4173/","v":1,"ts":"2026-11-14T03:46:27.335Z"}
+{"step":3,"status":"running","remark":"Step 2","v":1,"ts":"2026-11-14T03:46:34.020Z"}
+{"step":3,"status":"done","remark":"type: Typing Ana into Name field in People form","v":1,"ts":"2026-11-14T03:46:40.907Z"}
+{"step":4,"status":"running","remark":"Step 3","v":1,"ts":"2026-11-14T03:46:41.698Z"}
+{"step":4,"status":"done","remark":"click: Clicking Add person button to add Ana, Ben, and Cy","v":1,"ts":"2026-11-14T03:46:47.780Z"}
+{"step":5,"status":"running","remark":"Step 4","v":1,"ts":"2026-11-14T03:46:48.567Z"}
+{"step":5,"status":"done","remark":"type: Typing Ben into the Name field","v":1,"ts":"2026-11-14T03:46:54.146Z"}
+{"step":6,"status":"running","remark":"Step 5","v":1,"ts":"2026-11-14T03:46:54.764Z"}
+{"step":6,"status":"done","remark":"click: Clicking Add person button","v":1,"ts":"2026-11-14T03:47:00.130Z"}
+{"step":7,"status":"running","remark":"Step 6","v":1,"ts":"2026-11-14T03:47:00.797Z"}
+{"step":7,"status":"done","remark":"click: Clicking Add person button in the People form","v":1,"ts":"2026-11-14T03:47:06.669Z"}
+{"step":8,"status":"running","remark":"Step 7","v":1,"ts":"2026-11-14T03:47:07.322Z"}
+{"step":8,"status":"done","remark":"type: Typing Internet into the Bill name field","v":1,"ts":"2026-11-14T03:47:15.150Z"}
+{"step":9,"status":"running","remark":"Step 8","v":1,"ts":"2026-11-14T03:47:15.891Z"}
+{"step":9,"status":"done","remark":"wait: queued plan (5 steps): type \"Amount\"; click \"Ana\"; click \"Ben\"; click \"Cy\"; sele","v":1,"ts":"2026-11-14T03:47:23.242Z"}
+{"step":10,"status":"running","remark":"Step 9","v":1,"ts":"2026-11-14T03:47:23.935Z"}
+{"step":10,"status":"done","remark":"type: Type \"500.00\" into \"Amount\"","v":1,"ts":"2026-11-14T03:47:24.164Z"}
+{"step":11,"status":"running","remark":"Step 10","v":1,"ts":"2026-11-14T03:47:24.769Z"}
+{"step":11,"status":"done","remark":"click: Click \"Ana\"","v":1,"ts":"2026-11-14T03:47:25.457Z"}
+{"step":12,"status":"running","remark":"Step 11","v":1,"ts":"2026-11-14T03:47:26.063Z"}
+{"step":12,"status":"done","remark":"click: Click \"Ben\"","v":1,"ts":"2026-11-14T03:47:26.755Z"}
+{"step":13,"status":"running","remark":"Step 12","v":1,"ts":"2026-11-14T03:47:27.387Z"}
+{"step":13,"status":"done","remark":"","v":1,"ts":"2026-11-14T03:47:27.686Z"}
+{"step":14,"status":"running","remark":"Step 13","v":1,"ts":"2026-11-14T03:47:28.356Z"}
+{"step":14,"status":"done","remark":"click: Clicking the Cy checkbox","v":1,"ts":"2026-11-14T03:47:36.809Z"}
+{"step":15,"status":"running","remark":"Step 14","v":1,"ts":"2026-11-14T03:47:37.461Z"}
+{"step":15,"status":"done","remark":"click: Clicking Cy checkbox to set bill recipients","v":1,"ts":"2026-11-14T03:47:45.074Z"}
+{"step":16,"status":"running","remark":"Step 15","v":1,"ts":"2026-11-14T03:47:45.715Z"}
+{"step":16,"status":"done","remark":"wait: queued plan (4 steps): type \"Bill name\"; type \"Ana percent\"; type \"Ben percent\";","v":1,"ts":"2026-11-14T03:47:52.096Z"}
+{"step":17,"status":"running","remark":"Step 16","v":1,"ts":"2026-11-14T03:47:52.765Z"}
+{"step":17,"status":"done","remark":"type: Type \"Internet\" into \"Bill name\"","v":1,"ts":"2026-11-14T03:47:53.008Z"}
+{"step":18,"status":"running","remark":"Step 17","v":1,"ts":"2026-11-14T03:47:53.630Z"}
+{"step":18,"status":"done","remark":"type: Type \"50\" into \"Ana percent\"","v":1,"ts":"2026-11-14T03:47:53.861Z"}
+{"step":19,"status":"running","remark":"Step 18","v":1,"ts":"2026-11-14T03:47:54.485Z"}
+{"step":19,"status":"done","remark":"type: Type \"30\" into \"Ben percent\"","v":1,"ts":"2026-11-14T03:47:54.718Z"}
+{"step":20,"status":"running","remark":"Step 19","v":1,"ts":"2026-11-14T03:47:55.506Z"}
+{"step":20,"status":"done","remark":"type: Type \"30\" into \"Cy percent\"","v":1,"ts":"2026-11-14T03:47:55.786Z"}
+{"step":21,"status":"running","remark":"Step 20","v":1,"ts":"2026-11-14T03:47:56.559Z"}
+{"step":21,"status":"done","remark":"type: Entering bill amount 500.00","v":1,"ts":"2026-11-14T03:48:04.783Z"}
+{"step":22,"status":"running","remark":"Step 21","v":1,"ts":"2026-11-14T03:48:05.434Z"}
+{"step":22,"status":"done","remark":"type: Entering 30 into Cy percentage field","v":1,"ts":"2026-11-14T03:48:12.381Z"}
+{"step":23,"status":"running","remark":"Step 22","v":1,"ts":"2026-11-14T03:48:13.032Z"}
+{"step":23,"status":"done","remark":"click: Clicking Add bill","v":1,"ts":"2026-11-14T03:48:20.402Z"}
+{"step":24,"status":"running","remark":"Step 23","v":1,"ts":"2026-11-14T03:48:21.038Z"}
+{"step":24,"status":"done","remark":"wait: PRIMARY: read the message shown after trying to save the bill","v":1,"ts":"2026-11-14T03:48:27.716Z"}
+{"step":25,"status":"running","remark":"Step 24","v":1,"ts":"2026-11-14T03:48:28.411Z"}
+{"step":25,"status":"done","remark":"analyze: ANALYZE(visual, 'The error message text shown after trying to save the bill is s","v":1,"ts":"2026-11-14T03:48:38.822Z"}
+{"step":26,"status":"running","remark":"Step 25","v":1,"ts":"2026-11-14T03:48:39.487Z"}
+{"step":26,"status":"done","remark":"assert: The message \"Percentages must add up to 100\" is shown.","v":1,"ts":"2026-11-14T03:48:39.499Z"}
+{"step":27,"status":"running","remark":"Step 26","v":1,"ts":"2026-11-14T03:48:40.143Z"}
+{"step":27,"status":"done","remark":"assert: The Internet bill does not appear in the bill list.","v":1,"ts":"2026-11-14T03:48:40.153Z"}
+{"type":"coverage","status":"skipped","reason":"not_assurance_project","pack":"/home/hatch/.testmuai/kaneai/sessions/14c936c6-0014-4907-8113-e2f1f4c4ec9d/evidence/1a394b8f-5b5d-4b2e-8242-a3bb1b2af486.evidence","v":1,"ts":"2026-11-14T03:48:59.342Z"}
+{"type":"run_end","status":"passed","summary":"Opened Hati with a cleared starting state.\nAdded Ana, Ben, and Cy as people.\nCreated an Internet bill for 500.00 and selected all three people.\nChose a percentage split and entered 50% for Ana, 30% for Ben, and 30% for Cy.\nTried to save the bill; Hati showed “Percentages must add up to 100,” and the Internet bill was not added to the bill list.","one_liner":"tested an invalid percentage split for an Internet bill on Hati","final_state":{"url":"http://127.0.0.1:4173/","percentage_error":"Percentages must add up to 100","internet_bill_in_bill_list":"false"},"reason":"Objective completed","duration":144,"bifurcated":false,"total_runs":1,"context":{"memory":{"percentage_error_message_shown":{"extracted_value":"true","operator":"equals","transforms":[],"json_path":null,"reasoning":"value: 'true' -> 'true'; equals 'true' -> PASS","analyzer_type":"visual","step":24,"query":"whether The message \"Percentages must add up to 100\" is present (below the Add bill button)","condition":"The message \"Percentages must add up to 100\" is shown.","human_description":"Checking whether the percentage error message is present","expected_value":"true","subject":"The message \"Percentages must add up to 100\"","must_be":"present"},"internet_bill_in_bill_list":{"extracted_value":"false","operator":"equals","transforms":[],"json_path":null,"reasoning":"value: 'false' -> 'false'; equals 'false' -> PASS","analyzer_type":"visual","step":24,"query":"whether The Internet bill in the bill list is present (in the Bills panel)","condition":"The Internet bill does not appear in the bill list.","human_description":"Checking whether the Internet bill is present in the bill list","expected_value":"false","subject":"The Internet bill in the bill list","must_be":"absent"},"percentage_error":{"extracted_value":"Percentages must add up to 100","operator":"equals","transforms":["strip"],"json_path":null,"reasoning":"value: 'Percentages must add up to 100' (stored, no comparison)","analyzer_type":"visual","step":24,"query":"The error message text shown after trying to save the bill is stored as {{percentage_error}}.","condition":"The error message text shown after trying to save the bill is stored as {{percentage_error}}.","human_description":"Reading the bill save error message","expected_value":""}},"variables":{"percentage_error":{"syntax":"{{percentage_error}}","value":"Percentages must add up to 100","type":"memory","secret":false,"source":"runtime"},"percentage_error_message_shown":{"syntax":"{{percentage_error_message_shown}}","value":"true","type":"memory","secret":false},"internet_bill_in_bill_list":{"syntax":"{{internet_bill_in_bill_list}}","value":"false","type":"memory","secret":false}},"pointer":"(passed) tested an invalid percentage split for an Internet bill on Hati"},"credits_consumed":42.81599249999999,"session_dir":"/home/hatch/.testmuai/kaneai/sessions/14c936c6-0014-4907-8113-e2f1f4c4ec9d","run_dir":"/home/hatch/.testmuai/kaneai/sessions/14c936c6-0014-4907-8113-e2f1f4c4ec9d/runs/0","result_code":100,"reason_code":"success.complete","per_flow_metadata":[{"result_code":"100","reason_code":"success.complete","error_message":null,"summary":"Opened Hati with a cleared starting state.\nAdded Ana, Ben, and Cy as people.\nCreated an Internet bill for 500.00 and selected all three people.\nChose a percentage split and entered 50% for Ana, 30% for Ben, and 30% for Cy.\nTried to save the bill; Hati showed “Percentages must add up to 100,” and the Internet bill was not added to the bill list.","one_liner":"tested an invalid percentage split for an Internet bill on Hati","credits_consumed":42.81599249999999}],"run_id":"run-0","test_url":"https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C2K85B89DE9FXYNYZWAVZK/dashboard/share/US_R2NS4Y7TW4DKPZN8FPJ7N9ZQUB6IGUAEN1LO0TEFHA4RV7I6EXWOGSLLUQFB9H67?type=summary&agentView=true&fqdn=summary-page","coverage":{"status":"skipped"},"v":1,"ts":"2026-11-14T03:48:59.342Z"}

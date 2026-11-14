@@ -1,0 +1,10 @@
+Running on: Desktop · Chrome
+evidence: 1 status_disagrees advisory(ies) — step verdicts disagree with their failure records [
+  {
+    code: 'l1.failure.status_disagrees',
+    severity: 'warning',
+    location: 'tests/go-to-http-127-0-0-1-4173-open-hati-with-d0656535/steps/1-0-1/failure.yaml',
+    message: 'failure record status "broken" disagrees with result.yaml step status "passed"'
+  }
+]
+evidence: view locally with `kane-cli evidence serve /home/hatch/.testmuai/kaneai/sessions/612e5d1b-5a4a-49cc-857d-1f9f36612d15/evidence/db287c1d-1b81-412a-945f-979fbe756818.evidence`

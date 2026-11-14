@@ -1,0 +1,6 @@
+
+> hati@0.1.0 build
+> node scripts/build.mjs
+
+built dist/
+no changes, gate skipped: README and app build are unchanged and every claim is already verified

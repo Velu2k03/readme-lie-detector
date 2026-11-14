@@ -1,0 +1,56 @@
+{"type":"stream_start","cli_version":"0.10.4","surface":"run","pid":24403,"v":1,"ts":"2026-11-14T04:51:35.682Z"}
+{"type":"recording_state","enabled":true,"session_id":"b19c2666-eee2-4f0f-9e64-5ae03bebdef5","persist":false,"v":1,"ts":"2026-11-14T04:51:35.714Z"}
+{"type":"bifurcation","flows":["Navigate to http://127.0.0.1:4173/ then Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist).\nAdd the people Ana, Ben and Cy.\nAdd a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy.\nAdd a bill named Electricity with amount 300.00, paid by Ben, split equally between Ana, Ben and Cy.\nOpen Settle up and count the payments listed.\nAssert Settle up lists exactly two payments.\nAssert Ben pays Ana 300.00 appears among the payments or Cy is shown as paying.\nStore The number of payments listed in Settle up, as a digit as 'payment_count'."],"count":1,"v":1,"ts":"2026-11-14T04:51:53.053Z"}
+{"step":2,"status":"running","remark":"Step 1","v":1,"ts":"2026-11-14T04:51:53.928Z"}
+{"step":2,"status":"done","remark":"navigate: Navigate to http://127.0.0.1:4173/","v":1,"ts":"2026-11-14T04:51:53.932Z"}
+{"step":3,"status":"running","remark":"Step 2","v":1,"ts":"2026-11-14T04:52:00.213Z"}
+{"step":3,"status":"done","remark":"wait: queued plan (2 steps): type \"Name\"; click \"Add person\"","v":1,"ts":"2026-11-14T04:52:07.170Z"}
+{"step":4,"status":"running","remark":"Step 3","v":1,"ts":"2026-11-14T04:52:07.831Z"}
+{"step":4,"status":"done","remark":"type: Type \"Ana\" into \"Name\"","v":1,"ts":"2026-11-14T04:52:08.407Z"}
+{"step":5,"status":"running","remark":"Step 4","v":1,"ts":"2026-11-14T04:52:09.054Z"}
+{"step":5,"status":"done","remark":"click: Click \"Add person\"","v":1,"ts":"2026-11-14T04:52:09.766Z"}
+{"step":6,"status":"running","remark":"Step 5","v":1,"ts":"2026-11-14T04:52:10.412Z"}
+{"step":6,"status":"done","remark":"wait: queued plan (2 steps): type \"Name\"; click \"Add person\"","v":1,"ts":"2026-11-14T04:52:16.110Z"}
+{"step":7,"status":"running","remark":"Step 6","v":1,"ts":"2026-11-14T04:52:16.748Z"}
+{"step":7,"status":"done","remark":"type: Type \"Ben\" into \"Name\"","v":1,"ts":"2026-11-14T04:52:17.006Z"}
+{"step":8,"status":"running","remark":"Step 7","v":1,"ts":"2026-11-14T04:52:17.658Z"}
+{"step":8,"status":"done","remark":"click: Click \"Add person\"","v":1,"ts":"2026-11-14T04:52:18.388Z"}
+{"step":9,"status":"running","remark":"Step 8","v":1,"ts":"2026-11-14T04:52:19.012Z"}
+{"step":9,"status":"done","remark":"wait: queued plan (2 steps): type \"Name\"; click \"Add person\"","v":1,"ts":"2026-11-14T04:52:24.355Z"}
+{"step":10,"status":"running","remark":"Step 9","v":1,"ts":"2026-11-14T04:52:25.033Z"}
+{"step":10,"status":"done","remark":"type: Type \"Cy\" into \"Name\"","v":1,"ts":"2026-11-14T04:52:25.295Z"}
+{"step":11,"status":"running","remark":"Step 10","v":1,"ts":"2026-11-14T04:52:25.933Z"}
+{"step":11,"status":"done","remark":"click: Click \"Add person\"","v":1,"ts":"2026-11-14T04:52:26.631Z"}
+{"step":12,"status":"running","remark":"Step 11","v":1,"ts":"2026-11-14T04:52:27.255Z"}
+{"step":12,"status":"done","remark":"wait: queued plan (7 steps): type \"Bill name\"; type \"Amount\"; select \"Paid by\"; select","v":1,"ts":"2026-11-14T04:52:37.888Z"}
+{"step":13,"status":"running","remark":"Step 12","v":1,"ts":"2026-11-14T04:52:38.525Z"}
+{"step":13,"status":"done","remark":"type: Type \"Rent\" into \"Bill name\"","v":1,"ts":"2026-11-14T04:52:38.740Z"}
+{"step":14,"status":"running","remark":"Step 13","v":1,"ts":"2026-11-14T04:52:39.357Z"}
+{"step":14,"status":"done","remark":"type: Type \"900.00\" into \"Amount\"","v":1,"ts":"2026-11-14T04:52:39.576Z"}
+{"step":15,"status":"running","remark":"Step 14","v":1,"ts":"2026-11-14T04:52:40.215Z"}
+{"step":15,"status":"done","remark":"select: Select \"Ana\" in \"Paid by\"","v":1,"ts":"2026-11-14T04:52:40.402Z"}
+{"step":16,"status":"running","remark":"Step 15","v":1,"ts":"2026-11-14T04:52:41.033Z"}
+{"step":16,"status":"done","remark":"select: Select \"Equally\" in \"Split\"","v":1,"ts":"2026-11-14T04:52:41.215Z"}
+{"step":17,"status":"running","remark":"Step 16","v":1,"ts":"2026-11-14T04:52:41.843Z"}
+{"step":17,"status":"done","remark":"","v":1,"ts":"2026-11-14T04:52:42.149Z"}
+{"step":18,"status":"running","remark":"Step 17","v":1,"ts":"2026-11-14T04:52:42.774Z"}
+{"step":18,"status":"done","remark":"click: Clicking Ana checkbox to split the Rent bill evenly","v":1,"ts":"2026-11-14T04:52:50.352Z"}
+{"step":19,"status":"running","remark":"Step 18","v":1,"ts":"2026-11-14T04:52:50.978Z"}
+{"step":19,"status":"done","remark":"click: Clicking Ben checkbox to split the Rent bill equally","v":1,"ts":"2026-11-14T04:52:57.010Z"}
+{"step":20,"status":"running","remark":"Step 19","v":1,"ts":"2026-11-14T04:52:57.643Z"}
+{"step":20,"status":"done","remark":"click: Checking Cy in the people list","v":1,"ts":"2026-11-14T04:53:03.465Z"}
+{"step":21,"status":"running","remark":"Step 20","v":1,"ts":"2026-11-14T04:53:04.096Z"}
+{"step":21,"status":"done","remark":"click: Clicking Add bill to add Rent for 900 and split it equally","v":1,"ts":"2026-11-14T04:53:10.149Z"}
+{"step":22,"status":"running","remark":"Step 21","v":1,"ts":"2026-11-14T04:53:10.784Z"}
+{"step":22,"status":"done","remark":"wait: queued plan (3 steps): type \"Bill name\"; type \"Amount\"; select \"Paid by\"","v":1,"ts":"2026-11-14T04:53:18.511Z"}
+{"step":23,"status":"running","remark":"Step 22","v":1,"ts":"2026-11-14T04:53:19.146Z"}
+{"step":23,"status":"done","remark":"type: Type \"Electricity\" into \"Bill name\"","v":1,"ts":"2026-11-14T04:53:19.387Z"}
+{"step":24,"status":"running","remark":"Step 23","v":1,"ts":"2026-11-14T04:53:20.033Z"}
+{"step":24,"status":"done","remark":"type: Type \"300.00\" into \"Amount\"","v":1,"ts":"2026-11-14T04:53:20.268Z"}
+{"step":25,"status":"running","remark":"Step 24","v":1,"ts":"2026-11-14T04:53:20.919Z"}
+{"step":25,"status":"done","remark":"select: Select \"Ben\" in \"Paid by\"","v":1,"ts":"2026-11-14T04:53:21.118Z"}
+{"step":26,"status":"running","remark":"Step 25","v":1,"ts":"2026-11-14T04:53:21.764Z"}
+{"step":26,"status":"done","remark":"click: Clicking Add bill button for Rent bill entry","v":1,"ts":"2026-11-14T04:53:28.054Z"}
+{"step":27,"status":"running","remark":"Step 26","v":1,"ts":"2026-11-14T04:53:28.691Z"}
+{"type":"coverage","status":"skipped","reason":"not_assurance_project","pack":"/home/hatch/.testmuai/kaneai/sessions/b19c2666-eee2-4f0f-9e64-5ae03bebdef5/evidence/4c3f80fb-86c5-4852-a773-56f717798751.evidence","v":1,"ts":"2026-11-14T04:54:05.531Z"}
+{"type":"run_end","status":"failed","summary":"The allowed number of steps was too small for the required setup and follow-up checks. At the last recorded step, the agent was still submitting the Electricity bill, so the required settlement work had not yet started.\nIncrease the maximum-step allowance, or use a shorter setup sequence, so the run can submit Electricity, open Settle up, perform both assertions, and save payment_count.","one_liner":"The run ran out of its 25-step allowance while entering the second bill, before it could open Settle up, count payments, verify the result, or save payment_count.","final_state":{},"reason":"Maximum steps exceeded (26/25)","duration":122.8,"bifurcated":false,"total_runs":1,"context":{"memory":{},"variables":{"payment_count":{"syntax":"{{payment_count}}","value":"","type":"text","secret":false,"source":"runtime"}},"pointer":"(failed) The run ran out of its 25-step allowance while entering the second bill, before it could open Settle up, count payments, verify the result, or save payment_count."},"credits_consumed":35.394540000000006,"session_dir":"/home/hatch/.testmuai/kaneai/sessions/b19c2666-eee2-4f0f-9e64-5ae03bebdef5","run_dir":"/home/hatch/.testmuai/kaneai/sessions/b19c2666-eee2-4f0f-9e64-5ae03bebdef5/runs/0","result_code":310,"reason_code":"stuck.max_steps","per_flow_metadata":[{"result_code":"310","reason_code":"stuck.max_steps","error_message":"Maximum steps exceeded (26/25)","summary":"The allowed number of steps was too small for the required setup and follow-up checks. At the last recorded step, the agent was still submitting the Electricity bill, so the required settlement work had not yet started.\nIncrease the maximum-step allowance, or use a shorter setup sequence, so the run can submit Electricity, open Settle up, perform both assertions, and save payment_count.","one_liner":"The run ran out of its 25-step allowance while entering the second bill, before it could open Settle up, count payments, verify the result, or save payment_count.","credits_consumed":35.394540000000006}],"run_id":"run-0","verdict":{"confirmed":false,"status":"broken","family":"automation_bug","category":"config_issue","category_proposal":"","severity":"major","root_cause":"The allowed number of steps was too small for the required setup and follow-up checks. At the last recorded step, the agent was still submitting the Electricity bill, so the required settlement work had not yet started.","agent_fault_assessment":"The agent's recorded actions show normal progress through the requested setup: Rent was added, then Electricity was filled in with Ben selected as payer and all three people selected. The final action description incorrectly calls the second-bill submission a Rent entry, but the visible form contains Electricity for 300.00 paid by Ben. There is no evidence that the application prevented progress or behaved incorrectly. The failure was caused by the run limit expiring before the remaining objective steps could be performed, rather than by a product defect.","bug_title":"Step budget exhausted before settlement checks","signals":[],"confidence":0.93,"suggestion":"Increase the maximum-step allowance, or use a shorter setup sequence, so the run can submit Electricity, open Settle up, perform both assertions, and save payment_count.","one_liner":"The run ran out of its 25-step allowance while entering the second bill, before it could open Settle up, count payments, verify the result, or save payment_count.","relevant_steps":[15,17,20,24,25],"culprit_step":"step 0-25","credits_consumed":5.089999999999999,"mode":"terminal"},"test_url":"https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C6B57QH7NC0TDP4EPW8TWK/dashboard/share/US_PJJ1NFOZOIQ23TS9E69QQQK8GEV7KWIODVT99I5QAO0THT5M0PWMIRLJ5PSGPCJE?type=summary&agentView=true&fqdn=summary-page","coverage":{"status":"skipped"},"v":1,"ts":"2026-11-14T04:54:05.532Z"}

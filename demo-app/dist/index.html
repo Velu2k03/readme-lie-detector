@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hati</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Hati</h1>
+  <p class="sub">Bill splitter for people who share a home.</p>
+
+  <section id="people-section">
+    <h2>People</h2>
+    <form id="person-form">
+      <label>Name <input id="person-name" autocomplete="off"></label>
+      <button type="submit">Add person</button>
+    </form>
+    <p id="person-error" class="error" role="alert"></p>
+    <ul id="people"></ul>
+  </section>
+
+  <section id="bill-section">
+    <h2>Add bill</h2>
+    <form id="bill-form">
+      <label>Bill name <input id="bill-name" autocomplete="off"></label>
+      <label>Amount <input id="bill-amount" inputmode="decimal" autocomplete="off"></label>
+      <label>Paid by <select id="bill-payer"></select></label>
+      <label>Split <select id="bill-mode">
+        <option value="equal">Equally</option>
+        <option value="percent">By percentage</option>
+      </select></label>
+      <fieldset id="bill-people"><legend>Split between</legend></fieldset>
+      <button type="submit">Add bill</button>
+    </form>
+    <p id="bill-error" class="error" role="alert"></p>
+  </section>
+
+  <section id="bills-section">
+    <h2>Bills</h2>
+    <ul id="bills"></ul>
+  </section>
+
+  <section id="settle-section">
+    <h2>Settle up</h2>
+    <div id="settle"></div>
+  </section>
+</main>
+<script type="module" src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{"type":"stream_start","cli_version":"0.10.4","surface":"run","pid":5769,"v":1,"ts":"2026-11-14T05:37:41.697Z"}
+{"type":"recording_state","enabled":true,"session_id":"3d973a06-d813-4281-ada4-7b7189b2345e","persist":false,"v":1,"ts":"2026-11-14T05:37:41.796Z"}
+{"type":"bifurcation","flows":["Navigate to http://127.0.0.1:4173/ then Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist).\nAdd the people Ana, Ben and Cy.\nAdd a bill named Rent with amount 900.00, paid by Ana, split equally between Ana, Ben and Cy.","Open Settle up.\nMark each listed payment as paid, one by one.\nLook at the Settle up page after the last payment is marked paid.\nAssert Each payment disappears from the list once marked paid.\nAssert Settle up says \"All settled\".\nGet The status message shown in Settle up after all payments are marked paid and save as {{settled_message}}."],"count":2,"v":1,"ts":"2026-11-14T05:37:59.510Z"}
+{"step":2,"status":"running","remark":"Step 1","v":1,"ts":"2026-11-14T05:38:00.190Z"}
+{"step":2,"status":"done","remark":"navigate: Navigate to http://127.0.0.1:4173/","v":1,"ts":"2026-11-14T05:38:00.193Z"}
+{"step":3,"status":"running","remark":"Step 2","v":1,"ts":"2026-11-14T05:38:03.276Z"}
+{"step":3,"status":"done","remark":"wait: PRIMARY: confirm Hati has no saved people or bills","v":1,"ts":"2026-11-14T05:38:10.065Z"}
+{"step":4,"status":"running","remark":"Step 3","v":1,"ts":"2026-11-14T05:38:10.723Z"}
+{"step":4,"status":"done","remark":"wait: queued plan (2 steps): type \"Name\"; click \"Add person\"","v":1,"ts":"2026-11-14T05:38:17.419Z"}
+{"step":5,"status":"running","remark":"Step 4","v":1,"ts":"2026-11-14T05:38:18.044Z"}
+{"step":5,"status":"done","remark":"type: Type \"Ana\" into \"Name\"","v":1,"ts":"2026-11-14T05:38:18.562Z"}
+{"step":6,"status":"running","remark":"Step 5","v":1,"ts":"2026-11-14T05:38:19.195Z"}
+{"step":6,"status":"done","remark":"click: Click \"Add person\"","v":1,"ts":"2026-11-14T05:38:19.934Z"}
+{"step":7,"status":"running","remark":"Step 6","v":1,"ts":"2026-11-14T05:38:20.552Z"}
+{"step":7,"status":"done","remark":"wait: queued plan (2 steps): type \"Name\"; click \"Add person\"","v":1,"ts":"2026-11-14T05:38:26.972Z"}
+{"step":8,"status":"running","remark":"Step 7","v":1,"ts":"2026-11-14T05:38:27.589Z"}
+{"step":8,"status":"done","remark":"type: Type \"Ben\" into \"Name\"","v":1,"ts":"2026-11-14T05:38:27.829Z"}
+{"step":9,"status":"running","remark":"Step 8","v":1,"ts":"2026-11-14T05:38:28.463Z"}
+{"step":9,"status":"done","remark":"click: Click \"Add person\"","v":1,"ts":"2026-11-14T05:38:29.190Z"}
+{"step":10,"status":"running","remark":"Step 9","v":1,"ts":"2026-11-14T05:38:29.836Z"}
+{"step":10,"status":"done","remark":"wait: queued plan (2 steps): type \"Name\"; click \"Add person\"","v":1,"ts":"2026-11-14T05:38:35.695Z"}
+{"step":11,"status":"running","remark":"Step 10","v":1,"ts":"2026-11-14T05:38:36.429Z"}
+{"step":11,"status":"done","remark":"type: Type \"Cy\" into \"Name\"","v":1,"ts":"2026-11-14T05:38:36.809Z"}
+{"step":12,"status":"running","remark":"Step 11","v":1,"ts":"2026-11-14T05:38:37.446Z"}
+{"step":12,"status":"done","remark":"click: Click \"Add person\"","v":1,"ts":"2026-11-14T05:38:38.134Z"}
+{"step":13,"status":"running","remark":"Step 12","v":1,"ts":"2026-11-14T05:38:38.759Z"}
+{"step":13,"status":"done","remark":"wait: PRIMARY: confirm the people Ana, Ben and Cy have been added","v":1,"ts":"2026-11-14T05:38:45.744Z"}
+{"step":14,"status":"running","remark":"Step 13","v":1,"ts":"2026-11-14T05:38:46.386Z"}
+{"step":14,"status":"done","remark":"wait: queued plan (8 steps): type \"Bill name\"; type \"Amount\"; select \"Paid by\"; select","v":1,"ts":"2026-11-14T05:38:54.484Z"}
+{"step":15,"status":"running","remark":"Step 14","v":1,"ts":"2026-11-14T05:38:55.158Z"}
+{"step":15,"status":"done","remark":"type: Type \"Rent\" into \"Bill name\"","v":1,"ts":"2026-11-14T05:38:55.393Z"}
+{"step":16,"status":"running","remark":"Step 15","v":1,"ts":"2026-11-14T05:38:56.032Z"}
+{"step":16,"status":"done","remark":"type: Type \"900.00\" into \"Amount\"","v":1,"ts":"2026-11-14T05:38:56.273Z"}
+{"step":17,"status":"running","remark":"Step 16","v":1,"ts":"2026-11-14T05:38:56.911Z"}
+{"step":17,"status":"done","remark":"select: Select \"Ana\" in \"Paid by\"","v":1,"ts":"2026-11-14T05:38:57.105Z"}
+{"step":18,"status":"running","remark":"Step 17","v":1,"ts":"2026-11-14T05:38:57.761Z"}
+{"step":18,"status":"done","remark":"select: Select \"Equally\" in \"Split\"","v":1,"ts":"2026-11-14T05:38:57.950Z"}
+{"step":19,"status":"running","remark":"Step 18","v":1,"ts":"2026-11-14T05:38:58.635Z"}
+{"step":19,"status":"done","remark":"","v":1,"ts":"2026-11-14T05:38:58.930Z"}
+{"step":20,"status":"running","remark":"Step 19","v":1,"ts":"2026-11-14T05:38:59.557Z"}
+{"step":20,"status":"done","remark":"click: Selecting Ana in split options for Rent bill","v":1,"ts":"2026-11-14T05:39:06.397Z"}
+{"step":21,"status":"running","remark":"Step 20","v":1,"ts":"2026-11-14T05:39:07.021Z"}
+{"step":21,"status":"done","remark":"click: Selecting Ben split checkbox","v":1,"ts":"2026-11-14T05:39:12.609Z"}
+{"step":22,"status":"running","remark":"Step 21","v":1,"ts":"2026-11-14T05:39:13.256Z"}
+{"step":22,"status":"done","remark":"click: Checking Cy split checkbox","v":1,"ts":"2026-11-14T05:39:18.523Z"}
+{"step":23,"status":"running","remark":"Step 22","v":1,"ts":"2026-11-14T05:39:19.159Z"}
+{"step":23,"status":"done","remark":"click: Clicking Add bill in the bill form","v":1,"ts":"2026-11-14T05:39:24.978Z"}
+{"step":24,"status":"running","remark":"Step 23","v":1,"ts":"2026-11-14T05:39:25.625Z"}
+{"step":24,"status":"done","remark":"wait: PRIMARY: confirm the Rent bill with the requested equal split has been added","v":1,"ts":"2026-11-14T05:39:31.394Z"}
+{"step":25,"status":"running","remark":"Step 24","v":1,"ts":"2026-11-14T05:39:32.024Z"}
+{"step":25,"status":"done","remark":"wait: Waiting confirm the requested Hati people and Rent bill are present","v":1,"ts":"2026-11-14T05:39:36.728Z"}
+{"step":2,"status":"running","remark":"Step 1","v":1,"ts":"2026-11-14T05:39:45.649Z"}
+{"step":2,"status":"done","remark":"scroll: Scrolling to the first payment row in the Settle up list","v":1,"ts":"2026-11-14T05:39:51.349Z"}
+{"step":3,"status":"running","remark":"Step 2","v":1,"ts":"2026-11-14T05:39:52.035Z"}
+{"step":3,"status":"done","remark":"click: Clicking Mark paid button for Ben paying Ana 300.00","v":1,"ts":"2026-11-14T05:39:53.200Z"}
+{"step":4,"status":"running","remark":"Step 3","v":1,"ts":"2026-11-14T05:39:53.828Z"}
+{"step":4,"status":"done","remark":"click: Clicking Mark paid: Cy pays Ana 300.00 button","v":1,"ts":"2026-11-14T05:40:01.728Z"}
+{"step":5,"status":"running","remark":"Step 4","v":1,"ts":"2026-11-14T05:40:02.360Z"}
+{"step":5,"status":"done","remark":"wait: PRIMARY: confirm the completed Settle up status","v":1,"ts":"2026-11-14T05:40:07.710Z"}
+{"step":6,"status":"running","remark":"Step 5","v":1,"ts":"2026-11-14T05:40:08.335Z"}
+{"step":6,"status":"done","remark":"analyze: ANALYZE(textual_visual, 'The status message shown in Settle up after all payment","v":1,"ts":"2026-11-14T05:40:20.034Z"}
+{"step":7,"status":"running","remark":"Step 6","v":1,"ts":"2026-11-14T05:40:20.673Z"}
+{"step":7,"status":"done","remark":"assert: Each payment disappears from the list once marked paid.","v":1,"ts":"2026-11-14T05:40:20.684Z"}
+{"step":8,"status":"running","remark":"Step 7","v":1,"ts":"2026-11-14T05:40:21.308Z"}
+{"step":8,"status":"done","remark":"assert: Settle up says \"All settled\".","v":1,"ts":"2026-11-14T05:40:21.318Z"}
+{"type":"coverage","status":"skipped","reason":"not_assurance_project","pack":"/home/hatch/.testmuai/kaneai/sessions/3d973a06-d813-4281-ada4-7b7189b2345e/evidence/52f9b7c1-e3f2-4bb1-b738-1cd1c10c7b04.evidence","v":1,"ts":"2026-11-14T05:40:40.158Z"}
+{"type":"run_end","status":"passed","summary":"Opened the Settle up page as requested.\nMarked every listed payment as paid, one at a time.\nEach payment was removed from the list after it was marked paid.\nThe page now shows the status message “All settled.”","one_liner":"marked all listed payments as paid on Settle up","final_state":{"url":"http://127.0.0.1:4173/","settled_message":"All settled","all_settled_message_visible":"true","payments_disappear_when_paid":"false"},"reason":"Objective completed","duration":149.7,"bifurcated":true,"total_runs":2,"context":{"memory":{"payments_disappear_when_paid":{"extracted_value":"false","operator":"equals","transforms":[],"json_path":null,"reasoning":"value: 'false' -> 'false'; equals 'false' -> PASS","analyzer_type":"textual_visual","step":5,"query":"whether each payment in the list after it is marked paid is present (in the Settle up list)","condition":"Each payment disappears from the list once marked paid.","human_description":"Checking whether marked-paid payments remain in the Settle up list","expected_value":"false","subject":"each payment in the list after it is marked paid","must_be":"absent","code_js":"!!el(45).querySelector('button')","wrapped_js":"(els) => {\n  const __m = {45: 0};\n  const el = (i) => els[__m[i]];\n  const __v = (!!el(45).querySelector('button'));\n  return (typeof __v === 'boolean' ? String(__v) : __v);\n}","locators":["internal:text=\"Settle up All settled\"i"],"needs_unit_conversion":false},"all_settled_message_visible":{"extracted_value":"true","operator":"equals","transforms":[],"json_path":null,"reasoning":"value: 'true' -> 'true'; equals 'true' -> PASS","analyzer_type":"textual_visual","step":5,"query":"whether the status message \"All settled\" in Settle up is present (in the Settle up section)","condition":"Settle up says \"All settled\".","human_description":"Checking whether the Settle up status message is present","expected_value":"true","subject":"the status message \"All settled\" in Settle up","must_be":"present","code_js":"el(47).textContent.trim() === 'All settled'","wrapped_js":"(els) => {\n  const __m = {47: 0};\n  const el = (i) => els[__m[i]];\n  const __v = (el(47).textContent.trim() === 'All settled');\n  return (typeof __v === 'boolean' ? String(__v) : __v);\n}","locators":["internal:text=\"All settled\"i"],"needs_unit_conversion":false},"settled_message":{"extracted_value":"All settled","operator":"equals","transforms":["strip"],"json_path":null,"reasoning":"value: 'All settled' (stored, no comparison)","analyzer_type":"textual_visual","step":5,"query":"the status message shown in the Settle up section after all payments are marked paid","condition":"The status message shown in Settle up after all payments are marked paid is saved as {{settled_message}}.","human_description":"Reading the status message from Settle up","expected_value":"","code_js":"el(47).textContent.trim()","wrapped_js":"(els) => {\n  const __m = {47: 0};\n  const el = (i) => els[__m[i]];\n  const __v = (el(47).textContent.trim());\n  return (typeof __v === 'boolean' ? String(__v) : __v);\n}","locators":["internal:text=\"All settled\"i"],"needs_unit_conversion":false}},"variables":{"settled_message":{"syntax":"{{settled_message}}","value":"All settled","type":"memory","secret":false,"source":"runtime"},"payments_disappear_when_paid":{"syntax":"{{payments_disappear_when_paid}}","value":"false","type":"memory","secret":false},"all_settled_message_visible":{"syntax":"{{all_settled_message_visible}}","value":"true","type":"memory","secret":false}},"pointer":"(passed) set up a shared Rent bill on Hati; marked all listed payments as paid on Settle up"},"credits_consumed":47.483295,"session_dir":"/home/hatch/.testmuai/kaneai/sessions/3d973a06-d813-4281-ada4-7b7189b2345e","run_dir":"/home/hatch/.testmuai/kaneai/sessions/3d973a06-d813-4281-ada4-7b7189b2345e/runs/0","result_code":100,"reason_code":"success.complete","per_flow_metadata":[{"result_code":"100","reason_code":"success.complete","error_message":null,"summary":"Opened Hati with no saved data, clearing any existing people or bills first if present.\nAdded Ana, Ben, and Cy as people.\nAdded a $900.00 bill named Rent, paid by Ana and split equally among Ana, Ben, and Cy.\nCompleted the requested setup.","one_liner":"set up a shared Rent bill on Hati","credits_consumed":32.00339},{"result_code":"100","reason_code":"success.complete","error_message":null,"summary":"Opened the Settle up page as requested.\nMarked every listed payment as paid, one at a time.\nEach payment was removed from the list after it was marked paid.\nThe page now shows the status message “All settled.”","one_liner":"marked all listed payments as paid on Settle up","credits_consumed":15.479904999999997}],"run_id":"run-0","test_url":"https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7C8ZJM1PG83WVQVPFRW0KVJ/dashboard/share/US_MGAHQ9JSW78QCZ39NSKGV0TQRC5TNZ4XU6A2T5J93RNROSEUX8G72A7AN2GN7IQU?type=summary&agentView=true&fqdn=summary-page","coverage":{"status":"skipped"},"v":1,"ts":"2026-11-14T05:40:40.158Z"}

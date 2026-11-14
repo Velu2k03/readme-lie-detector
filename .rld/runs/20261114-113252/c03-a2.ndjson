@@ -1,0 +1,39 @@
+{"type":"stream_start","cli_version":"0.10.4","surface":"run","pid":6097,"v":1,"ts":"2026-11-14T03:40:38.939Z"}
+{"type":"recording_state","enabled":true,"session_id":"f84aef94-777f-4b7b-8bb7-dc28257ae785","persist":false,"v":1,"ts":"2026-11-14T03:40:38.987Z"}
+{"type":"bifurcation","flows":["Navigate to http://127.0.0.1:4173/ then Open Hati with no saved data (clear this site's browser storage and reload if any bills or people exist).\nIn the People section, type Ana in the name field and click Add person.\nIn the People section, type Ben in the name field and click Add person.\nIn the People section, type Cy in the name field and click Add person, then confirm Ana, Ben and Cy are all listed.","In the bill form, type Rent in the Bill name field and 900.00 in the Amount field, choose Ana as the payer, make sure Ana, Ben and Cy are all selected to share equally, then click the button to add the bill, and confirm Rent 900.00 appears in the bills list.","In the bill form, type Electricity in the Bill name field and 300.00 in the Amount field, choose Ben as the payer, make sure Ana, Ben and Cy are all selected to share equally, then click the button to add the bill, and confirm Electricity 300.00 appears in the bills list.","Scroll to the Settle up section, or click Settle up if it is a button or tab, and read the list of payments shown there.\nCount each listed payment line (for example 'X pays Y amount') and note the total number.\nAssert Settle up lists exactly two payments.\nAssert Ben pays Ana 300.00 appears among the payments or Cy is shown as paying.\nStore The number of payments listed in Settle up, as a digit as 'payment_count'."],"count":4,"v":1,"ts":"2026-11-14T03:41:03.288Z"}
+{"step":2,"status":"running","remark":"Step 1","v":1,"ts":"2026-11-14T03:41:03.983Z"}
+{"step":2,"status":"done","remark":"navigate: Navigate to http://127.0.0.1:4173/","v":1,"ts":"2026-11-14T03:41:03.986Z"}
+{"step":3,"status":"running","remark":"Step 2","v":1,"ts":"2026-11-14T03:41:09.040Z"}
+{"step":3,"status":"done","remark":"wait: PRIMARY: confirm Hati has no saved people or bills","v":1,"ts":"2026-11-14T03:41:15.764Z"}
+{"step":4,"status":"running","remark":"Step 3","v":1,"ts":"2026-11-14T03:41:16.402Z"}
+{"step":4,"status":"done","remark":"type: Typing Ana into the name field in People section","v":1,"ts":"2026-11-14T03:41:22.934Z"}
+{"step":5,"status":"running","remark":"Step 4","v":1,"ts":"2026-11-14T03:41:23.601Z"}
+{"step":5,"status":"done","remark":"click: Clicking Add person in the People section","v":1,"ts":"2026-11-14T03:41:29.419Z"}
+{"step":6,"status":"running","remark":"Step 5","v":1,"ts":"2026-11-14T03:41:30.047Z"}
+{"step":6,"status":"done","remark":"type: Typing Ben in the name field","v":1,"ts":"2026-11-14T03:41:35.461Z"}
+{"step":7,"status":"running","remark":"Step 6","v":1,"ts":"2026-11-14T03:41:36.135Z"}
+{"step":7,"status":"done","remark":"click: Clicking Add person in the People section","v":1,"ts":"2026-11-14T03:41:41.048Z"}
+{"step":8,"status":"running","remark":"Step 7","v":1,"ts":"2026-11-14T03:41:41.751Z"}
+{"step":8,"status":"done","remark":"type: Typing Cy into the name field in the People section","v":1,"ts":"2026-11-14T03:41:47.884Z"}
+{"step":9,"status":"running","remark":"Step 8","v":1,"ts":"2026-11-14T03:41:48.530Z"}
+{"step":9,"status":"done","remark":"click: Clicking Add person in the People section","v":1,"ts":"2026-11-14T03:41:53.373Z"}
+{"step":10,"status":"running","remark":"Step 9","v":1,"ts":"2026-11-14T03:41:54.045Z"}
+{"step":10,"status":"done","remark":"analyze: Cy is listed.","v":1,"ts":"2026-11-14T03:42:04.866Z"}
+{"step":11,"status":"running","remark":"Step 10","v":1,"ts":"2026-11-14T03:42:05.550Z"}
+{"step":11,"status":"done","remark":"assert: Ana, Ben and Cy are all listed.","v":1,"ts":"2026-11-14T03:42:05.567Z"}
+{"step":2,"status":"running","remark":"Step 1","v":1,"ts":"2026-11-14T03:42:12.142Z"}
+{"step":2,"status":"done","remark":"wait: queued plan (3 steps): type \"Bill name\"; type \"Amount\"; select \"Paid by\"","v":1,"ts":"2026-11-14T03:42:21.169Z"}
+{"step":3,"status":"running","remark":"Step 2","v":1,"ts":"2026-11-14T03:42:21.906Z"}
+{"step":3,"status":"done","remark":"type: Type \"Rent\" into \"Bill name\"","v":1,"ts":"2026-11-14T03:42:22.414Z"}
+{"step":4,"status":"running","remark":"Step 3","v":1,"ts":"2026-11-14T03:42:23.059Z"}
+{"step":4,"status":"done","remark":"type: Type \"900.00\" into \"Amount\"","v":1,"ts":"2026-11-14T03:42:23.286Z"}
+{"step":5,"status":"running","remark":"Step 4","v":1,"ts":"2026-11-14T03:42:23.959Z"}
+{"step":5,"status":"done","remark":"","v":1,"ts":"2026-11-14T03:42:24.259Z"}
+{"step":6,"status":"running","remark":"Step 5","v":1,"ts":"2026-11-14T03:42:24.913Z"}
+{"step":6,"status":"done","remark":"select: Selecting Ana as the payer","v":1,"ts":"2026-11-14T03:42:30.709Z"}
+{"step":7,"status":"running","remark":"Step 6","v":1,"ts":"2026-11-14T03:42:31.695Z"}
+{"step":7,"status":"done","remark":"click: Clicking Add bill button","v":1,"ts":"2026-11-14T03:42:36.994Z"}
+{"step":8,"status":"running","remark":"Step 7","v":1,"ts":"2026-11-14T03:42:37.616Z"}
+{"step":8,"status":"done","remark":"analyze: Rent 900.00 appears in the bills list.","v":1,"ts":"2026-11-14T03:42:47.014Z"}
+{"step":9,"status":"running","remark":"Step 8","v":1,"ts":"2026-11-14T03:42:47.697Z"}
+{"step":9,"status":"done","remark":"assert: Rent 900.00 appears in the bills list.","v":1,"ts":"2026-11-14T03:42:47.706Z"}

@@ -21,8 +21,10 @@ def main(argv=None) -> int:
     g.add_argument("--out", default="report/")
     g.add_argument("--lock", default="claims.lock.json")
     g.add_argument("--app-dir", default="demo-app/", help="where the app code lives (used in the fix hint)")
-    g.add_argument("--failed-first", action="store_true", help="run claims that were red last time first")
-    g.add_argument("--stop-on-red", action="store_true", help="stop at the first red claim")
+    g.add_argument("--failed-first", action=argparse.BooleanOptionalAction, default=True,
+                   help="run claims that were red last time first (default on)")
+    g.add_argument("--stop-on-red", action=argparse.BooleanOptionalAction, default=True,
+                   help="stop at the first red claim (default on)")
     g.add_argument("--confirm", action="store_true")
     a = ap.parse_args(argv)
     try:

@@ -3,17 +3,22 @@ from __future__ import annotations
 
 import json
 import os
+import signal
 import subprocess
+import sys
 import time
 from pathlib import Path
 
+from . import budget
 from . import classify as clf
 from . import extract, kane, objective, report
+from .budget import InfraError, RunCapReached
 
 RUN_SCRIPT = os.environ.get("RLD_RUN_SCRIPT", os.path.expanduser("~/workspace/tools/kane-smoke/run-kane.sh"))
 CHROME = os.path.expanduser("~/.cache/puppeteer/chrome/linux-155.0.8059.39/chrome-linux64/chrome")
 TIMEOUT, TIMEOUT_RETRY = 180, 270
 MAX_REWRITES = 2
+KILL_GRACE = 240   # seconds past --timeout before the whole run script is killed
 
 VERIFIED, FALSE_CLAIM, STALE_DOC, INCONCLUSIVE, NOT_VERIFIABLE = (
     "VERIFIED", "FALSE_CLAIM", "STALE_DOC", "INCONCLUSIVE", "NOT_VERIFIABLE")
@@ -23,16 +28,17 @@ FIX_HINTS = {
 }
 
 
-class InfraError(RuntimeError):
-    pass
-
-
 def run_kane(obj: str, url: str, outdir: Path, label: str, timeout: int) -> kane.KaneRun:
     """One kane-cli run via the VM run script (proxy + Chrome for Testing + CDP)."""
     outdir.mkdir(parents=True, exist_ok=True)
     env = dict(os.environ, CHROME_BIN=os.environ.get("CHROME_BIN", CHROME))
-    subprocess.run(["bash", RUN_SCRIPT, str(outdir), label, str(timeout), url, obj],
-                   env=env, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=timeout + 240)
+    proc = subprocess.Popen(["bash", RUN_SCRIPT, str(outdir), label, str(timeout), url, obj], env=env,
+                            stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, start_new_session=True)
+    try:
+        proc.wait(timeout=timeout + KILL_GRACE)
+    except subprocess.TimeoutExpired:
+        os.killpg(proc.pid, signal.SIGKILL)   # kill kane-cli, Chrome and the proxy too, not only bash
+        proc.wait()
     ec_file = outdir / f"{label}.exit"
     code = int(ec_file.read_text().strip()) if ec_file.exists() else 2
     return kane.parse(outdir / f"{label}.ndjson", code)
@@ -44,7 +50,17 @@ def _attempt_record(n, obj, run, dec, note=""):
             "test_url": run.test_url, "note": note}
 
 
-def run_claim(claim: dict, url: str, runs_dir: Path, confirm: bool, runner=run_kane, ask_json=None) -> dict:
+def run_claim(claim: dict, url: str, runs_dir: Path, confirm: bool, runner=run_kane, ask_json=None,
+              max_runs: int | None = None) -> dict:
+    """Worst case is `max_runs` Kane runs (default 4: 1 first + 1 timeout retry + 2 rewrites), then INCONCLUSIVE."""
+    cap = max(1, max_runs or budget.max_claim_runs())
+    used = 0
+
+    def go(obj, label, timeout):
+        nonlocal used
+        used += 1
+        return runner(obj, url, runs_dir, label, timeout)
+
     cur = dict(claim)
     attempts: list[dict] = []
     credits = 0.0
@@ -53,16 +69,23 @@ def run_claim(claim: dict, url: str, runs_dir: Path, confirm: bool, runner=run_k
     confirmed = False
     last_run = None
     while True:
+        if used >= cap:
+            return _result(claim, INCONCLUSIVE, last_run, attempts, credits, cur,
+                           reason=f"per-claim run cap ({cap}) reached")
         n += 1
         obj = objective.build(cur, url)
         label = f"{claim['id']}-a{n}"
-        run = runner(obj, url, runs_dir, label, TIMEOUT)
+        run = go(obj, label, TIMEOUT)
         dec = kane.decide(run, 1)
         if dec.outcome == kane.TIMEOUT:
             credits += run.credits or 0
+            if used >= cap:
+                attempts.append(_attempt_record(n, obj, run, dec, "timeout; per-claim run cap reached"))
+                return _result(claim, INCONCLUSIVE, run, attempts, credits, cur,
+                               reason=f"timeout and the per-claim run cap ({cap}) is reached")
             attempts.append(_attempt_record(n, obj, run, dec, "timeout; retrying with longer timeout"))
             n += 1
-            run = runner(obj, url, runs_dir, f"{claim['id']}-a{n}", TIMEOUT_RETRY)
+            run = go(obj, f"{claim['id']}-a{n}", TIMEOUT_RETRY)
             dec = kane.decide(run, 2)
         credits += run.credits or 0
         last_run = run
@@ -89,6 +112,9 @@ def run_claim(claim: dict, url: str, runs_dir: Path, confirm: bool, runner=run_k
             if rewrites >= MAX_REWRITES:
                 return _result(claim, INCONCLUSIVE, run, attempts, credits, cur,
                                reason="still a bad test after two rewrites", cls=c)
+            if used >= cap:
+                return _result(claim, INCONCLUSIVE, run, attempts, credits, cur,
+                               reason=f"bad test and the per-claim run cap ({cap}) is reached", cls=c)
             try:
                 cur = objective.rewrite(cur, url, obj, [s.remark for s in run.steps], c.evidence, ask_json)
                 rewrites += 1
@@ -98,7 +124,7 @@ def run_claim(claim: dict, url: str, runs_dir: Path, confirm: bool, runner=run_k
                 attempts[-1]["note"] += f" -> rewrite rejected: {e}"
                 return _result(claim, INCONCLUSIVE, run, attempts, credits, cur, reason=f"rewrite rejected: {e}", cls=c)
         if c.label in ("false_claim", "stale_doc"):
-            if confirm and not confirmed:
+            if confirm and not confirmed and used < cap:
                 confirmed = True
                 attempts[-1]["note"] += " -> confirm re-run"
                 continue
@@ -144,31 +170,47 @@ def nv_results(lk: dict, start: int) -> list[dict]:
 
 
 def finish(url: str, readme: str, lk: dict, extracted: bool, results: list[dict], code: int,
-           err: str | None, outd: Path) -> None:
+           err: str | None, outd: Path, extra: dict | None = None) -> None:
     """Write results.json and render the report (the report also adds screenshots to each result)."""
     cli = next((r["cli_version"] for r in results if r.get("cli_version")), None)
     doc = {"url": url, "readme": str(readme), "readme_sha256": lk["readme_sha256"], "extracted_now": extracted,
            "exit_code": code, "infra_error": err, "cli_version": cli,
            "total_credits": round(sum(r.get("credits", 0) for r in results if not r.get("carried")), 3),
-           "results": results}
+           "results": results, **(extra or {})}
     report.build(doc, outd)
     (outd / "results.json").write_text(json.dumps(doc, indent=2) + "\n")
 
 
+@budget.locked
 def check(url: str, readme: str, out: str = "report", lock: str = "claims.lock.json", confirm: bool = False,
-          runner=run_kane, ask_json=None) -> int:
+          runner=run_kane, ask_json=None, balance_fn=None, costs_log: str = "docs/COSTS.md") -> int:
     outd = Path(out)
     outd.mkdir(parents=True, exist_ok=True)
     runs_dir = Path(".rld/runs") / time.strftime("%Y%m%d-%H%M%S")
     lk, extracted = extract.load_lock_or_extract(readme, lock, ask_json)
-    results, infra, err = [], False, None
+    guard = budget.make_guard(runner, run_kane, balance_fn)
+    try:
+        guard.preflight()
+    except InfraError as e:
+        print(f"rld: {e}", file=sys.stderr)
+        return 4   # nothing ran: leave the last report alone
+    results, infra, err, capped = [], False, None, False
     for claim in lk["claims"]:
         try:
-            results.append(run_claim(claim, url, runs_dir, confirm, runner, ask_json))
+            results.append(run_claim(claim, url, runs_dir, confirm, guard, ask_json))
         except InfraError as e:
             infra, err = True, str(e)
             break
+        except RunCapReached as e:
+            capped = True
+            print(f"rld: {e}; {len(lk['claims']) - len(results)} claim(s) not run", file=sys.stderr)
+            break
     results += nv_results(lk, len(results))
     code = exit_code([r for r in results if r["verdict"] != NOT_VERIFIABLE], infra)
-    finish(url, readme, lk, extracted, results, code, err, outd)
+    if capped and code == 0:
+        code = 3   # green so far, but not every claim ran
+    finish(url, readme, lk, extracted, results, code, err, outd,
+           {"runs": guard.runs, "run_cap_hit": capped} if capped else None)
+    guard.close()
+    budget.log_costs(costs_log, "check", guard, err or ("run cap hit" if capped else ""))
     return code

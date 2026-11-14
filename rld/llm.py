@@ -35,7 +35,7 @@ def _cmd(system: str) -> list[str]:
 def ask(prompt: str, system: str, timeout: int = 300) -> str:
     with tempfile.TemporaryDirectory() as cwd:
         p = subprocess.run(_cmd(system), input=prompt, capture_output=True, text=True,
-                           timeout=timeout, cwd=cwd)
+                           timeout=timeout, cwd=cwd, env=dict(os.environ, RLD_HOOK="off"))  # never let a nested turn fire the Stop hook
     out = (p.stdout or "").strip()
     try:
         d = json.loads(out)

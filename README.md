@@ -4,7 +4,9 @@ READMEs lie. Not on purpose: the code changes, the README does not, and nobody n
 
 It is built for developers who write a README first and want it kept honest, and for AI coding agents that are told "the README is the spec". A false claim blocks the agent from finishing until the code makes it true.
 
-Live report: https://velu2k03.github.io/readme-lie-detector/
+Live report: https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/
+
+Backup copy on GitHub Pages: https://velu2k03.github.io/readme-lie-detector/
 
 ## Run it
 

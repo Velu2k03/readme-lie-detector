@@ -1,0 +1,178 @@
+{
+  "url": "https://velu2k03.github.io/readme-lie-detector/",
+  "readme": "README.md",
+  "readme_sha256": "dcc1a8d226589be3118be8cd648c8b1c89a65fe399b4219dd9d2cbb832ccbeb9",
+  "extracted_now": false,
+  "exit_code": 1,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 23.241,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "STALE_DOC",
+      "readme_line": 56,
+      "readme_quote": "When every claim is true it says \"All 8 claims are true.\"",
+      "expect": {
+        "banner_text": "All 8 claims are true."
+      },
+      "observed": {},
+      "one_liner": "The report loaded correctly, but the check expected only the first sentence while the banner displayed its full message.",
+      "reason": "Final verification failed: \"The banner text reads \"All 8 claims are true.\".\"",
+      "objective": "Go to https://velu2k03.github.io/readme-lie-detector/. Open https://velu2k03.github.io/readme-lie-detector/ in a fresh browser tab with no prior state. Wait for the report page to finish loading. Look at the verdict banner at the top of the report page. Assert A verdict banner is visible at the top of the page. Assert The banner text reads \"All 8 claims are true.\". Store The exact text shown in the verdict banner at the top of the report as 'banner_text'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to https://velu2k03.github.io/readme-lie-detector/. Open https://velu2k03.github.io/readme-lie-detector/ in a fresh browser tab with no prior state. Wait for the report page to finish loading. Look at the verdict banner at the top of the report page. Assert A verdict banner is visible at the top of the page. Assert The banner text reads \"All 8 claims are true.\". Store The exact text shown in the verdict banner at the top of the report as 'banner_text'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "ASSERT_FAIL",
+          "reason": "assertion_error.final_verification",
+          "credits": 23.2406425,
+          "duration": 58.0,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7CF9MAA6DMCARVGZVBPG08B/dashboard/share/US_3FUAHIYBKYWFU6W7L6YS8IGOF3A8KZROU4U0HVOM9OPJPMY9L7HD04BW65JADL78?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified stale_doc: Kane loaded the report and read the banner, which says \"All 8 claims are true. This README told the truth.\" The verdict works, but the README quotes only the first sentence of the banner."
+        }
+      ],
+      "credits": 23.241,
+      "summary": "The test was set up with incomplete expected text. The visible banner says \u201cAll 8 claims are true. This README told the truth.\u201d, not only \u201cAll 8 claims are true.\u201d\nUpdate the expected banner value to the full displayed text, or make the assertion explicitly check that the banner starts with \u201cAll 8 claims are true.\u201d if that is the intended requirement.",
+      "cli_version": "0.10.4",
+      "duration": 58.0,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7CF9MAA6DMCARVGZVBPG08B/dashboard/share/US_3FUAHIYBKYWFU6W7L6YS8IGOF3A8KZROU4U0HVOM9OPJPMY9L7HD04BW65JADL78?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/7d1d75bc-a2bf-4ad5-82b0-ececf5b4df89",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/7d1d75bc-a2bf-4ad5-82b0-ececf5b4df89/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://velu2k03.github.io/readme-lie-detector/",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: Wait for the report page to finish loading",
+        "[4 running] Step 3",
+        "[4 done] wait: PRIMARY: Wait for the report page to finish loading",
+        "[5 running] Step 4",
+        "[5 done] wait: PRIMARY: Look at the verdict banner at the top of the report page; role=heading;",
+        "[6 running] Step 5",
+        "[6 done] analyze: ANALYZE(textual_visual, 'The exact text shown in the verdict banner at the top o",
+        "[7 running] Step 6",
+        "[7 done] assert: A verdict banner is visible at the top of the page.",
+        "[8 running] Step 7",
+        "[8 failed] assert: The banner text reads \"All 8 claims are true.\"."
+      ],
+      "classification": {
+        "label": "stale_doc",
+        "evidence": "",
+        "reason": "Kane loaded the report and read the banner, which says \"All 8 claims are true. This README told the truth.\" The verdict works, but the README quotes only the first sentence of the banner."
+      },
+      "fix_hint": "the feature works, the README line is out of date: edit that README line to describe the app as it is, do not change the code (Change the README to quote the full banner text, \"All 8 claims are true. This README told the truth.\", or say the banner starts with \"All 8 claims are true.\")",
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        },
+        {
+          "file": "06-step6.jpg",
+          "step": 6,
+          "annotated": false
+        },
+        {
+          "file": "07-step7.jpg",
+          "step": 7,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/7d1d75bc-a2bf-4ad5-82b0-ececf5b4df89/evidence/bfdcbb65-3734-42e5-9e2e-ed479f01063c.evidence"
+    },
+    {
+      "id": "nv2",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 14,
+      "readme_quote": "python3 -m rld check --url http://127.0.0.1:4173/ --readme demo-app/README.md",
+      "reason": "Shell command run in a terminal, not observable in a browser."
+    },
+    {
+      "id": "nv3",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 21,
+      "readme_quote": "`rld gate` exits 0 when every claim is true, 1 when a claim is false or stale, 3 when the result is inconclusive, and 4 when the tool itself or Kane failed.",
+      "reason": "Process exit codes are a CLI behaviour, not visible in a browser."
+    },
+    {
+      "id": "nv4",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 19,
+      "readme_quote": "It runs previously failed claims first, stops at the first failure, and skips claims that already passed on the same README and build.",
+      "reason": "CLI ordering and caching behaviour, not observable in a browser."
+    },
+    {
+      "id": "nv5",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 25,
+      "readme_quote": "Python 3.11 or newer and Node.js (tested with v24.22.1).",
+      "reason": "Install and version requirements, not observable in a browser."
+    },
+    {
+      "id": "nv6",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 35,
+      "readme_quote": "Install the pinned Kane CLI: `npm install -g @testmuai/kane-cli@0.10.4`",
+      "reason": "Install command, not observable in a browser."
+    },
+    {
+      "id": "nv7",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 37,
+      "readme_quote": "The tool uses `claude -p` once per README to extract the claims, which uses your Claude plan and no API key.",
+      "reason": "Local CLI and billing behaviour, not observable in a browser."
+    },
+    {
+      "id": "nv8",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 42,
+      "readme_quote": "the tool refuses to start when your balance is under 2,000 credits (`RLD_MIN_CREDITS`), runs at most 12 Kane runs per invocation (`RLD_MAX_RUNS`) and 4 per claim (`RLD_MAX_CLAIM_RUNS`).",
+      "reason": "CLI safeguards depending on a Kane account balance, not observable in a browser."
+    },
+    {
+      "id": "nv9",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 60,
+      "readme_quote": "After three blocked rounds the turn is released with a warning. Set `RLD_HOOK=off` to turn the hook off.",
+      "reason": "Claude Code Stop hook behaviour in a local environment, not observable in a browser."
+    },
+    {
+      "id": "nv10",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 46,
+      "readme_quote": "| VERIFIED | Kane ran the claim in a browser and it is true. |",
+      "reason": "Definitions of verdicts are documentation, not app behaviour checkable in a browser."
+    },
+    {
+      "id": "nv11",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 62,
+      "readme_quote": "`demo-app/` is Hati, a small bill splitter",
+      "reason": "The Hati app's own README claims are not included here, so its behaviour cannot be tested from this text."
+    }
+  ],
+  "run_at": "2026-11-14 15:29:41 PST",
+  "commit": "3ac0e26"
+}

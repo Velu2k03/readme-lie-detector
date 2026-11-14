@@ -1,25 +1,24 @@
 {
-  "readme_sha256": "dcc1a8d226589be3118be8cd648c8b1c89a65fe399b4219dd9d2cbb832ccbeb9",
+  "readme_sha256": "28c0c35e1e008ccc1ed2d93a0a1dd415c9fb470450f4bcefb575e3d6cbdb32ec",
   "readme_path": "README.md",
   "claims": [
     {
       "id": "c01",
       "readme_line": 56,
-      "readme_quote": "When every claim is true it says \"All 8 claims are true.\"",
+      "readme_quote": "When every claim is true it says \"All 8 claims are true. This README told the truth.\"",
       "rank": 1,
       "setup": [
-        "Open https://velu2k03.github.io/readme-lie-detector/ in a fresh browser tab with no prior state",
-        "Wait for the report page to finish loading"
+        "Open https://velu2k03.github.io/readme-lie-detector/ in the browser"
       ],
       "action": "Look at the verdict banner at the top of the report page",
       "assertions": [
-        "A verdict banner is visible at the top of the page",
-        "The banner text reads \"All 8 claims are true.\""
+        "A verdict banner is shown at the top of the page",
+        "The banner says \"All 8 claims are true. This README told the truth.\""
       ],
       "store_name": "banner_text",
-      "store_what": "The exact text shown in the verdict banner at the top of the report",
+      "store_what": "The full visible text of the verdict banner at the top of the report page",
       "expect": {
-        "banner_text": "All 8 claims are true."
+        "banner_text": "All 8 claims are true. This README told the truth."
       }
     },
     {
@@ -28,17 +27,15 @@
       "readme_quote": "`demo-app/` is Hati, a small bill splitter whose README makes eight testable claims. All eight pass.",
       "rank": 2,
       "setup": [
-        "Open https://velu2k03.github.io/readme-lie-detector/ in a fresh browser tab with no prior state",
-        "Wait for the report page to finish loading"
+        "Open https://velu2k03.github.io/readme-lie-detector/ in the browser"
       ],
-      "action": "Scroll through the report and count the claim cards, each of which shows a verdict",
+      "action": "Scroll through the report page and count the separate claim cards",
       "assertions": [
-        "Each claim card shows a verdict",
-        "Every card's verdict is VERIFIED",
-        "The report has 8 claim cards"
+        "The page shows one card per claim",
+        "The number of claim cards is 8"
       ],
       "store_name": "claim_card_count",
-      "store_what": "The number of claim cards on the report page, as a digit",
+      "store_what": "The number of separate claim cards on the report page, as a digit",
       "expect": {
         "claim_card_count": "8"
       }
@@ -49,91 +46,77 @@
       "readme_quote": "Each claim has its own card showing the README line, the README quote, the value the README expected, the value Kane observed, and the screenshots from every step.",
       "rank": 3,
       "setup": [
-        "Open https://velu2k03.github.io/readme-lie-detector/ in a fresh browser tab with no prior state",
-        "Wait for the report page to finish loading"
+        "Open https://velu2k03.github.io/readme-lie-detector/ in the browser",
+        "Scroll down to the first claim card"
       ],
-      "action": "Look at the first claim card on the page, reading its labelled fields",
+      "action": "Read the first claim card and its verdict label",
       "assertions": [
-        "The card shows a README line number",
-        "The card shows the README quote, the expected value and the observed value",
-        "The card shows at least one screenshot image"
+        "The card shows a README line number and a README quote",
+        "The card shows an expected value, an observed value and at least one screenshot",
+        "The card's verdict is \"Verified\""
       ],
-      "store_name": "card_quote_label",
-      "store_what": "The visible label or heading on the first claim card that introduces the README quote text",
+      "store_name": "first_card_verdict",
+      "store_what": "The verdict label shown on the first claim card",
       "expect": {
-        "card_quote_label": "README quote"
-      }
-    },
-    {
-      "id": "c04",
-      "readme_line": 7,
-      "readme_quote": "Live report: https://velu2k03.github.io/readme-lie-detector/",
-      "rank": 4,
-      "setup": [
-        "Open https://velu2k03.github.io/readme-lie-detector/ in a fresh browser tab with no prior state"
-      ],
-      "action": "Wait for the page to load and read the main page title or heading",
-      "assertions": [
-        "The page loads without an error or 404 message",
-        "The main heading or title contains \"README Lie Detector\""
-      ],
-      "store_name": "page_title",
-      "store_what": "The main heading or title text shown at the top of the report page",
-      "expect": {
-        "page_title": "README Lie Detector"
+        "first_card_verdict": "Verified"
       }
     }
   ],
   "not_verifiable": [
     {
+      "readme_line": 3,
+      "quote": "checks each one in a real browser with Kane CLI",
+      "reason": "Describes how the tool works internally. A browser cannot observe which engine produced the report."
+    },
+    {
       "readme_line": 14,
       "quote": "python3 -m rld check --url http://127.0.0.1:4173/ --readme demo-app/README.md",
-      "reason": "Shell command run in a terminal, not observable in a browser."
+      "reason": "Shell command. It is not observable in a browser."
     },
     {
       "readme_line": 21,
       "quote": "`rld gate` exits 0 when every claim is true, 1 when a claim is false or stale, 3 when the result is inconclusive, and 4 when the tool itself or Kane failed.",
-      "reason": "Process exit codes are a CLI behaviour, not visible in a browser."
+      "reason": "Process exit codes are not visible in a browser."
     },
     {
       "readme_line": 19,
       "quote": "It runs previously failed claims first, stops at the first failure, and skips claims that already passed on the same README and build.",
-      "reason": "CLI ordering and caching behaviour, not observable in a browser."
+      "reason": "CLI runtime behaviour. Nothing in the browser shows it."
     },
     {
       "readme_line": 25,
       "quote": "Python 3.11 or newer and Node.js (tested with v24.22.1).",
-      "reason": "Install and version requirements, not observable in a browser."
+      "reason": "Local install requirement, not a browser check."
     },
     {
       "readme_line": 35,
-      "quote": "Install the pinned Kane CLI: `npm install -g @testmuai/kane-cli@0.10.4`",
-      "reason": "Install command, not observable in a browser."
+      "quote": "npm install -g @testmuai/kane-cli@0.10.4",
+      "reason": "Install command, not a browser check."
     },
     {
-      "readme_line": 37,
-      "quote": "The tool uses `claude -p` once per README to extract the claims, which uses your Claude plan and no API key.",
-      "reason": "Local CLI and billing behaviour, not observable in a browser."
+      "readme_line": 36,
+      "quote": "To claim it, sign in at testmuai.com, open https://www.testmuai.com/kane-cli/#creditOffer, enter your email and click \"Claim Credits\".",
+      "reason": "Needs a real account and email, and would spend or claim real credits. Third-party site, outside this README's app."
     },
     {
       "readme_line": 42,
-      "quote": "the tool refuses to start when your balance is under 2,000 credits (`RLD_MIN_CREDITS`), runs at most 12 Kane runs per invocation (`RLD_MAX_RUNS`) and 4 per claim (`RLD_MAX_CLAIM_RUNS`).",
-      "reason": "CLI safeguards depending on a Kane account balance, not observable in a browser."
+      "quote": "the tool refuses to start when your balance is under 2,000 credits (`RLD_MIN_CREDITS`), runs at most 12 Kane runs per invocation",
+      "reason": "CLI safeguards driven by environment variables. Not observable in a browser."
     },
     {
       "readme_line": 60,
       "quote": "After three blocked rounds the turn is released with a warning. Set `RLD_HOOK=off` to turn the hook off.",
-      "reason": "Claude Code Stop hook behaviour in a local environment, not observable in a browser."
+      "reason": "Claude Code Stop hook behaviour, outside the browser."
     },
     {
-      "readme_line": 46,
-      "quote": "| VERIFIED | Kane ran the claim in a browser and it is true. |",
-      "reason": "Definitions of verdicts are documentation, not app behaviour checkable in a browser."
+      "readme_line": 56,
+      "quote": "Every run writes one static page, `report/index.html`, plus screenshots in `report/assets/`.",
+      "reason": "Local file output. The browser only sees the hosted copy, not the files a run writes."
     },
     {
-      "readme_line": 62,
-      "quote": "`demo-app/` is Hati, a small bill splitter",
-      "reason": "The Hati app's own README claims are not included here, so its behaviour cannot be tested from this text."
+      "readme_line": 64,
+      "quote": "`demo-app/` is Hati, a small bill splitter whose README makes eight testable claims.",
+      "reason": "The README does not describe any of Hati's features, so there is nothing concrete to test. Its URL is a local address (127.0.0.1:4173)."
     }
   ]
 }

@@ -8,7 +8,7 @@ import time
 from pathlib import Path
 
 from . import classify as clf
-from . import extract, kane, objective
+from . import extract, kane, objective, report
 
 RUN_SCRIPT = os.environ.get("RLD_RUN_SCRIPT", os.path.expanduser("~/workspace/tools/kane-smoke/run-kane.sh"))
 CHROME = os.path.expanduser("~/.cache/puppeteer/chrome/linux-155.0.8059.39/chrome-linux64/chrome")
@@ -18,8 +18,8 @@ MAX_REWRITES = 2
 VERIFIED, FALSE_CLAIM, STALE_DOC, INCONCLUSIVE, NOT_VERIFIABLE = (
     "VERIFIED", "FALSE_CLAIM", "STALE_DOC", "INCONCLUSIVE", "NOT_VERIFIABLE")
 FIX_HINTS = {
-    FALSE_CLAIM: "change the code so the README claim is true; do not edit the claim",
-    STALE_DOC: "the feature works; update the README line to describe the app correctly",
+    FALSE_CLAIM: "change the code in demo-app/ so the claim is true, do not edit the claim",
+    STALE_DOC: "the feature works, the README line is out of date: edit that README line to describe the app as it is, do not change the code",
 }
 
 
@@ -113,7 +113,9 @@ def _result(claim, verdict, run, attempts, credits, cur, observed=None, reason="
          "observed": observed if observed is not None else run.final_state,
          "one_liner": run.one_liner, "reason": reason or (run.run_end or {}).get("reason"),
          "objective": attempts[-1]["objective"], "attempts": attempts, "credits": round(credits, 3),
+         "summary": (run.run_end or {}).get("summary"), "cli_version": run.cli_version,
          "duration": run.duration, "test_url": run.test_url, "session_dir": run.session_dir,
+         "run_dir": (run.run_end or {}).get("run_dir"),
          "step_remarks": [f"[{s.step} {s.status}] {s.remark}" for s in run.steps if s.remark]}
     if mism:
         r["mismatch"] = mism
@@ -135,6 +137,24 @@ def exit_code(results: list[dict], infra: bool) -> int:
     return 0
 
 
+def nv_results(lk: dict, start: int) -> list[dict]:
+    return [{"id": f"nv{start + i + 1}", "verdict": NOT_VERIFIABLE, "readme_line": nv.get("readme_line"),
+             "readme_quote": nv.get("quote"), "reason": nv.get("reason")}
+            for i, nv in enumerate(lk.get("not_verifiable", []))]
+
+
+def finish(url: str, readme: str, lk: dict, extracted: bool, results: list[dict], code: int,
+           err: str | None, outd: Path) -> None:
+    """Write results.json and render the report (the report also adds screenshots to each result)."""
+    cli = next((r["cli_version"] for r in results if r.get("cli_version")), None)
+    doc = {"url": url, "readme": str(readme), "readme_sha256": lk["readme_sha256"], "extracted_now": extracted,
+           "exit_code": code, "infra_error": err, "cli_version": cli,
+           "total_credits": round(sum(r.get("credits", 0) for r in results if not r.get("carried")), 3),
+           "results": results}
+    report.build(doc, outd)
+    (outd / "results.json").write_text(json.dumps(doc, indent=2) + "\n")
+
+
 def check(url: str, readme: str, out: str = "report", lock: str = "claims.lock.json", confirm: bool = False,
           runner=run_kane, ask_json=None) -> int:
     outd = Path(out)
@@ -148,12 +168,7 @@ def check(url: str, readme: str, out: str = "report", lock: str = "claims.lock.j
         except InfraError as e:
             infra, err = True, str(e)
             break
-    for nv in lk.get("not_verifiable", []):
-        results.append({"id": f"nv{len(results)+1}", "verdict": NOT_VERIFIABLE, "readme_line": nv.get("readme_line"),
-                        "readme_quote": nv.get("quote"), "reason": nv.get("reason")})
+    results += nv_results(lk, len(results))
     code = exit_code([r for r in results if r["verdict"] != NOT_VERIFIABLE], infra)
-    doc = {"url": url, "readme": str(readme), "readme_sha256": lk["readme_sha256"], "extracted_now": extracted,
-           "exit_code": code, "infra_error": err, "total_credits": round(sum(r.get("credits", 0) for r in results), 3),
-           "results": results}
-    (outd / "results.json").write_text(json.dumps(doc, indent=2) + "\n")
+    finish(url, readme, lk, extracted, results, code, err, outd)
     return code

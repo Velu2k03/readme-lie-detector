@@ -1,0 +1,210 @@
+{
+  "url": "http://127.0.0.1:4173/",
+  "readme": "tests/gate/README.md",
+  "readme_sha256": "46ad6c912eaf75a8aead402700a59d9b2b130899cf3c961e4f582b0a5fd05476",
+  "extracted_now": false,
+  "exit_code": 0,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 35.614,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "VERIFIED",
+      "readme_line": 6,
+      "readme_quote": "Clicking Add raises the count, and clicking Reset sets the count back to \"Count: 0\".",
+      "expect": {
+        "count_after_reset": "Count: 0"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "count_after_reset": "Count: 0"
+      },
+      "one_liner": "reset the counter on the app page",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:4173/. Open the app's page in the browser (start fresh). Click Reset. Click Add three times. Click Reset. Assert The text \"Count: 0\" is displayed on the page. Store the visible count text shown on the page after clicking Reset as 'count_after_reset'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open the app's page in the browser (start fresh). Click Reset. Click Add three times. Click Reset. Assert The text \"Count: 0\" is displayed on the page. Store the visible count text shown on the page after clicking Reset as 'count_after_reset'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 20.3340505,
+          "duration": 66.2,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7BYNGPTPGSF82XX1RFG2DR2/dashboard/share/US_DEERBT81UDYIQK8ACP5OG60OEGOHSI9GRXWF9UU5K1HTQZG7DRINMJZU5BEYRIIB?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 20.334,
+      "summary": "Opened the app from a fresh start.\nClicked Reset, then clicked Add three times.\nClicked Reset again as requested.\nThe count was reset successfully and showed \u201cCount: 0\u201d on the page.",
+      "cli_version": "0.10.4",
+      "duration": 66.2,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7BYNGPTPGSF82XX1RFG2DR2/dashboard/share/US_DEERBT81UDYIQK8ACP5OG60OEGOHSI9GRXWF9UU5K1HTQZG7DRINMJZU5BEYRIIB?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/87b734cf-51d2-40ea-b656-09a0dfcb1737",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/87b734cf-51d2-40ea-b656-09a0dfcb1737/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: app's page in the browser; role=text; text=\"Welcome to Gate Shop\"",
+        "[4 running] Step 3",
+        "[4 done] click: Clicking Reset button below the count",
+        "[5 running] Step 4",
+        "[5 done] click: Clicking Add three times below the count",
+        "[6 running] Step 5",
+        "[6 done] click: Clicking Add button three times",
+        "[7 running] Step 6",
+        "[7 done] click: Clicking Add three times",
+        "[8 running] Step 7",
+        "[8 done] click: Clicking Reset in the main section below the Add button",
+        "[9 running] Step 8",
+        "[9 done] analyze: ANALYZE(textual_visual, 'The visible count text shown on the page after clicking",
+        "[10 running] Step 9",
+        "[10 done] assert: The text \"Count: 0\" is displayed on the page."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.png",
+          "step": 3,
+          "annotated": true
+        },
+        {
+          "file": "04-step4.png",
+          "step": 4,
+          "annotated": true
+        },
+        {
+          "file": "05-step5.png",
+          "step": 5,
+          "annotated": true
+        },
+        {
+          "file": "06-step6.png",
+          "step": 6,
+          "annotated": true
+        },
+        {
+          "file": "07-step7.png",
+          "step": 7,
+          "annotated": true
+        },
+        {
+          "file": "08-step8.jpg",
+          "step": 8,
+          "annotated": false
+        },
+        {
+          "file": "09-step9.jpg",
+          "step": 9,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/87b734cf-51d2-40ea-b656-09a0dfcb1737/evidence/e24a0185-d4c9-4b8b-9234-aae454b539ac.evidence"
+    },
+    {
+      "id": "c02",
+      "verdict": "VERIFIED",
+      "readme_line": 5,
+      "readme_quote": "The page heading says \"Welcome to Gate Shop\".",
+      "expect": {
+        "page_heading": "Welcome to Gate Shop"
+      },
+      "observed": {
+        "url": "http://127.0.0.1:4173/",
+        "page_heading": "Welcome to Gate Shop"
+      },
+      "one_liner": "opened the Gate Shop page on Gate Shop",
+      "reason": "Objective completed",
+      "objective": "Go to http://127.0.0.1:4173/. Open the app's page in the browser (start fresh). Read the main heading at the top of the page. Assert The page heading reads \"Welcome to Gate Shop\". Store the visible text of the main page heading as 'page_heading'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4173/. Open the app's page in the browser (start fresh). Read the main heading at the top of the page. Assert The page heading reads \"Welcome to Gate Shop\". Store the visible text of the main page heading as 'page_heading'.",
+          "exit_code": 0,
+          "status": "passed",
+          "decision": "PASS",
+          "reason": "passed",
+          "credits": 15.2804825,
+          "duration": 25.2,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7BYRPFP0NP5HG3Z69RJ9T1W/dashboard/share/US_PY47DTZPJ0DNVNSGC3Q6GGI7SCT43IVIDL5D906PT8VZGDVIHRLDZBIDQ0M2CCW4?type=summary&agentView=true&fqdn=summary-page",
+          "note": "passed; stored values match the README"
+        }
+      ],
+      "credits": 15.28,
+      "summary": "Opened the Gate Shop page from a fresh browser session.\nConfirmed that the main heading reads \u201cWelcome to Gate Shop.\u201d\nSaved the visible main heading text as \u201cWelcome to Gate Shop.\u201d",
+      "cli_version": "0.10.4",
+      "duration": 25.2,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7BYRPFP0NP5HG3Z69RJ9T1W/dashboard/share/US_PY47DTZPJ0DNVNSGC3Q6GGI7SCT43IVIDL5D906PT8VZGDVIHRLDZBIDQ0M2CCW4?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/4934f6cc-1ce2-4145-85bb-37f2cebbcb4c",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/4934f6cc-1ce2-4145-85bb-37f2cebbcb4c/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4173/",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: Open the app's page in the browser",
+        "[4 running] Step 3",
+        "[4 done] analyze: ANALYZE(textual_visual, 'The visible text of the main page heading is saved as {",
+        "[5 running] Step 4",
+        "[5 done] assert: The page heading reads \"Welcome to Gate Shop\"."
+      ],
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/4934f6cc-1ce2-4145-85bb-37f2cebbcb4c/evidence/fff37642-c095-46e5-b663-b6d77bd683e3.evidence"
+    },
+    {
+      "id": "nv3",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 7,
+      "readme_quote": "It loads instantly.",
+      "reason": "Vague speed claim with no measurable threshold; a browser agent cannot objectively verify it."
+    },
+    {
+      "id": "nv4",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 8,
+      "readme_quote": "Run it with `python3 -m http.server`.",
+      "reason": "Shell command for starting a server; not observable in a browser."
+    },
+    {
+      "id": "nv5",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 6,
+      "readme_quote": "Clicking Add raises the count",
+      "reason": "No specific count value is stated in the README, so no literal can be copied as an expected value."
+    }
+  ],
+  "run_at": "2026-11-14 10:40:04 PST",
+  "commit": "4a3ba9b"
+}

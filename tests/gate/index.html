@@ -2,5 +2,5 @@
 <body><h1>Welcome to Gate Shop</h1>
 <p id="c">Count: 0</p>
 <button onclick="n++;document.getElementById('c').textContent='Count: '+n">Add</button>
-<button onclick="/* bug: does nothing */">Reset</button>
+<button onclick="n=0;document.getElementById('c').textContent='Count: 0'">Reset</button>
 <script>var n=0;</script></body></html>

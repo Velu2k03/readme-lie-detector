@@ -44,3 +44,7 @@ Fixtures: `tests/fixtures/*.ndjson` (scrubbed copies of these three runs).
 - NDJSON lines seen: `stream_start`, `recording_state` (`persist:false`), `bifurcation`, step lines, `coverage`, `run_end`. `run_end` also has a large `context.memory` object (JS snippets, locators) which fixtures keep.
 - Run stderr carries the `evidence:` hint and `status_disagrees advisory` notes; stdout NDJSON is clean.
 - The agent's step list for the failed run shows `analyze` done then `assert` failed, so the classifier can quote the failed step remark.
+
+## Day 2 gate run (Sun 15 Nov 2026 session, 2 claims)
+
+`rld check` on tests/gate (heading claim true, Reset claim false): 40.2 credits by run_end, 44.8 by balance drop (1022.5 to 977.7), about 3 min wall. Verdicts: c02 VERIFIED (14.8 credits), c01 FALSE_CLAIM (25.5). Extraction and classification ran through `claude -p` (Pro plan, no API spend). Chrome reaches 127.0.0.1 directly (loopback bypasses the proxy), so local pages work.

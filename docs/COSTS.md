@@ -55,3 +55,5 @@ Fixtures: `tests/fixtures/*.ndjson` (scrubbed copies of these three runs).
 - 2026-11-14 13:34 gate: 3 Kane runs, 89.0 credits by run_end, balance 9559.83 -> 9447.69 (drop 112.13); run cap hit
 - 2026-11-14 13:42 gate: 3 Kane runs, 104.0 credits by run_end, balance 9447.69 -> 9334.96 (drop 112.74); run cap hit
 - 2026-11-14 13:45 gate: 1 Kane runs, 38.7 credits by run_end, balance 9334.96 -> 9284.42 (drop 50.54)
+- 2026-11-14 14:36 gate: 3 Kane runs, 40.7 credits by run_end, balance 9284.42 -> 9236.66 (drop 47.76); run cap hit
+- 2026-11-14 14:53 gate: 1 Kane runs, 18.2 credits by run_end, balance 9106.58 -> 9085.78 (drop 20.80)

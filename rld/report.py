@@ -149,7 +149,7 @@ def _card(r: dict, doc: dict, sha: str) -> str:
     exp = _kv(r.get("expect"), "No expected value recorded.")
     obs = _kv(r.get("observed"), "Nothing stored: the run stopped before the store step."
               if r["verdict"] != "VERIFIED" else "Nothing stored.")
-    return f"""<article class="card {cls}" id="{fid}">
+    return f"""<article class="card reveal {cls}" id="{fid}">
 <header><span class="chip {cls}"><span aria-hidden="true">{glyph}</span> {label}</span><span class="id">{fid}</span></header>
 <blockquote><span class="ln">{ln}</span><code>{E(r.get("readme_quote") or "")}</code></blockquote>
 <p class="one">{E(r.get("one_liner") or "")}</p>{why}{hint}{carried}
@@ -212,6 +212,36 @@ footer p{margin:0 0 var(--s)}
 #lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;cursor:zoom-out;z-index:9}
 #lb.on{display:flex}#lb img{max-width:94vw;max-height:94vh;background:#fff}
 @media(max-width:640px){.ev{grid-template-columns:1fr}h1{font-size:26px}}
+/* Design system. Type scale (px): 12 / 13 / 15 / 18 / 26 / 34 / 44. Spacing: 8px grid (--s). Radius: 6 / 8 / 14.
+   Color tokens: neutral zinc ramp + one semantic pair per verdict (ok, bad, warn, mute) + --accent for brand.
+   Card pattern: white surface, 1px border, 4px verdict stripe on the left, 8px radius.
+   Motion rules: 120-600ms, ease-out, opacity and transform only; everything is off under prefers-reduced-motion. */
+:root{--accent:#4f46e5;--accentb:#eef2ff;--ease:cubic-bezier(.2,.7,.2,1);--r-lg:14px}
+.hero{background:linear-gradient(180deg,#fff,#f4f4f5);border:1px solid var(--bd);border-radius:var(--r-lg);padding:calc(var(--s)*4) calc(var(--s)*3) calc(var(--s)*3);margin:0 0 calc(var(--s)*4)}
+.eyebrow{display:flex;flex-wrap:wrap;gap:var(--s);align-items:center;margin:0 0 calc(var(--s)*2);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;background:var(--accentb);color:var(--accent);border:1px solid #c7d2fe}
+.badge.credits::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.hero h1{font-size:44px;line-height:1.08}
+.diagram{display:block;width:100%;height:auto;margin:calc(var(--s)*3) 0 0}
+.diagram .box{fill:#fff;stroke:#d4d4d8;stroke-width:1.5}.diagram .lbl{font:600 13px -apple-system,Segoe UI,Inter,sans-serif;fill:#111}
+.diagram .sub{font:12px -apple-system,Segoe UI,Inter,sans-serif;fill:#6b6b6b}.diagram .arrow{stroke:#a1a1aa;stroke-width:2;fill:none;stroke-dasharray:6 5}
+.diagram .okd{fill:var(--ok)}.diagram .badd{fill:var(--bad)}.diagram .warnd{fill:#d97706}.diagram .mutd{fill:#a1a1aa}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--s)*2);list-style:none;padding:0;margin:0 0 calc(var(--s)*2);counter-reset:step}
+.flow li{counter-increment:step;background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:calc(var(--s)*2);font-size:13px;color:var(--mut);position:relative}
+.flow li b{display:block;color:var(--fg);font-size:15px;margin:var(--s) 0 4px;font-weight:600}
+.flow li::before{content:counter(step);display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:600}
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.card{transition:box-shadow .2s var(--ease),transform .2s var(--ease)}.card:hover{box-shadow:0 6px 20px rgba(0,0,0,.07);transform:translateY(-2px)}
+.bar i{transform-origin:left;animation:grow .9s var(--ease) both}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.diagram .arrow{animation:dash 1.4s linear infinite}@keyframes dash{to{stroke-dashoffset:-22}}
+.btn{transition:background .15s var(--ease),color .15s var(--ease)}.btn:hover{background:var(--fg);color:#fff}
+.foot-badges{display:flex;flex-wrap:wrap;gap:var(--s);margin:calc(var(--s)*2) 0 0}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+@media(max-width:760px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:30px}}
+@media(max-width:640px){.flow{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 """
 
 JS = """
@@ -221,8 +251,25 @@ if(t.classList.contains('thumb')){var f=t.closest('.proof'),m=f.querySelector('.
 f.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('on')});t.classList.add('on');}
 else if(t.classList.contains('zoom')){li.src=t.src;lb.classList.add('on');}
 else if(lb.contains(t)){lb.classList.remove('on');}});
+var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.08}):null;
+document.querySelectorAll('.reveal').forEach(function(n){io?io.observe(n):n.classList.add('in');});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});})();
 """
+
+
+DIAGRAM = """<svg class="diagram" viewBox="0 0 840 150" role="img" aria-label="README to claims to real browser run to verdicts">
+<rect class="box" x="4" y="35" width="150" height="80" rx="10"/><text class="lbl" x="79" y="70" text-anchor="middle">README</text><text class="sub" x="79" y="92" text-anchor="middle">the spec</text>
+<path class="arrow" d="M158 75H238"/><rect class="box" x="242" y="35" width="150" height="80" rx="10"/><text class="lbl" x="317" y="70" text-anchor="middle">Claims</text><text class="sub" x="317" y="92" text-anchor="middle">testable sentences</text>
+<path class="arrow" d="M396 75H476"/><rect class="box" x="480" y="35" width="150" height="80" rx="10"/><text class="lbl" x="555" y="70" text-anchor="middle">Kane + Chrome</text><text class="sub" x="555" y="92" text-anchor="middle">real browser run</text>
+<path class="arrow" d="M634 75H694"/><rect class="box" x="698" y="12" width="138" height="126" rx="10"/><text class="lbl" x="767" y="36" text-anchor="middle">Verdicts</text>
+<circle class="okd" cx="716" cy="58" r="5"/><text class="sub" x="728" y="62">verified</text><circle class="badd" cx="716" cy="80" r="5"/><text class="sub" x="728" y="84">false claim</text>
+<circle class="warnd" cx="716" cy="102" r="5"/><text class="sub" x="728" y="106">stale doc</text><circle class="mutd" cx="716" cy="124" r="5"/><text class="sub" x="728" y="128">inconclusive</text></svg>"""
+
+FLOW = """<h2>How it works</h2><ol class="flow reveal">
+<li><b>Read</b>Picks the sentences in the README that a browser can check and copies each expected value from the text.</li>
+<li><b>Run</b>Kane CLI performs each claim in a real Chrome and saves a screenshot at every step.</li>
+<li><b>Compare</b>A second check compares the value Kane read with the README value.</li>
+<li><b>Classify</b>A failure is a false claim (fix the code), a stale doc (fix the README) or a bad test (rewritten, never softened).</li></ol>"""
 
 
 def render_html(doc: dict, prev: dict | None, sha: str) -> str:
@@ -254,16 +301,21 @@ def render_html(doc: dict, prev: dict | None, sha: str) -> str:
     cmd = f'python3 -m rld check --url {doc.get("url")} --readme {doc.get("readme")}'
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>README Lie Detector report</title><style>{CSS}</style></head><body><main>
+<section class="hero"><p class="eyebrow">README Lie Detector <span class="badge credits">{doc.get("total_credits", 0):.1f} Kane credits this run</span></p>
+<h1>{E(head)}</h1>{DIAGRAM}</section>
 <p class="meta">{metaf}</p>
-<h1>{E(head)}</h1><div class="bar" role="img" aria-label="{E(legend)}">{bar}</div><p class="legend">{E(legend)}</p>{infra}
+<div class="bar" role="img" aria-label="{E(legend)}">{bar}</div><p class="legend">{E(legend)}</p>{infra}
 {changed}
+{FLOW}
 <h2>Claims</h2>
 {"".join(_card(r, doc, sha) for r in cards) or '<p class="muted">No testable claims.</p>'}
 {nvt}
 <footer><p>How it works: it reads your README and picks the claims a browser can check, copying every expected value from the README text.</p>
 <p>Kane CLI runs each claim in a real Chrome and returns a pass or fail with screenshots; a second check compares the value it read with the README.</p>
 <p>A failure is classified as a false claim (fix the code), a stale doc (fix the README) or a bad test (rewritten, never softened).</p>
-<p>Reproduce this report: <code>{E(cmd)}</code></p></footer></main>
+<p>Reproduce this report: <code>{E(cmd)}</code></p>
+<div class="foot-badges"><span class="badge">Verdicts come from real browser runs</span><span class="badge credits">{doc.get("total_credits", 0):.1f} credits</span><span class="badge">Built with Claude Code and Kane CLI</span></div>
+<p style="margin-top:16px">README Lie Detector &middot; <a href="https://github.com/Velu2k03/readme-lie-detector" target="_blank" rel="noopener">source on GitHub</a></p></footer></main>
 <div id="lb"><img alt="enlarged screenshot"></div>
 <script id="rld-data" type="application/json">{data}</script><script>{JS}</script></body></html>"""
 

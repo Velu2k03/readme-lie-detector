@@ -1,0 +1,305 @@
+{
+  "url": "http://127.0.0.1:4180/",
+  "readme": "README.md",
+  "readme_sha256": "214018e6591bf11cc339db649144d987cf05ee204e1d298dea2b2dcf83370074",
+  "extracted_now": true,
+  "exit_code": 3,
+  "infra_error": null,
+  "cli_version": "0.10.4",
+  "total_credits": 40.661,
+  "results": [
+    {
+      "id": "c01",
+      "verdict": "INCONCLUSIVE",
+      "readme_line": 56,
+      "readme_quote": "When every claim is true it says \"All 8 claims are true.\"",
+      "expect": {
+        "verdict_banner_text": "All 8 claims are true."
+      },
+      "observed": {},
+      "one_liner": "The configured report address opened GitHub\u2019s 404 page, so no verdict banner could be checked or saved.",
+      "reason": "bad_test claimed without a quote that matches a step remark: Kane never reached the verdict banner: the report URL returned GitHub's 404 page, so the page never loaded and the claim was not checked.",
+      "objective": "Go to http://127.0.0.1:4180/. Open https://velu2k03.github.io/readme-lie-detector/ in the browser. Wait for the report page to finish loading. Look at the verdict banner at the top of the report page. Assert A verdict banner is visible at the top of the page. Assert The banner reads \"All 8 claims are true.\". Store The full text of the verdict banner at the top of the report page as 'verdict_banner_text'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4180/. Open https://velu2k03.github.io/readme-lie-detector/ in the browser. Wait for the report page to finish loading. Look at the verdict banner at the top of the report page. Assert A verdict banner is visible at the top of the page. Assert The banner reads \"All 8 claims are true.\". Store The full text of the verdict banner at the top of the report page as 'verdict_banner_text'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "ASSERT_FAIL",
+          "reason": "assertion_error.step_not_achievable",
+          "credits": 11.888434999999998,
+          "duration": 26.8,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7CC1QKFQEY1S5932VPZ550B/dashboard/share/US_VKGETC6LIPZZZ5022Q6JFG2QF5MRUSWZ0EGUFUH5G3TT8AA7E3WJILV91ITXIWVU?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified unproven: bad_test claimed without a quote that matches a step remark: Kane never reached the verdict banner: the report URL returned GitHub's 404 page, so the page never loaded and the claim was not checked."
+        }
+      ],
+      "credits": 11.888,
+      "summary": "The test was given a report URL that does not currently point to a published report page.\nUpdate the test configuration with the current published report URL, or restore and publish the report page at this address.\nevidence: network_failure: GET https://velu2k03.github.io/readme-lie-detector/ -> 404 body: <!DOCTYPE html>",
+      "cli_version": "0.10.4",
+      "duration": 26.8,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7CC1QKFQEY1S5932VPZ550B/dashboard/share/US_VKGETC6LIPZZZ5022Q6JFG2QF5MRUSWZ0EGUFUH5G3TT8AA7E3WJILV91ITXIWVU?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/1a0d68a5-9822-4aff-a0e4-3da1412c5a67",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/1a0d68a5-9822-4aff-a0e4-3da1412c5a67/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4180/",
+        "[3 running] Step 2",
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://velu2k03.github.io/readme-lie-detector/",
+        "[3 running] Step 2",
+        "[3 failed] wait: Waiting for the report page to finish loading"
+      ],
+      "classification": {
+        "label": "unproven",
+        "evidence": "[3 failed] wait: Waiting for the report page to finish loading",
+        "reason": "bad_test claimed without a quote that matches a step remark: Kane never reached the verdict banner: the report URL returned GitHub's 404 page, so the page never loaded and the claim was not checked."
+      },
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/1a0d68a5-9822-4aff-a0e4-3da1412c5a67/evidence/980d6cc1-3bf6-4ef0-9618-7bf33b7681c9.evidence"
+    },
+    {
+      "id": "c02",
+      "verdict": "INCONCLUSIVE",
+      "readme_line": 64,
+      "readme_quote": "`demo-app/` is Hati, a small bill splitter whose README makes eight testable claims.",
+      "expect": {
+        "claim_card_count": "8"
+      },
+      "observed": {},
+      "one_liner": "The run was sent to a GitHub Pages address that does not host the report, so no claim cards could be checked or counted.",
+      "reason": "bad_test claimed without a quote that matches a step remark: Kane never reached the report: the GitHub Pages URL returned 404 (and so did the site root), so no claim cards were rendered to count and the claim was never tested.",
+      "objective": "Go to http://127.0.0.1:4180/. Open https://velu2k03.github.io/readme-lie-detector/ in the browser. Wait for the report page to finish loading. Scroll through the report and count the individual claim cards. Assert Each claim has its own separate card. Assert The number of claim cards is 8. Store The total number of claim cards on the report page, as a single digit as 'claim_card_count'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4180/. Open https://velu2k03.github.io/readme-lie-detector/ in the browser. Wait for the report page to finish loading. Scroll through the report and count the individual claim cards. Assert Each claim has its own separate card. Assert The number of claim cards is 8. Store The total number of claim cards on the report page, as a single digit as 'claim_card_count'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "ASSERT_FAIL",
+          "reason": "assertion_error.step_not_achievable",
+          "credits": 15.160587499999998,
+          "duration": 42.7,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7CC44TGFH9T46VYH6ZWF5PY/dashboard/share/US_N8WUDSPX6KWKB9IPSPB8FUA8KNF3AK2LW3NIY0DRFO8GZBU0J47P9VFZWQSA6H8T?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified unproven: bad_test claimed without a quote that matches a step remark: Kane never reached the report: the GitHub Pages URL returned 404 (and so did the site root), so no claim cards were rendered to count and the claim was never tested."
+        }
+      ],
+      "credits": 15.161,
+      "summary": "The test's configured report address is unavailable. Trying the linked site root reached the same missing-site page, so there was no report page for the assertions to inspect.\nUpdate the test configuration with the current published report URL, or restore the GitHub Pages deployment before rerunning the claim-card checks.\nevidence: network_failure: GET https://velu2k03.github.io/readme-lie-detector/ -> 404 body: <!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"C\nevidence: network_failure: GET https://velu2k03.github.io/ -> 404 body: <!DOCTYPE html>\n<html>\n  <head>\n    <meta http-equiv=\"Content-type\" content",
+      "cli_version": "0.10.4",
+      "duration": 42.7,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7CC44TGFH9T46VYH6ZWF5PY/dashboard/share/US_N8WUDSPX6KWKB9IPSPB8FUA8KNF3AK2LW3NIY0DRFO8GZBU0J47P9VFZWQSA6H8T?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/7124120a-5118-444a-b9ed-5df8774e6b85",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/7124120a-5118-444a-b9ed-5df8774e6b85/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4180/",
+        "[3 running] Step 2",
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://velu2k03.github.io/readme-lie-detector/",
+        "[3 running] Step 2",
+        "[3 done] click: Clicking report page recovery link",
+        "[4 running] Step 3",
+        "[4 done] navigate: PRIMARY: Navigate to https://velu2k03.github.io/",
+        "[5 running] Step 4",
+        "[5 failed] wait: Waiting 1000 ms for the report page to finish loading"
+      ],
+      "classification": {
+        "label": "unproven",
+        "evidence": "[5 failed] wait: Waiting 1000 ms for the report page to finish loading",
+        "reason": "bad_test claimed without a quote that matches a step remark: Kane never reached the report: the GitHub Pages URL returned 404 (and so did the site root), so no claim cards were rendered to count and the claim was never tested."
+      },
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.png",
+          "step": 3,
+          "annotated": true
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        },
+        {
+          "file": "05-step5.jpg",
+          "step": 5,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/7124120a-5118-444a-b9ed-5df8774e6b85/evidence/cca9ae4e-9c66-457c-b4f1-edd363446b14.evidence"
+    },
+    {
+      "id": "c03",
+      "verdict": "INCONCLUSIVE",
+      "readme_line": 48,
+      "readme_quote": "| VERIFIED | Kane ran the claim in a browser and it is true. |",
+      "expect": {
+        "first_card_verdict": "VERIFIED"
+      },
+      "observed": {},
+      "one_liner": "The run opened a missing GitHub Pages site instead of the report page, so no claim card or verdict label was available to assert or save.",
+      "reason": "bad_test claimed without a quote that matches a step remark: The test navigated to a GitHub Pages URL that returns 404, so Kane never reached a report page or claim card and could not evaluate the VERIFIED claim.",
+      "objective": "Go to http://127.0.0.1:4180/. Open https://velu2k03.github.io/readme-lie-detector/ in the browser. Wait for the report page to finish loading. Read the verdict label shown on the first claim card. Assert The first claim card shows a verdict label. Assert The verdict label reads VERIFIED. Store The verdict label text shown on the first claim card as 'first_card_verdict'.",
+      "attempts": [
+        {
+          "attempt": 1,
+          "objective": "Go to http://127.0.0.1:4180/. Open https://velu2k03.github.io/readme-lie-detector/ in the browser. Wait for the report page to finish loading. Read the verdict label shown on the first claim card. Assert The first claim card shows a verdict label. Assert The verdict label reads VERIFIED. Store The verdict label text shown on the first claim card as 'first_card_verdict'.",
+          "exit_code": 1,
+          "status": "failed",
+          "decision": "ASSERT_FAIL",
+          "reason": "assertion_error.step_not_achievable",
+          "credits": 13.6115475,
+          "duration": 41.9,
+          "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7CC777YMJNE9HFERS2B346X/dashboard/share/US_V8KDEH4V0UHW4QO3YOJSWIUIP13A8L07VS16QBSE5EQ40E1O7VBYU4134RE1OMT0?type=summary&agentView=true&fqdn=summary-page",
+          "note": "classified unproven: bad_test claimed without a quote that matches a step remark: The test navigated to a GitHub Pages URL that returns 404, so Kane never reached a report page or claim card and could not evaluate the VERIFIED claim."
+        }
+      ],
+      "credits": 13.612,
+      "summary": "The test was given a URL that does not host the expected report. The page showed a 404 page rather than the application.\nUpdate the test configuration with the live report URL, or restore the expected GitHub Pages deployment before rerunning the test.\nevidence: network_failure: GET https://velu2k03.github.io/readme-lie-detector/ -> 404\nevidence: console_error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+      "cli_version": "0.10.4",
+      "duration": 41.9,
+      "test_url": "https://test-manager.lambdatest.com/projects/01M7B3888DMY5RB6GRD8T8BWK3/test-cases/01M7CC777YMJNE9HFERS2B346X/dashboard/share/US_V8KDEH4V0UHW4QO3YOJSWIUIP13A8L07VS16QBSE5EQ40E1O7VBYU4134RE1OMT0?type=summary&agentView=true&fqdn=summary-page",
+      "session_dir": "/home/hatch/.testmuai/kaneai/sessions/f10cdb09-bb04-46df-8d06-0fe27e91652d",
+      "run_dir": "/home/hatch/.testmuai/kaneai/sessions/f10cdb09-bb04-46df-8d06-0fe27e91652d/runs/0",
+      "step_remarks": [
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to http://127.0.0.1:4180/",
+        "[3 running] Step 2",
+        "[2 running] Step 1",
+        "[2 done] navigate: Navigate to https://velu2k03.github.io/readme-lie-detector/",
+        "[3 running] Step 2",
+        "[3 done] wait: PRIMARY: wait 2000 ms for the report page to finish loading",
+        "[4 running] Step 3",
+        "[4 failed] wait: Waiting after confirming whether the report page is available"
+      ],
+      "classification": {
+        "label": "unproven",
+        "evidence": "[4 failed] wait: Waiting after confirming whether the report page is available",
+        "reason": "bad_test claimed without a quote that matches a step remark: The test navigated to a GitHub Pages URL that returns 404, so Kane never reached a report page or claim card and could not evaluate the VERIFIED claim."
+      },
+      "frames": [
+        {
+          "file": "01-step1.jpg",
+          "step": 1,
+          "annotated": false
+        },
+        {
+          "file": "02-step2.jpg",
+          "step": 2,
+          "annotated": false
+        },
+        {
+          "file": "03-step3.jpg",
+          "step": 3,
+          "annotated": false
+        },
+        {
+          "file": "04-step4.jpg",
+          "step": 4,
+          "annotated": false
+        }
+      ],
+      "evidence_pack": "/home/hatch/.testmuai/kaneai/sessions/f10cdb09-bb04-46df-8d06-0fe27e91652d/evidence/e834454c-b0af-4028-b285-54bb102fa7e3.evidence"
+    },
+    {
+      "id": "nv4",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 3,
+      "readme_quote": "checks each one in a real browser with Kane CLI",
+      "reason": "This describes the tool's internal process. A browser cannot observe how the claims were checked."
+    },
+    {
+      "id": "nv5",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 5,
+      "readme_quote": "A false claim blocks the agent from finishing until the code makes it true.",
+      "reason": "This is Claude Code Stop hook behaviour. It cannot be observed in a browser."
+    },
+    {
+      "id": "nv6",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 14,
+      "readme_quote": "python3 -m rld check --url http://127.0.0.1:4173/ --readme demo-app/README.md",
+      "reason": "This is a shell command that needs a local CLI and a local server."
+    },
+    {
+      "id": "nv7",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 21,
+      "readme_quote": "`rld gate` exits 0 when every claim is true, 1 when a claim is false or stale, 3 when the result is inconclusive, and 4 when the tool itself or Kane failed.",
+      "reason": "Process exit codes are not visible in a browser."
+    },
+    {
+      "id": "nv8",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 19,
+      "readme_quote": "It runs previously failed claims first, stops at the first failure, and skips claims that already passed on the same README and build.",
+      "reason": "This is CLI scheduling and caching behaviour. A browser cannot observe it."
+    },
+    {
+      "id": "nv9",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 25,
+      "readme_quote": "Python 3.11 or newer and Node.js (tested with v24.22.1).",
+      "reason": "This is an install requirement for the local machine."
+    },
+    {
+      "id": "nv10",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 35,
+      "readme_quote": "npm install -g @testmuai/kane-cli@0.10.4",
+      "reason": "This is an install command."
+    },
+    {
+      "id": "nv11",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 42,
+      "readme_quote": "the tool refuses to start when your balance is under 2,000 credits (`RLD_MIN_CREDITS`), runs at most 12 Kane runs per invocation (`RLD_MAX_RUNS`) and 4 per claim (`RLD_MAX_CLAIM_RUNS`).",
+      "reason": "These are CLI environment-variable safeguards. They are not observable on the web page."
+    },
+    {
+      "id": "nv12",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 60,
+      "readme_quote": "After three blocked rounds the turn is released with a warning. Set `RLD_HOOK=off` to turn the hook off.",
+      "reason": "This is Claude Code hook behaviour and an environment variable. It is not observable in a browser."
+    },
+    {
+      "id": "nv13",
+      "verdict": "NOT_VERIFIABLE",
+      "readme_line": 62,
+      "readme_quote": "All eight pass. `claims.lock.json` holds the extracted claims for that README.",
+      "reason": "The demo app has no URL in the README, and the lock file is a repository file, not a web page."
+    }
+  ],
+  "runs": 3,
+  "run_cap_hit": true,
+  "run_at": "2026-11-14 14:36:01 PST",
+  "commit": "5847bf3"
+}

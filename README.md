@@ -33,11 +33,11 @@ python3 -m rld gate  --url http://127.0.0.1:4173/ --readme demo-app/README.md
 
    The `rld` package itself uses only the Python standard library, so there is nothing else to install. 
 3. Install the pinned Kane CLI: `npm install -g @testmuai/kane-cli@0.10.4`
-4. Sign in with `kane-cli login --oauth`. Run `kane-cli balance` to see your credits. This project was built on a free 10,000-credit grant claimed from the Kane account billing page.
+4. Sign in with `kane-cli login --oauth`. Run `kane-cli balance` to see your credits. This project was built on a free 10,000-credit grant. To claim it, sign in at testmuai.com, open https://www.testmuai.com/kane-cli/#creditOffer, enter your email and click "Claim Credits".
 5. Install and sign in to Claude Code (`claude`). The tool uses `claude -p` once per README to extract the claims, which uses your Claude plan and no API key.
 6. Check it works: `python3 -m rld --help` and `python3 -m pytest -q`.
 
-Kane runs go through a run script. The default is the author's machine setup. On another machine set `RLD_RUN_SCRIPT` to your own script that starts Chrome and calls `kane-cli run`.
+Kane runs go through a run script. The default is the author's machine setup. On another machine set `RLD_RUN_SCRIPT` to your own script that starts Chrome and calls `kane-cli run`. A starting point is `examples/run-kane-portable.sh` (no proxy, needs Chrome or Chromium; not yet tested end to end).
 
 Credit safeguards are on by default: the tool refuses to start when your balance is under 2,000 credits (`RLD_MIN_CREDITS`), runs at most 12 Kane runs per invocation (`RLD_MAX_RUNS`) and 4 per claim (`RLD_MAX_CLAIM_RUNS`).
 

@@ -149,7 +149,7 @@ def _card(r: dict, doc: dict, sha: str) -> str:
     exp = _kv(r.get("expect"), "No expected value recorded.")
     obs = _kv(r.get("observed"), "Nothing stored: the run stopped before the store step."
               if r["verdict"] != "VERIFIED" else "Nothing stored.")
-    return f"""<article class="card reveal {cls}" id="{fid}">
+    return f"""<article class="card {cls}" id="{fid}">
 <header><span class="chip {cls}"><span aria-hidden="true">{glyph}</span> {label}</span><span class="id">{fid}</span></header>
 <blockquote><span class="ln">{ln}</span><code>{E(r.get("readme_quote") or "")}</code></blockquote>
 <p class="one">{E(r.get("one_liner") or "")}</p>{why}{hint}{carried}
@@ -166,82 +166,89 @@ def _card(r: dict, doc: dict, sha: str) -> str:
 
 
 CSS = """
-:root{--bg:#fafafa;--fg:#111;--mut:#6b6b6b;--bd:#e4e4e7;--card:#fff;--ok:#15803d;--okb:#dcfce7;--bad:#b91c1c;--badb:#fee2e2;
---warn:#92400e;--warnb:#fef3c7;--mute:#3f3f46;--muteb:#e4e4e7;--s:8px}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,sans-serif}
-main{max-width:880px;margin:0 auto;padding:calc(var(--s)*5) calc(var(--s)*3) calc(var(--s)*8)}
-code,pre,.cmd{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
-.meta{display:flex;flex-wrap:wrap;gap:var(--s) calc(var(--s)*3);color:var(--mut);font-size:13px;margin:0 0 calc(var(--s)*4)}
-.meta b{color:var(--fg);font-weight:500}
-h1{font-size:34px;line-height:1.15;letter-spacing:-.02em;margin:0 0 calc(var(--s)*2);font-weight:650}
-h2{font-size:18px;margin:calc(var(--s)*6) 0 calc(var(--s)*2);font-weight:600}
-h4{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:calc(var(--s)*2) 0 var(--s);font-weight:600}
-.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--muteb);margin-bottom:var(--s)}
-.bar i{display:block}.bar .ok{background:var(--ok)}.bar .bad{background:var(--bad)}.bar .warn{background:#d97706}.bar .mute{background:#a1a1aa}
-.legend{color:var(--mut);font-size:13px;margin:0}
-.changed{background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:calc(var(--s)*2);margin:0;list-style:none}
-.changed li{padding:calc(var(--s)/2) 0}
-.card{background:var(--card);border:1px solid var(--bd);border-left-width:4px;border-radius:8px;padding:calc(var(--s)*3);margin:0 0 calc(var(--s)*3)}
-.card.bad{border-left-color:var(--bad)}.card.ok{border-left-color:var(--ok)}.card.warn{border-left-color:#d97706}.card.mute{border-left-color:#a1a1aa}
-.card header{display:flex;justify-content:space-between;align-items:center;margin-bottom:calc(var(--s)*2)}
-.id{color:var(--mut);font-family:ui-monospace,monospace;font-size:13px}
-.chip{display:inline-flex;gap:var(--s);align-items:center;padding:calc(var(--s)/2) calc(var(--s)*1.5);border-radius:999px;font-size:13px;font-weight:600}
+/* Design system "ledger". Light paper, one accent (burnt orange), verdict colors are semantic only.
+   Type: Fraunces (display) / IBM Plex Sans (body) / IBM Plex Mono (data). Scale (px): 12 / 13 / 15 / 17 / 22 / 32 / 56-68.
+   Spacing: 8px grid (--s). Radius: 2px only, hairline rules instead of boxes and shadows.
+   Card: no fill, 2px ink top rule, id/verdict in a left rail, content in the right column.
+   Motion: color transitions only (120ms). Nothing animates on load or scroll. Off under prefers-reduced-motion. */
+:root{--paper:#f3efe6;--card:#faf8f2;--ink:#16130e;--mut:#6a6355;--rule:#d9d2c3;--accent:#c2410c;
+--ok:#1f6b3a;--okb:#e0ecd9;--bad:#a4161a;--badb:#f6dcd8;--warn:#7a5200;--warnb:#f3e3b8;--mute:#4a463d;--muteb:#e4dfd2;
+--s:8px;--serif:"Fraunces",Georgia,"Times New Roman",serif;--sans:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 15px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+main{max-width:1040px;margin:0 auto;padding:calc(var(--s)*6) calc(var(--s)*4) calc(var(--s)*10)}
+code,pre,.cmd,.id{font-family:var(--mono);font-size:13px}
+a{color:var(--ink);text-decoration-color:var(--accent);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{color:var(--accent)}
+h1,h2{font-family:var(--serif);font-weight:500;font-variation-settings:"opsz" 144;letter-spacing:-.02em}
+h1{font-size:clamp(36px,6vw,64px);line-height:1.02;margin:0;max-width:16ch;letter-spacing:-.03em}
+h2{font-size:28px;line-height:1.15;margin:calc(var(--s)*10) 0 calc(var(--s)*3);padding-top:var(--s);border-top:2px solid var(--ink)}
+h4{font:500 12px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--mut);margin:calc(var(--s)*2) 0 var(--s)}
+.hero{display:grid;grid-template-columns:minmax(0,1fr);gap:calc(var(--s)*5);padding-bottom:calc(var(--s)*5);border-bottom:1px solid var(--rule)}
+.eyebrow{display:flex;flex-wrap:wrap;gap:calc(var(--s)*1.5);align-items:center;margin:0 0 calc(var(--s)*4);font:500 12px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.eyebrow::before{content:"";width:10px;height:10px;background:var(--accent)}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border:1px solid var(--ink);border-radius:2px;font:500 12px/1 var(--mono);letter-spacing:.02em;text-transform:none;color:var(--ink);background:transparent}
+.badge.credits::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.stats{display:flex;flex-wrap:wrap;gap:calc(var(--s)*1) calc(var(--s)*6);margin:0;padding:0;list-style:none}
+.stats li{display:flex;flex-direction:column;font-size:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--mut)}
+.stats b{font:500 56px/1 var(--serif);letter-spacing:-.03em;color:var(--ink);text-transform:none;margin-bottom:6px;font-variant-numeric:lining-nums}
+.stats .bad b{color:var(--bad)}.stats .ok b{color:var(--ok)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:calc(var(--s)*2) calc(var(--s)*4);margin:calc(var(--s)*4) 0 0;font-size:13px}
+.meta span{display:flex;flex-direction:column;color:var(--mut);font:500 11px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;min-width:0}
+.meta b{font:400 13px/1.5 var(--mono);color:var(--ink);text-transform:none;letter-spacing:0;overflow-wrap:anywhere}
+.bar{display:flex;height:6px;background:var(--muteb);margin:calc(var(--s)*4) 0 var(--s)}
+.bar i{display:block}.bar .ok{background:var(--ok)}.bar .bad{background:var(--bad)}.bar .warn{background:#b7791f}.bar .mute{background:#8a8472}
+.legend{color:var(--mut);font:13px var(--mono);margin:0}
+.changed{border-top:1px solid var(--rule);padding:0;margin:0;list-style:none}
+.changed li{padding:var(--s) 0;border-bottom:1px solid var(--rule);font-size:15px}
+.diagram{display:block;width:100%;height:auto}
+.diagram .box{fill:var(--card);stroke:var(--ink);stroke-width:1.25}.diagram .lbl{font:500 13px var(--mono);fill:var(--ink)}
+.diagram .sub{font:12px var(--mono);fill:var(--mut)}.diagram .arrow{stroke:var(--ink);stroke-width:1.25;fill:none}
+.diagram .okd{fill:var(--ok)}.diagram .badd{fill:var(--bad)}.diagram .warnd{fill:#b7791f}.diagram .mutd{fill:#8a8472}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;list-style:none;padding:0;margin:0;counter-reset:step;border-top:1px solid var(--rule)}
+.flow li{counter-increment:step;padding:calc(var(--s)*2) calc(var(--s)*3) calc(var(--s)*2) 0;font-size:14px;color:var(--mut);line-height:1.55}
+.flow li+li{padding-left:calc(var(--s)*3);border-left:1px solid var(--rule)}
+.flow li::before{content:"0" counter(step);display:block;font:500 12px var(--mono);color:var(--accent);margin-bottom:var(--s)}
+.flow li b{display:block;font:500 22px/1.2 var(--serif);color:var(--ink);margin-bottom:var(--s);letter-spacing:-.01em}
+.card{display:grid;grid-template-columns:200px minmax(0,1fr);gap:0 calc(var(--s)*4);padding:calc(var(--s)*3) 0 calc(var(--s)*5);border-top:2px solid var(--ink);margin:0}
+.card+.card{margin-top:calc(var(--s)*2)}
+.card>*{grid-column:2;min-width:0}
+.card>header{grid-column:1;grid-row:1/span 12;display:flex;flex-direction:column;align-items:flex-start;gap:var(--s);position:sticky;top:calc(var(--s)*3);align-self:start}
+.id{color:var(--ink);font-size:32px;font-family:var(--serif);font-weight:500;letter-spacing:-.02em;order:-1}
+.chip{display:inline-flex;gap:6px;align-items:center;padding:4px 8px;border-radius:2px;font:500 12px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.06em}
 .chip.ok{background:var(--okb);color:var(--ok)}.chip.bad{background:var(--badb);color:var(--bad)}
 .chip.warn{background:var(--warnb);color:var(--warn)}.chip.mute{background:var(--muteb);color:var(--mute)}
-blockquote{margin:0 0 calc(var(--s)*2);padding:calc(var(--s)*1.5) calc(var(--s)*2);background:#f4f4f5;border-radius:6px;display:flex;gap:calc(var(--s)*2)}
-blockquote .ln{flex:none;color:var(--mut);font-size:13px}blockquote code{word-break:break-word}
-.one{font-weight:500;margin:0 0 var(--s)}.muted{color:var(--mut);font-size:13px;margin:var(--s) 0}.hint{font-size:13px;margin:var(--s) 0}
-.ev{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--s)*2);margin:calc(var(--s)*2) 0}
-.ev section{border:1px solid var(--bd);border-radius:6px;padding:0 calc(var(--s)*2) var(--s)}
-.kv{display:flex;flex-direction:column;margin-bottom:var(--s)}.kv .k{font-size:12px;color:var(--mut)}.kv code{word-break:break-word}
-.proof{margin:calc(var(--s)*2) 0}.proof .main{width:100%;max-height:480px;object-fit:contain;object-position:top left;border:1px solid var(--bd);border-radius:6px;display:block;cursor:zoom-in;background:#fff}
+blockquote{margin:0 0 calc(var(--s)*2);padding:calc(var(--s)*2);background:var(--card);border:1px solid var(--rule);border-radius:2px;display:flex;gap:calc(var(--s)*2)}
+blockquote .ln{flex:none;color:var(--mut);font:12px var(--mono)}blockquote code{word-break:break-word;font-size:13px;line-height:1.55}
+.one{font:500 17px/1.45 var(--sans);margin:0 0 var(--s)}.muted{color:var(--mut);font-size:13px;margin:var(--s) 0}.hint{font-size:14px;margin:var(--s) 0}
+.ev{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:calc(var(--s)*2) 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.ev section{padding:0 calc(var(--s)*2) var(--s) 0;min-width:0}.ev section+section{padding-left:calc(var(--s)*2);border-left:1px solid var(--rule)}
+.kv{display:flex;flex-direction:column;margin-bottom:var(--s)}.kv .k{font:11px var(--mono);color:var(--mut);text-transform:uppercase;letter-spacing:.06em}.kv code{word-break:break-word}
+.proof{margin:calc(var(--s)*2) 0}.proof .main{width:100%;max-height:480px;object-fit:contain;object-position:top left;border:1px solid var(--rule);border-radius:2px;display:block;cursor:zoom-in;background:#fff}
 .proof figcaption{color:var(--mut);font-size:12px;margin:var(--s) 0}
 .film{display:flex;gap:var(--s);overflow-x:auto;padding-bottom:var(--s)}
-.thumb{height:56px;border:2px solid var(--bd);border-radius:4px;cursor:pointer;flex:none;background:#fff}.thumb.on{border-color:var(--fg)}
-.attempts{color:var(--mut);font-size:13px;margin:var(--s) 0}
-details{margin:var(--s) 0;font-size:14px}summary{cursor:pointer;color:var(--mut)}
-pre{white-space:pre-wrap;word-break:break-word;background:#f4f4f5;padding:calc(var(--s)*1.5);border-radius:6px;margin:0}
+.thumb{height:56px;border:1px solid var(--rule);border-radius:2px;cursor:pointer;flex:none;background:#fff;opacity:.7;transition:opacity .12s}.thumb:hover{opacity:1}.thumb.on{border-color:var(--ink);outline:1px solid var(--ink);opacity:1}
+.attempts{color:var(--mut);font:12px var(--mono);margin:var(--s) 0}
+details{margin:var(--s) 0;font-size:14px}summary{cursor:pointer;color:var(--ink);font:500 12px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+pre{white-space:pre-wrap;word-break:break-word;background:var(--card);border:1px solid var(--rule);padding:calc(var(--s)*1.5);border-radius:2px;margin:0}
 ul{padding-left:calc(var(--s)*3);margin:0}li{font-size:13px}
 .links{display:flex;flex-wrap:wrap;gap:calc(var(--s)*2);align-items:center;margin-top:calc(var(--s)*2)}
-.btn{display:inline-block;padding:var(--s) calc(var(--s)*2);border:1px solid var(--fg);border-radius:6px;color:var(--fg);text-decoration:none;font-size:13px;font-weight:500}
-a{color:inherit}.cmd{color:var(--mut)}
-table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--bd);border-radius:8px;font-size:13px}
-th,td{text-align:left;padding:calc(var(--s)*1.5) calc(var(--s)*2);border-bottom:1px solid var(--bd);vertical-align:top}th{color:var(--mut);font-weight:600}
-footer{margin-top:calc(var(--s)*8);color:var(--mut);font-size:13px;border-top:1px solid var(--bd);padding-top:calc(var(--s)*3)}
-footer p{margin:0 0 var(--s)}
-#lb{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;cursor:zoom-out;z-index:9}
+.btn{display:inline-block;padding:var(--s) calc(var(--s)*2);border:1px solid var(--ink);border-radius:2px;color:var(--ink);text-decoration:none;font:500 13px var(--mono);transition:background .12s,color .12s}
+.btn:hover{background:var(--ink);color:var(--paper)}.cmd{color:var(--mut);overflow-wrap:anywhere}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:calc(var(--s)*1.5) calc(var(--s)*2) calc(var(--s)*1.5) 0;border-bottom:1px solid var(--rule);vertical-align:top}
+th{color:var(--mut);font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.08em;border-bottom:1px solid var(--ink)}
+footer{margin-top:calc(var(--s)*10);color:var(--mut);font-size:13px;border-top:2px solid var(--ink);padding-top:calc(var(--s)*3);display:grid;grid-template-columns:repeat(3,1fr);gap:calc(var(--s)*2) calc(var(--s)*4)}
+footer p{margin:0}footer .wide{grid-column:1/-1}
+.foot-badges{display:flex;flex-wrap:wrap;gap:var(--s)}
+#lb{position:fixed;inset:0;background:rgba(22,19,14,.88);display:none;align-items:center;justify-content:center;cursor:zoom-out;z-index:9}
 #lb.on{display:flex}#lb img{max-width:94vw;max-height:94vh;background:#fff}
-@media(max-width:640px){.ev{grid-template-columns:1fr}h1{font-size:26px}}
-/* Design system. Type scale (px): 12 / 13 / 15 / 18 / 26 / 34 / 44. Spacing: 8px grid (--s). Radius: 6 / 8 / 14.
-   Color tokens: neutral zinc ramp + one semantic pair per verdict (ok, bad, warn, mute) + --accent for brand.
-   Card pattern: white surface, 1px border, 4px verdict stripe on the left, 8px radius.
-   Motion rules: 120-600ms, ease-out, opacity and transform only; everything is off under prefers-reduced-motion. */
-:root{--accent:#4f46e5;--accentb:#eef2ff;--ease:cubic-bezier(.2,.7,.2,1);--r-lg:14px}
-.hero{background:linear-gradient(180deg,#fff,#f4f4f5);border:1px solid var(--bd);border-radius:var(--r-lg);padding:calc(var(--s)*4) calc(var(--s)*3) calc(var(--s)*3);margin:0 0 calc(var(--s)*4)}
-.eyebrow{display:flex;flex-wrap:wrap;gap:var(--s);align-items:center;margin:0 0 calc(var(--s)*2);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);font-weight:600}
-.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:0;text-transform:none;background:var(--accentb);color:var(--accent);border:1px solid #c7d2fe}
-.badge.credits::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
-.hero h1{font-size:44px;line-height:1.08}
-.diagram{display:block;width:100%;height:auto;margin:calc(var(--s)*3) 0 0}
-.diagram .box{fill:#fff;stroke:#d4d4d8;stroke-width:1.5}.diagram .lbl{font:600 13px -apple-system,Segoe UI,Inter,sans-serif;fill:#111}
-.diagram .sub{font:12px -apple-system,Segoe UI,Inter,sans-serif;fill:#6b6b6b}.diagram .arrow{stroke:#a1a1aa;stroke-width:2;fill:none;stroke-dasharray:6 5}
-.diagram .okd{fill:var(--ok)}.diagram .badd{fill:var(--bad)}.diagram .warnd{fill:#d97706}.diagram .mutd{fill:#a1a1aa}
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:calc(var(--s)*2);list-style:none;padding:0;margin:0 0 calc(var(--s)*2);counter-reset:step}
-.flow li{counter-increment:step;background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:calc(var(--s)*2);font-size:13px;color:var(--mut);position:relative}
-.flow li b{display:block;color:var(--fg);font-size:15px;margin:var(--s) 0 4px;font-weight:600}
-.flow li::before{content:counter(step);display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--accent);color:#fff;font-size:12px;font-weight:600}
-.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
-.reveal.in{opacity:1;transform:none}
-.card{transition:box-shadow .2s var(--ease),transform .2s var(--ease)}.card:hover{box-shadow:0 6px 20px rgba(0,0,0,.07);transform:translateY(-2px)}
-.bar i{transform-origin:left;animation:grow .9s var(--ease) both}
-@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.diagram .arrow{animation:dash 1.4s linear infinite}@keyframes dash{to{stroke-dashoffset:-22}}
-.btn{transition:background .15s var(--ease),color .15s var(--ease)}.btn:hover{background:var(--fg);color:#fff}
-.foot-badges{display:flex;flex-wrap:wrap;gap:var(--s);margin:calc(var(--s)*2) 0 0}
 :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media(max-width:760px){.flow{grid-template-columns:1fr 1fr}.hero h1{font-size:30px}}
-@media(max-width:640px){.flow{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+@media(max-width:860px){.card{grid-template-columns:1fr}.card>*,.card>header{grid-column:1}.card>header{grid-row:auto;position:static;flex-direction:row;align-items:center;justify-content:space-between;margin-bottom:var(--s)}.id{order:0}
+.flow{grid-template-columns:1fr 1fr}.flow li:nth-child(3){padding-left:0;border-left:0}.flow li:nth-child(n+3){border-top:1px solid var(--rule)}footer{grid-template-columns:1fr}}
+@media(max-width:640px){main{padding:calc(var(--s)*4) calc(var(--s)*2) calc(var(--s)*8)}.ev{grid-template-columns:1fr}.ev section+section{padding-left:0;border-left:0;border-top:1px solid var(--rule);padding-top:var(--s)}
+.flow{grid-template-columns:1fr}.flow li,.flow li+li{padding-left:0;border-left:0}.flow li+li{border-top:1px solid var(--rule)}.stats b{font-size:44px}.diagram{display:none}h2{font-size:24px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 """
 
 JS = """
@@ -251,8 +258,6 @@ if(t.classList.contains('thumb')){var f=t.closest('.proof'),m=f.querySelector('.
 f.querySelectorAll('.thumb').forEach(function(x){x.classList.remove('on')});t.classList.add('on');}
 else if(t.classList.contains('zoom')){li.src=t.src;lb.classList.add('on');}
 else if(lb.contains(t)){lb.classList.remove('on');}});
-var io='IntersectionObserver' in window?new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:.08}):null;
-document.querySelectorAll('.reveal').forEach(function(n){io?io.observe(n):n.classList.add('in');});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on');});})();
 """
 
@@ -265,7 +270,7 @@ DIAGRAM = """<svg class="diagram" viewBox="0 0 840 150" role="img" aria-label="R
 <circle class="okd" cx="716" cy="58" r="5"/><text class="sub" x="728" y="62">verified</text><circle class="badd" cx="716" cy="80" r="5"/><text class="sub" x="728" y="84">false claim</text>
 <circle class="warnd" cx="716" cy="102" r="5"/><text class="sub" x="728" y="106">stale doc</text><circle class="mutd" cx="716" cy="124" r="5"/><text class="sub" x="728" y="128">inconclusive</text></svg>"""
 
-FLOW = """<h2>How it works</h2><ol class="flow reveal">
+FLOW = """<h2>How it works</h2><ol class="flow">
 <li><b>Read</b>Picks the sentences in the README that a browser can check and copies each expected value from the text.</li>
 <li><b>Run</b>Kane CLI performs each claim in a real Chrome and saves a screenshot at every step.</li>
 <li><b>Compare</b>A second check compares the value Kane read with the README value.</li>
@@ -284,6 +289,8 @@ def render_html(doc: dict, prev: dict | None, sha: str) -> str:
     bar = "".join(f'<i class="{c}" style="width:{n * 100 / total:.1f}%"></i>' for c, n in counts.items() if n)
     legend = " · ".join(f"{n} {w}" for n, w in (
         (counts["ok"], "verified"), (counts["bad"], "false"), (counts["warn"], "stale doc"), (counts["mute"], "inconclusive")) if n)
+    stats = "".join(f'<li class="{c}"><b>{counts[c]}</b>{w}</li>' for c, w in
+                    (("ok", "verified"), ("bad", "false claim"), ("warn", "stale doc"), ("mute", "inconclusive")) if counts[c] or c == "ok")
     chg = changed_since(prev, results)
     changed = ('<h2>Changed since last run</h2><ul class="changed">' + "".join(f"<li>{E(x)}</li>" for x in chg) + "</ul>"
                if prev and chg else ('<h2>Changed since last run</h2><ul class="changed"><li>No changes.</li></ul>' if prev else ""))
@@ -300,9 +307,9 @@ def render_html(doc: dict, prev: dict | None, sha: str) -> str:
     data = json.dumps(doc).replace("<", "\\u003c")
     cmd = f'python3 -m rld check --url {doc.get("url")} --readme {doc.get("readme")}'
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>README Lie Detector report</title><style>{CSS}</style></head><body><main>
-<section class="hero"><p class="eyebrow">README Lie Detector <span class="badge credits">{doc.get("total_credits", 0):.1f} Kane credits this run</span></p>
-<h1>{E(head)}</h1>{DIAGRAM}</section>
+<title>README Lie Detector report</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap"><style>{CSS}</style></head><body><main>
+<section class="hero"><div><p class="eyebrow">README Lie Detector <span class="badge credits">{doc.get("total_credits", 0):.1f} Kane credits this run</span></p>
+<h1>{E(head)}</h1></div><ul class="stats">{stats}</ul>{DIAGRAM}</section>
 <p class="meta">{metaf}</p>
 <div class="bar" role="img" aria-label="{E(legend)}">{bar}</div><p class="legend">{E(legend)}</p>{infra}
 {changed}
@@ -313,9 +320,9 @@ def render_html(doc: dict, prev: dict | None, sha: str) -> str:
 <footer><p>How it works: it reads your README and picks the claims a browser can check, copying every expected value from the README text.</p>
 <p>Kane CLI runs each claim in a real Chrome and returns a pass or fail with screenshots; a second check compares the value it read with the README.</p>
 <p>A failure is classified as a false claim (fix the code), a stale doc (fix the README) or a bad test (rewritten, never softened).</p>
-<p>Reproduce this report: <code>{E(cmd)}</code></p>
-<div class="foot-badges"><span class="badge">Verdicts come from real browser runs</span><span class="badge credits">{doc.get("total_credits", 0):.1f} credits</span><span class="badge">Built with Claude Code and Kane CLI</span></div>
-<p style="margin-top:16px">README Lie Detector &middot; <a href="https://github.com/Velu2k03/readme-lie-detector" target="_blank" rel="noopener">source on GitHub</a></p></footer></main>
+<p class="wide">Reproduce this report: <code>{E(cmd)}</code></p>
+<div class="foot-badges wide"><span class="badge">Verdicts come from real browser runs</span><span class="badge credits">{doc.get("total_credits", 0):.1f} credits</span><span class="badge">Built with Claude Code and Kane CLI</span></div>
+<p class="wide">README Lie Detector &middot; <a href="https://github.com/Velu2k03/readme-lie-detector" target="_blank" rel="noopener">source on GitHub</a></p></footer></main>
 <div id="lb"><img alt="enlarged screenshot"></div>
 <script id="rld-data" type="application/json">{data}</script><script>{JS}</script></body></html>"""
 

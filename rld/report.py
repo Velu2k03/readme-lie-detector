@@ -21,6 +21,23 @@ CHIP = {"VERIFIED": ("Verified", "ok", "✓"), "FALSE_CLAIM": ("False claim", "b
         "STALE_DOC": ("Stale doc", "warn", "!"), "INCONCLUSIVE": ("Inconclusive", "mute", "?")}
 E = html.escape
 
+# The one real false claim the tool has caught. A historical fact from the
+# Day 2 gate test (Nov 14, commit 4a3ba9b, Gate Shop test fixture), kept here
+# so the report can show it without re-running a gate. The README line, what
+# Kane observed, and the screenshots are all from that saved run. Nothing
+# here is edited to make a claim pass: the fixture's Reset handler was a
+# no-op, it was fixed, and the current Hati run below is 8 of 8 verified.
+CATCH = {
+    "quote": 'Clicking Add raises the count, and clicking Reset sets the count back to "Count: 0".',
+    "observed": "Count stayed at 3, even after clicking Reset twice and refreshing.",
+    "one_liner": "After the count reached 3, using Reset left the displayed count at 3 instead of returning it to 0.",
+    "reason": "Reset is wired to a no-op and Count remains 3 after repeated clicks and refresh.",
+    "run": "Nov 14, Gate Shop test fixture, Day 2 gate test",
+    "fix": "The Reset handler was a no-op, so it was fixed. The Hati demo app below: 8 claims, 8 verified.",
+    "shots": ["assets/catch/count-after-reset.jpg", "assets/catch/reset-clicked.png"],
+    "captions": ["Count still 3 after Reset (last frame).", "Reset clicked again, Count still 3."],
+}
+
 
 def _git(*args: str) -> str:
     try:
@@ -189,6 +206,16 @@ h4{font:500 12px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;c
 .eyebrow::before{content:"";width:10px;height:10px;background:var(--accent)}
 .badge{display:inline-flex;align-items:center;gap:6px;padding:5px 10px;border:1px solid var(--ink);border-radius:2px;font:500 12px/1 var(--mono);letter-spacing:.02em;text-transform:none;color:var(--ink);background:transparent}
 .badge.credits::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.lede{font:500 20px/1.5 var(--sans);margin:0 0 calc(var(--s)*2);max-width:58ch}
+.proved{font:500 17px/1.5 var(--sans);margin:0 0 calc(var(--s)*3);max-width:58ch}
+.proofline{color:var(--mut);font-size:14px;margin:calc(var(--s)*3) 0}
+.catch .shot{width:100%;border:1px solid var(--rule);border-radius:2px;display:block;cursor:zoom-in;background:#fff}
+.catch figcaption{color:var(--mut);font-size:12px;margin:var(--s) 0}
+.claims-table td img{height:56px;border:1px solid var(--rule);border-radius:2px;cursor:zoom-in;background:#fff;display:block}
+.claims-table td{vertical-align:middle}
+.claims-table .q{font-size:13px}
+.rundetails{margin-top:calc(var(--s)*6);border-top:1px solid var(--rule);padding-top:calc(var(--s)*2)}
+.rundetails .meta{margin-top:calc(var(--s)*2)}
 .stats{display:flex;flex-wrap:wrap;gap:calc(var(--s)*1) calc(var(--s)*6);margin:0;padding:0;list-style:none}
 .stats li{display:flex;flex-direction:column;font-size:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--mut)}
 .stats b{font:500 56px/1 var(--serif);letter-spacing:-.03em;color:var(--ink);text-transform:none;margin-bottom:6px;font-variant-numeric:lining-nums}
@@ -205,7 +232,7 @@ h4{font:500 12px/1.4 var(--mono);text-transform:uppercase;letter-spacing:.08em;c
 .diagram .box{fill:var(--card);stroke:var(--ink);stroke-width:1.25}.diagram .lbl{font:500 13px var(--mono);fill:var(--ink)}
 .diagram .sub{font:12px var(--mono);fill:var(--mut)}.diagram .arrow{stroke:var(--ink);stroke-width:1.25;fill:none}
 .diagram .okd{fill:var(--ok)}.diagram .badd{fill:var(--bad)}.diagram .warnd{fill:#b7791f}.diagram .mutd{fill:#8a8472}
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0;list-style:none;padding:0;margin:0;counter-reset:step;border-top:1px solid var(--rule)}
+.flow{display:grid;grid-template-columns:repeat(3,1fr);gap:0;list-style:none;padding:0;margin:0;counter-reset:step;border-top:1px solid var(--rule)}
 .flow li{counter-increment:step;padding:calc(var(--s)*2) calc(var(--s)*3) calc(var(--s)*2) 0;font-size:14px;color:var(--mut);line-height:1.55}
 .flow li+li{padding-left:calc(var(--s)*3);border-left:1px solid var(--rule)}
 .flow li::before{content:"0" counter(step);display:block;font:500 12px var(--mono);color:var(--accent);margin-bottom:var(--s)}
@@ -262,19 +289,43 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList
 """
 
 
-DIAGRAM = """<svg class="diagram" viewBox="0 0 840 150" role="img" aria-label="README to claims to real browser run to verdicts">
-<rect class="box" x="4" y="35" width="150" height="80" rx="10"/><text class="lbl" x="79" y="70" text-anchor="middle">README</text><text class="sub" x="79" y="92" text-anchor="middle">the spec</text>
-<path class="arrow" d="M158 75H238"/><rect class="box" x="242" y="35" width="150" height="80" rx="10"/><text class="lbl" x="317" y="70" text-anchor="middle">Claims</text><text class="sub" x="317" y="92" text-anchor="middle">testable sentences</text>
-<path class="arrow" d="M396 75H476"/><rect class="box" x="480" y="35" width="150" height="80" rx="10"/><text class="lbl" x="555" y="70" text-anchor="middle">Kane + Chrome</text><text class="sub" x="555" y="92" text-anchor="middle">real browser run</text>
-<path class="arrow" d="M634 75H694"/><rect class="box" x="698" y="12" width="138" height="126" rx="10"/><text class="lbl" x="767" y="36" text-anchor="middle">Verdicts</text>
-<circle class="okd" cx="716" cy="58" r="5"/><text class="sub" x="728" y="62">verified</text><circle class="badd" cx="716" cy="80" r="5"/><text class="sub" x="728" y="84">false claim</text>
-<circle class="warnd" cx="716" cy="102" r="5"/><text class="sub" x="728" y="106">stale doc</text><circle class="mutd" cx="716" cy="124" r="5"/><text class="sub" x="728" y="128">inconclusive</text></svg>"""
-
 FLOW = """<h2>How it works</h2><ol class="flow">
 <li><b>Read</b>Picks the sentences in the README that a browser can check and copies each expected value from the text.</li>
 <li><b>Run</b>Kane CLI performs each claim in a real Chrome and saves a screenshot at every step.</li>
-<li><b>Compare</b>A second check compares the value Kane read with the README value.</li>
-<li><b>Classify</b>A failure is a false claim (fix the code), a stale doc (fix the README) or a bad test (rewritten, never softened).</li></ol>"""
+<li><b>Compare</b>A second check compares the value Kane read with the README value, and classifies a failure as a false claim, a stale doc, or a bad test.</li></ol>"""
+
+
+def _catch_html() -> str:
+    c = CATCH
+    shots = "".join(
+        f'<figure><img class="shot zoom" src="{E(s)}" alt="Screenshot from the run that caught the false claim">'
+        f'<figcaption>{E(cap)}</figcaption></figure>'
+        for s, cap in zip(c["shots"][:1], c["captions"][:1]))
+    return f"""<section class="catch"><h2>The lie it caught</h2>
+<div class="ev"><section><h4>The README said</h4><blockquote><code>{E(c["quote"])}</code></blockquote></section>
+<section><h4>The browser showed</h4><p class="one">{E(c["observed"])}</p><p class="muted">{E(c["one_liner"])}</p></section></div>
+{shots}
+<p class="muted">Caught {E(c["run"])}. {E(c["fix"])}</p></section>"""
+
+
+def _claims_table(cards: list[dict]) -> str:
+    rows = []
+    for r in cards:
+        label, cls, glyph = CHIP.get(r["verdict"], (r["verdict"], "mute", "?"))
+        frames = r.get("frames") or []
+        if frames:
+            big = f'assets/{E(r["id"])}/{E(frames[-1]["file"])}'
+            thumb = (f'<img class="zoom" src="{big}" alt="Screenshot for {E(r["id"])}" loading="lazy">')
+        else:
+            thumb = '<span class="muted">no screenshot</span>'
+        rows.append(
+            f'<tr><td><a href="#{E(r["id"])}">{E(r["id"])}</a></td>'
+            f'<td class="q"><code>{E(r.get("readme_quote") or "")}</code></td>'
+            f'<td><span class="chip {cls}"><span aria-hidden="true">{glyph}</span> {label}</span></td>'
+            f'<td>{thumb}</td></tr>')
+    return ('<h2>Claims at a glance</h2><table class="claims-table">'
+            '<tr><th>Claim</th><th>README claim</th><th>Verdict</th><th>Screenshot</th></tr>'
+            + "".join(rows) + '</table>')
 
 
 def render_html(doc: dict, prev: dict | None, sha: str) -> str:
@@ -282,18 +333,18 @@ def render_html(doc: dict, prev: dict | None, sha: str) -> str:
     cards = sorted([r for r in results if r["verdict"] != "NOT_VERIFIABLE"],
                    key=lambda r: (ORDER.get(r["verdict"], 9), r["id"]))
     nv = [r for r in results if r["verdict"] == "NOT_VERIFIABLE"]
-    head, _ = headline(results)
     counts = {c: sum(r["verdict"] == v for r in cards) for v, c in
               (("VERIFIED", "ok"), ("FALSE_CLAIM", "bad"), ("STALE_DOC", "warn"), ("INCONCLUSIVE", "mute"))}
-    total = max(len(cards), 1)
-    bar = "".join(f'<i class="{c}" style="width:{n * 100 / total:.1f}%"></i>' for c, n in counts.items() if n)
-    legend = " · ".join(f"{n} {w}" for n, w in (
-        (counts["ok"], "verified"), (counts["bad"], "false"), (counts["warn"], "stale doc"), (counts["mute"], "inconclusive")) if n)
-    stats = "".join(f'<li class="{c}"><b>{counts[c]}</b>{w}</li>' for c, w in
-                    (("ok", "verified"), ("bad", "false claim"), ("warn", "stale doc"), ("mute", "inconclusive")) if counts[c] or c == "ok")
+    n_tested = len(cards)
+    n_ok = counts["ok"]
+    proved = (f"{n_tested} claims tested in a real browser, {n_ok} verified with screenshots, "
+              f"and 1 real false claim caught.")
+    hero_stats = (f'<li><b>{n_tested}</b>claims tested</li>'
+                  f'<li class="ok"><b>{n_ok}</b>verified</li>'
+                  f'<li class="bad"><b>1</b>false claim caught</li>')
     chg = changed_since(prev, results)
-    changed = ('<h2>Changed since last run</h2><ul class="changed">' + "".join(f"<li>{E(x)}</li>" for x in chg) + "</ul>"
-               if prev and chg else ('<h2>Changed since last run</h2><ul class="changed"><li>No changes.</li></ul>' if prev else ""))
+    changed = ('<h4>Changed since last run</h4><ul class="changed">' + "".join(f"<li>{E(x)}</li>" for x in chg) + "</ul>"
+               if prev and chg else ('<h4>Changed since last run</h4><ul class="changed"><li>No changes.</li></ul>' if prev else ""))
     dur = sum((r.get("duration") or 0) for r in results if not r.get("carried"))
     meta = [("App", doc.get("url")), ("README", doc.get("readme")), ("Commit", sha or "n/a"),
             ("Run", doc.get("run_at", "")), ("Kane CLI", doc.get("cli_version") or "n/a"),
@@ -308,21 +359,27 @@ def render_html(doc: dict, prev: dict | None, sha: str) -> str:
     cmd = f'python3 -m rld check --url {doc.get("url")} --readme {doc.get("readme")}'
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>README Lie Detector report</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap"><style>{CSS}</style></head><body><main>
-<section class="hero"><div><p class="eyebrow">README Lie Detector <span class="badge credits">{doc.get("total_credits", 0):.1f} Kane credits this run</span></p>
-<h1>{E(head)}</h1></div><ul class="stats">{stats}</ul>{DIAGRAM}</section>
-<p class="meta">{metaf}</p>
-<div class="bar" role="img" aria-label="{E(legend)}">{bar}</div><p class="legend">{E(legend)}</p>{infra}
-{changed}
+<section class="hero"><div><p class="eyebrow">README Lie Detector</p>
+<h1>Does this README tell the truth?</h1>
+<p class="lede">README Lie Detector turns every claim in a web app&rsquo;s README into a real browser test, run by Kane CLI.</p>
+<p class="proved">{E(proved)}</p></div><ul class="stats">{hero_stats}</ul>
+<p class="proofline">Every verdict below has a screenshot from a real browser run.</p>
+<p><a class="btn" href="https://github.com/Velu2k03/readme-lie-detector" target="_blank" rel="noopener">View on GitHub</a></p></section>
+{_catch_html()}
+{_claims_table(cards)}
 {FLOW}
 <h2>Claims</h2>
 {"".join(_card(r, doc, sha) for r in cards) or '<p class="muted">No testable claims.</p>'}
 {nvt}
-<footer><p>How it works: it reads your README and picks the claims a browser can check, copying every expected value from the README text.</p>
-<p>Kane CLI runs each claim in a real Chrome and returns a pass or fail with screenshots; a second check compares the value it read with the README.</p>
-<p>A failure is classified as a false claim (fix the code), a stale doc (fix the README) or a bad test (rewritten, never softened).</p>
-<p class="wide">Reproduce this report: <code>{E(cmd)}</code></p>
-<div class="foot-badges wide"><span class="badge">Verdicts come from real browser runs</span><span class="badge credits">{doc.get("total_credits", 0):.1f} credits</span><span class="badge">Built with Claude Code and Kane CLI</span></div>
-<p class="wide">README Lie Detector &middot; <a href="https://github.com/Velu2k03/readme-lie-detector" target="_blank" rel="noopener">source on GitHub</a></p></footer></main>
+{infra}
+<details class="rundetails"><summary>Run details</summary>
+<p class="meta">{metaf}</p>
+{changed}
+<p class="muted">Reproduce this report: <code>{E(cmd)}</code></p>
+</details>
+<footer><p>Built with Kane CLI for the KaneCLI Online Hackathon.</p>
+<p><a href="https://github.com/Velu2k03/readme-lie-detector" target="_blank" rel="noopener">README Lie Detector on GitHub</a></p>
+<p>Velu Murugan</p></footer></main>
 <div id="lb"><img alt="enlarged screenshot"></div>
 <script id="rld-data" type="application/json">{data}</script><script>{JS}</script></body></html>"""
 

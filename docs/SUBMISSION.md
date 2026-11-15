@@ -1,8 +1,8 @@
 # Submission: README Lie Detector
 
 - Repo: https://github.com/Velu2k03/readme-lie-detector
-- Live report (Vercel): https://readme-lie-detector-report-a3ld2nbko-velus-projects-27f81f38.vercel.app/
-- Demo video (unlisted YouTube): PENDING, needs upload from Velu's browser. Local file: `docs/video/readme-lie-detector-demo.mp4` (1920x1080, about 1:56)
+- Live report (Vercel): https://readme-lie-detector-report.vercel.app/
+- Demo video (unlisted YouTube): PENDING, needs upload from Velu's browser. Local file: `docs/video/readme-lie-detector-demo-v4.mp4` (1920x1080, 2:09, Casper 1.2x voice, stakes-first hook)
 
 ## Paragraph
 
